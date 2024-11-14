@@ -2,7 +2,7 @@ package com.learner.controllers;
 
 import java.io.IOException;
 
-import com.learner.game.App;
+import com.learner.narration.Narrator;
 
 import javafx.fxml.FXML;
 
@@ -10,6 +10,6 @@ public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+        Narrator.playSound("Je mapell Portia!");
     }
 }
