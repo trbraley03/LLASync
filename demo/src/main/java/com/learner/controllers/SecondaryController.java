@@ -1,6 +1,9 @@
-package com.learner.game;
+package com.learner.controllers;
 
 import java.io.IOException;
+
+import com.learner.game.App;
+
 import javafx.fxml.FXML;
 
 public class SecondaryController {

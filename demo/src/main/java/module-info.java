@@ -18,4 +18,10 @@ module com.learner.game {
 
     opens com.learner.narration to java.fxml;
     exports com.learner.narration;
+
+    opens com.learner.model to javafx.fxml;
+    exports com.learner.model;
+
+    opens com.learner.controllers to javafx.fxml;
+    exports com.learner.controllers;
 }
