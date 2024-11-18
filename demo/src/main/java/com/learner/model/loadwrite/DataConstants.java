@@ -9,12 +9,14 @@ import java.util.UUID;
  */
 public class DataConstants {
 
-    // Constants for GameData.json
+    // File paths
     public final static String GAME_DATA_FILE = "application\\src\\main\\data\\gamesData.json";
     public final static String GAME_DATA_FILE_JUNIT = "application\\src\\test\\resources\\gamesData.json";
 
     public final static String USER_FILE = "application\\src\\main\\data\\users.json";
     public final static String USER_FILE_JUNIT = "application\\src\\test\\resources\\users.json";
+
+    // Constants for GameData.json
 
     // MAIN JSON ARRAY HOLDING EVERYTHING
     public static final String LANGUAGES = "LANGUAGES";
@@ -22,6 +24,16 @@ public class DataConstants {
     // MAIN JSON OBJS
     public static final String LANG = "LANG";
     public static final String UUID = "UUID";
+
+    // ADDITIONAL JSON ARRAYS 
+    public static final String GAMES = "GAMES";
+    public static final String QUESTIONS = "QUESTIONS";
+    public static final String TEXT = "TEXT";
+
+    // GAME ATTRIBUTES
+    public static final String GAME_TITLE = "GAME_TITLE";
+    public static final String DIFFICULTY = "DIFFICULTY";
+    public static final String CATEGORY = "CATEGORY";
 
     // INFO OBJ + ITS OBJS/ARRAYS
     public static final String INFO = "INFO";
@@ -35,11 +47,6 @@ public class DataConstants {
     public static final String EXAMPLE_USAGE = "exampleUsage";
     public static final String GAME_TIP = "gameTip";
 
-    // JSON ARRAYS 
-    public static final String GAMES = "GAMES";
-    public static final String QUESTIONS = "QUESTIONS";
-    public static final String TEXT = "TEXT";
-
     // JSON OBJS WITHIN TEXT ARRAY (additonally a uuid is held within
     public static final String TEXT_OBJ = "text";
     public static final String ENGLISH_TEXT = "englishText";
@@ -47,8 +54,8 @@ public class DataConstants {
     public static final String ENGLISH_LINKED_TEXT = "englishLinkedText";
     public static final String HELPER_TEXT = "helperText";
 
-    // JSON OBJS WITHIN QUESTION
-    public static final String QUESTION_TEXT = "questionText"; // JSON OBJ
+    // WITHIN QUESTION
+    public static final String QUESTION = "question";          // JSON OBJ
     public static final String CHOICES = "choices";            // JSON ARRAY (postion 0 should always be the correct answer)
 
     // Constants for User.json
