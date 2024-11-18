@@ -10,10 +10,10 @@ import java.util.UUID;
 public class DataConstants {
 
     // Constants for GameData.json
-    public final static String GAME_DATA_FILE = "application\\src\\main\\data\\gamesData.json";
+    public final static String GAME_DATA_FILE = "demo\\src\\main\\resources\\com\\learner\\game\\gamesData.json";
     public final static String GAME_DATA_FILE_JUNIT = "demo\\src\\test\\resources\\gamesData.json";
 
-    public final static String USER_FILE = "application\\src\\main\\data\\users.json";
+    public final static String USER_FILE = "demo\\src\\main\\resources\\com\\learner\\game\\users.json";
     public final static String USER_FILE_JUNIT = "demo\\src\\test\\resources\\users.json"; 
 
     // MAIN JSON ARRAY HOLDING EVERYTHING
@@ -22,6 +22,8 @@ public class DataConstants {
     // MAIN JSON OBJS
     public static final String LANG = "LANG";
     public static final String UUID = "UUID";
+
+    public static final String CATEGORY = "CATEGORY";
 
     // INFO OBJ + ITS OBJS/ARRAYS
     public static final String INFO = "INFO";
