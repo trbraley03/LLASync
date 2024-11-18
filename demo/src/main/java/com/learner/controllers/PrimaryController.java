@@ -10,6 +10,6 @@ public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        Narrator.playSound("Hello World!");
+        Narrator.playSound("Kumusta mundo!");
     }
 }
