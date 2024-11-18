@@ -1,16 +1,16 @@
 package com.learner.model.loadwrite;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.util.UUID;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.learner.model.User;
 import com.learner.model.UserList;
 import com.learner.model.questions.Question;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.util.UUID;
 
 public class DataWriter {
 
@@ -87,36 +87,40 @@ public class DataWriter {
         StringBuilder prettyJsonBuilder = new StringBuilder();
         String indent = "";
         boolean inQuote = false;
-
+    
         for (char charFromJson : jsonString.toCharArray()) {
             switch (charFromJson) {
-                case '"' -> {
+                case '"':
                     inQuote = !inQuote;
                     prettyJsonBuilder.append(charFromJson);
-                }
-                case '{', '[' -> {
+                    break;
+                case '{':
+                case '[':
                     prettyJsonBuilder.append(charFromJson);
                     if (!inQuote) {
                         prettyJsonBuilder.append("\n").append(indent).append("  ");
                         indent += "  ";
                     }
-                }
-                case '}', ']' -> {
+                    break;
+                case '}':
+                case ']':
                     if (!inQuote) {
                         indent = indent.substring(0, indent.length() - 2);
                         prettyJsonBuilder.append("\n").append(indent);
                     }
                     prettyJsonBuilder.append(charFromJson);
-                }
-                case ',' -> {
+                    break;
+                case ',':
                     prettyJsonBuilder.append(charFromJson);
                     if (!inQuote) {
                         prettyJsonBuilder.append("\n").append(indent);
                     }
-                }
-                default -> prettyJsonBuilder.append(charFromJson);
+                    break;
+                default:
+                    prettyJsonBuilder.append(charFromJson);
+                    break;
             }
         }
         return prettyJsonBuilder.toString();
-    }
+    }    
 }

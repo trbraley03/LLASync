@@ -216,11 +216,22 @@ public class GameManager {
 
     public ArrayList<Game> getGamesByDifficulty(UUID languageUUID, Difficulty difficulty) {
         ArrayList<Game> gamesByDifficulty = new ArrayList<>();
-        ArrayList<UUID> gameUUIDs = switch (difficulty) {
-            case EASY -> easyGameUUIDs.getOrDefault(languageUUID, new ArrayList<>());
-            case MEDIUM -> mediumGameUUIDs.getOrDefault(languageUUID, new ArrayList<>());
-            case HARD -> hardGameUUIDs.getOrDefault(languageUUID, new ArrayList<>());
-        };
+        ArrayList<UUID> gameUUIDs;
+
+        switch (difficulty) {
+            case EASY:
+                gameUUIDs = easyGameUUIDs.getOrDefault(languageUUID, new ArrayList<>());
+                break;
+            case MEDIUM:
+                gameUUIDs = mediumGameUUIDs.getOrDefault(languageUUID, new ArrayList<>());
+                break;
+            case HARD:
+                gameUUIDs = hardGameUUIDs.getOrDefault(languageUUID, new ArrayList<>());
+                break;
+            default:
+                gameUUIDs = new ArrayList<>();
+                break;
+        }  
     
         for (UUID gameUUID : gameUUIDs) {
             Game game = games.get(gameUUID);

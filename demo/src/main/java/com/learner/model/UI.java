@@ -36,12 +36,22 @@ public class UI {
         scanner.nextLine();
 
         switch (choice) {
-            case 1 -> handleLogin();
-            case 2 -> handleRegistration();
-            case 3 -> selectLanguage();
-            case 4 -> exitApplication();
-            default -> System.out.println("Invalid choice. Please try again.");
-        }
+            case 1:
+                handleLogin();
+                break;
+            case 2:
+                handleRegistration();
+                break;
+            case 3:
+                selectLanguage();
+                break;
+            case 4:
+                exitApplication();
+                break;
+            default:
+                System.out.println("Invalid choice. Please try again.");
+                break;
+        }        
     }
 
     private void handleLogin() {
