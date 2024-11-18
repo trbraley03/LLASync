@@ -4,24 +4,25 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 
 import org.junit.Test;
 
 import com.learner.model.Difficulty;
 import com.learner.model.Facade;
 
-class FacadeTest {
+public class FacadeTest {
 
     private Facade facade;
 
-    @Test
-    void getInstanceAndLoad() {
+    @Before
+    public void getInstanceAndLoad() {
         facade = Facade.getInstance();
         facade.loadData("path/to/gameData.json", "path/to/userData.json"); // Mock or temporary paths for testing
     }
 
     @Test
-    void testLoginUser() {
+    public void testLoginUser() {
         facade.registerUser("test@example.com", "testUser", "Test Display", "test123");
         String result = facade.loginUser("test@example.com", "test123");
         assertEquals("Login successful.", result);
@@ -29,7 +30,7 @@ class FacadeTest {
     }
 
     @Test
-    void testLogoutUser() {
+    public void testLogoutUser() {
         facade.registerUser("test@example.com", "testUser", "Test Display", "test123");
         facade.loginUser("test@example.com", "test123");
         assertTrue(facade.isUserLoggedIn());
@@ -40,7 +41,7 @@ class FacadeTest {
     }
 
     @Test
-    void testSelectLanguage() {
+    public void testSelectLanguage() {
         facade.registerUser("user@example.com", "user", "User Display", "password");
         facade.loginUser("user@example.com", "password");
 
@@ -49,7 +50,7 @@ class FacadeTest {
     }
 
     @Test
-    void testSelectDifficulty() {
+    public void testSelectDifficulty() {
         facade.registerUser("user@example.com", "user", "User Display", "password");
         facade.loginUser("user@example.com", "password");
         facade.selectLanguage(0);
@@ -59,7 +60,7 @@ class FacadeTest {
     }
 
     @Test
-    void testGetAvailableGames() {
+    public void testGetAvailableGames() {
         facade.registerUser("user@example.com", "user", "User Display", "password");
         facade.loginUser("user@example.com", "password");
         facade.selectLanguage(0);
@@ -70,7 +71,7 @@ class FacadeTest {
     }
 
     @Test
-    void testSelectGame() {
+    public void testSelectGame() {
         facade.registerUser("user@example.com", "user", "User Display", "password");
         facade.loginUser("user@example.com", "password");
         facade.selectLanguage(0);

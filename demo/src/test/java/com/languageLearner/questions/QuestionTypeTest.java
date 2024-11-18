@@ -9,7 +9,7 @@ import com.learner.model.questions.QuestionType;
 public class QuestionTypeTest {
 
     @Test
-    void testEnumValues() {
+    public void testEnumValues() {
         QuestionType[] types = QuestionType.values();
         assertEquals(3, types.length);
         assertEquals(QuestionType.FITB, types[0]);

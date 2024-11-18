@@ -12,6 +12,12 @@ import com.learner.model.loadwrite.DataLoader;
 
 public class DataLoaderTest {
 
+    //@Test
+    //public void clear() {
+        //UserList.getInstance().clearUsers();  // You may need to add a clearUsers() method.
+        //GameManager.getInstance().clearData();
+    //}
+
     /**
      * Return true after clearing
      */

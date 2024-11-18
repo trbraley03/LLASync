@@ -12,24 +12,26 @@ import com.learner.model.questions.QuestionType;
 
 import java.util.UUID;
 
+import org.junit.Before;
+
 public class QuestionFactoryTest {
     
     private QuestionFactory questionFactory;
 
-    @Test
-    void setUp() {
+    @Before
+    public void setUp() {
         questionFactory = new QuestionFactory();
     }
 
     @Test
-    void testCreateFITBQuestionReturnsCorrectInstance() {
+    public void testCreateFITBQuestionReturnsCorrectInstance() {
         UUID uuid = UUID.randomUUID();
         Question question = questionFactory.createQuestion(QuestionType.FITB, uuid);
         assertTrue(question instanceof FITBQuestion);
     }
 
     @Test
-    void testCreateMultipleChoiceQuestionReturnsCorrectInstance() {
+    public void testCreateMultipleChoiceQuestionReturnsCorrectInstance() {
         UUID uuid = UUID.randomUUID();
         Question question = questionFactory.createQuestion(QuestionType.MULTIPLE_CHOICE, uuid);
         assertTrue(question instanceof MultipleChoiceQuestion);
