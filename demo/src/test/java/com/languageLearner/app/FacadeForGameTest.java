@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.learner.model.Difficulty;
@@ -29,9 +30,9 @@ public class FacadeForGameTest {
     private UUID gameUUID;
     private User testUser;
 
-    @Test
+    @Before
     public void setUp() {
-        gameManager.clearData();
+        //gameManager.clearData();
 
         facadeForGame = new FacadeForGame();
         gameManager = GameManager.getInstance();
@@ -39,6 +40,7 @@ public class FacadeForGameTest {
         // Create randomm language
         Language lang = new Language(UUID.randomUUID(), "Random Language");
         gameManager.initializeLanguage(lang);
+        this.languageUUID = lang.getUUID();
         
         // Set up game and related data
         gameUUID = UUID.randomUUID();

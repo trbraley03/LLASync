@@ -7,7 +7,7 @@ import com.learner.narration.Narrator;
 public class NarratorTest {
 
     @Test
-    void testPlaySound() {
+    public void testPlaySound() {
         String testText = "Kumusta ka na?";
         
         // Test that playSound can be called without throwing exceptions
@@ -15,7 +15,7 @@ public class NarratorTest {
     }
 
     @Test
-    void testPlaySoundWithEmptyString() {
+    public void testPlaySoundWithEmptyString() {
         String emptyText = "";
         
         // Test that playSound does not throw an exception with an empty string
@@ -23,7 +23,7 @@ public class NarratorTest {
     }
 
     @Test
-    void testPlaySoundWithNull() {
+    public void testPlaySoundWithNull() {
         String nullText = null;
         
         // Test that playSound throws a NullPointerException with null input

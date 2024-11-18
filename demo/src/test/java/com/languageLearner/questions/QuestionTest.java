@@ -7,11 +7,13 @@ import com.learner.model.questions.FITBQuestion;
 
 import java.util.UUID;
 
+import org.junit.Before;
+
 public class QuestionTest {
 
     private FITBQuestion question; // or whatever specific question type you're testing
 
-    @Test
+    @Before
     public void setUp() {
         UUID uuid = UUID.randomUUID();
         question = new FITBQuestion(uuid); // Assuming this constructor exists
