@@ -76,7 +76,7 @@ public class DataConstantsTest {
 
     @Test
     public void testQuestionKeys() {
-        assertEquals("questionText", DataConstants.QUESTION_TEXT, "Incorrect value for QUESTION_TEXT key.");
+        assertEquals("questionText", DataConstants.QUESTION, "Incorrect value for QUESTION_TEXT key.");
         assertEquals("choices", DataConstants.CHOICES, "Incorrect value for CHOICES key.");
     }
 
