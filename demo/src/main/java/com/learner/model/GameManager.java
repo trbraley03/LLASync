@@ -80,13 +80,19 @@ public class GameManager {
 
         HashMap<UUID, ArrayList<UUID>> difficultyMap;
         switch (game.getDifficulty()) {
-            case EASY -> difficultyMap = easyGameUUIDs;
-            case MEDIUM -> difficultyMap = mediumGameUUIDs;
-            case HARD -> difficultyMap = hardGameUUIDs;
-            default -> {
+            case EASY:
+                difficultyMap = easyGameUUIDs;
+                break;
+            case MEDIUM:
+                difficultyMap = mediumGameUUIDs;
+                break;
+            case HARD:
+                difficultyMap = hardGameUUIDs;
+                break;
+            default:
                 return;
             }
-        }
+
         difficultyMap.computeIfAbsent(game.getLanguageUUID(), k -> new ArrayList<>()).add(gameUUID);
         languages.computeIfAbsent(getLanguageByUUID(game.getLanguageUUID()), k -> new ArrayList<>()).add(gameUUID);
     }

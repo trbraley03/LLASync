@@ -16,10 +16,17 @@ public class QuestionFactory {
         Question question;
 
         switch (type) {
-            case FITB -> question = new FITBQuestion(textObjectUUID);
-            case MATCHING -> question = new MatchingQuestion(textObjectUUID);
-            case SEQUENCING -> question = new SequencingQuestion(textObjectUUID);
-            default -> throw new IllegalArgumentException("Unsupported question type for creation/generation: " + type);
+            case FITB:
+                question = new FITBQuestion(textObjectUUID);
+                break;
+            case MATCHING:
+                question = new MatchingQuestion(textObjectUUID);
+                break;
+            case SEQUENCING:
+                question = new SequencingQuestion(textObjectUUID);
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported question type for creation/generation: " + type);
         }
 
         question.generateQuestion();
