@@ -76,12 +76,16 @@ public class Facade {
 
     public String selectLanguage(int index) {
         ArrayList<Language> allLanguages = gameManager.getAllLanguages();
+        if (allLanguages.isEmpty()) {
+            return "No languages available.";
+        }
         if (index >= 0 && index < allLanguages.size()) {
             currentLanguage = allLanguages.get(index);
             return "Language set to " + currentLanguage.getLanguageName() + ".";
         }
         return "Invalid language selection.";
     }
+    
 
     public ArrayList<String> getAvailableDifficulties() {
         ArrayList<String> difficulties = new ArrayList<>();
@@ -151,13 +155,3 @@ public class Facade {
         return currentUser;
     }
 }
-
-    // Will we need game methods directly interconnected to facade?
-    // Methods of game / game logic needs to be created,
-    // every game is just built upon text info,
-    // user, getting next text info, until the end, this the option to go back
-    // once the end is hit we will be asking questions,
-    // we can pull 3 multiple choice and create 2 fill in the blank, 
-    // create 1 matching, and then only give a sequncing if the gameUUID, if within a
-    // list of gameUUIDs that will be stored in gameConstants (bc we only want to give sequence problems when 
-    // the sequence matters, like for a story), 

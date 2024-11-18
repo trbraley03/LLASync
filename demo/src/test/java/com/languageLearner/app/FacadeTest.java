@@ -5,11 +5,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
-
 import org.junit.Test;
 
 import com.learner.model.Difficulty;
 import com.learner.model.Facade;
+import com.learner.model.loadwrite.DataConstants;
 
 public class FacadeTest {
 
@@ -18,7 +18,7 @@ public class FacadeTest {
     @Before
     public void getInstanceAndLoad() {
         facade = Facade.getInstance();
-        facade.loadData("path/to/gameData.json", "path/to/userData.json"); // Mock or temporary paths for testing
+        facade.loadData(DataConstants.GAME_DATA_FILE_JUNIT, DataConstants.USER_FILE_JUNIT);
     }
 
     @Test
