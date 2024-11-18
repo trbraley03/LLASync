@@ -8,8 +8,12 @@ import software.amazon.awssdk.regions.Region;
 
 public class VoiceListTest {
     @Test
-    public void testShowVoices() {
+    void testShowVoices() {
         // Test that showVoices can be called without throwing exceptions
-        assertThrows(NullPointerException.class, () -> VoiceList.showVoices(Region.EU_WEST_3));
+        try {
+            VoiceList.showVoices(Region.EU_WEST_3);
+        } catch (Exception e) {
+            fail("showVoices should not throw an exception when called with Region.EU_WEST_3. Exception: " + e.getMessage());
+        }
     }
 }
