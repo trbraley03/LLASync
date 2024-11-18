@@ -24,7 +24,6 @@ public class DataWriterTest {
     @Test
     public void setUp() {
         userList = UserList.getInstance();
-        userList.clearUsers();
     }
 
     @Test

@@ -1,24 +1,16 @@
 package com.languageLearner.data;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotNull;
-
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
-import com.learner.model.loadwrite.DataLoader;
 import com.learner.model.GameManager;
 import com.learner.model.UserList;
 import com.learner.model.loadwrite.DataConstants;
+import com.learner.model.loadwrite.DataLoader;
 
 public class DataLoaderTest {
-
-    @Test
-    public void clear() {
-        UserList.getInstance().clearUsers();  // You may need to add a clearUsers() method.
-        GameManager.getInstance().clearData();
-    }
 
     /**
      * Return true after clearing

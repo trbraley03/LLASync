@@ -1,5 +1,5 @@
 package com.languageLearner.narration;
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import com.learner.narration.Narrator;
@@ -11,7 +11,12 @@ public class NarratorTest {
         String testText = "Kumusta ka na?";
         
         // Test that playSound can be called without throwing exceptions
-        assertDoesNotThrow(() -> Narrator.playSound(testText), "playSound should not throw an exception.");
+        try {
+            Narrator.playSound(testText);
+        } catch (Exception e) {
+            fail("playSound should not throw an exception. Exception message: " + e.getMessage());
+        }
+        
     }
 
     @Test
@@ -19,7 +24,12 @@ public class NarratorTest {
         String emptyText = "";
         
         // Test that playSound does not throw an exception with an empty string
-        assertDoesNotThrow(() -> Narrator.playSound(emptyText), "playSound should not throw an exception with an empty string.");
+        try {
+            Narrator.playSound(emptyText);
+        } catch (Exception e) {
+            fail("playSound should not throw an exception with an empty string. Exception: " + e.getMessage());
+        }
+        
     }
 
     @Test
@@ -27,6 +37,13 @@ public class NarratorTest {
         String nullText = null;
         
         // Test that playSound throws a NullPointerException with null input
-        assertThrows(NullPointerException.class, () -> Narrator.playSound(nullText), "playSound should throw NullPointerException with null input.");
+        try {
+            Narrator.playSound(nullText);
+            fail("playSound should throw NullPointerException with null input.");
+        } catch (NullPointerException e) {
+            // Test passes if exception is caught
+        } catch (Exception e) {
+            fail("Expected NullPointerException, but got " + e.getClass().getSimpleName());
+        }        
     }
 }

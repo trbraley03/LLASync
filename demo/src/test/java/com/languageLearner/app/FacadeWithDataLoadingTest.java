@@ -5,13 +5,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 import com.learner.model.Difficulty;
 import com.learner.model.Facade;
-import com.learner.model.GameManager;
-import com.learner.model.UserList;
 import com.learner.model.loadwrite.DataConstants;
 
 public class FacadeWithDataLoadingTest {
@@ -20,9 +17,6 @@ public class FacadeWithDataLoadingTest {
 
     @Test
     public void setUp() {
-        // Load data using the DataLoader with specified paths
-        GameManager.getInstance().clearData();
-        UserList.getInstance().clearUsers();
         
         facade = Facade.getInstance();
         facade.loadData(DataConstants.GAME_DATA_FILE_JUNIT, DataConstants.USER_FILE_JUNIT);

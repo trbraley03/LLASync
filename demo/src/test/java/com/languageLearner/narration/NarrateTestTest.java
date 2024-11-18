@@ -1,5 +1,6 @@
 package com.languageLearner.narration;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import com.learner.narration.Narrator;
@@ -9,7 +10,11 @@ public class NarrateTestTest {
     @Test
     void testNarratePlaySound() {
         // Test that playSound can be called without throwing exceptions
-        assertDoesNotThrow(() -> Narrator.playSound("Kumusta ka na?"));
+        try {
+            Narrator.playSound("Kumusta ka na?");
+        } catch (Exception e) {
+            fail("Method threw an exception: " + e.getMessage());
+        }
     }
 
     @Test
@@ -21,6 +26,10 @@ public class NarrateTestTest {
     @Test
     void testNarratePlaySoundWithEmptyString() {
         // Test that playSound with an empty string does not throw exceptions
-        assertDoesNotThrow(() -> Narrator.playSound(""));
+        try {
+            Narrator.playSound("");
+        } catch (Exception e) {
+            fail("Method threw an exception: " + e.getMessage());
+        }
     }
 }

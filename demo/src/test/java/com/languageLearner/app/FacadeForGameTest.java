@@ -5,7 +5,6 @@ import java.util.UUID;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 import com.learner.model.Difficulty;
@@ -31,8 +30,6 @@ public class FacadeForGameTest {
 
     @Test
     public void setUp() {
-        gameManager.clearData();
-
         facadeForGame = new FacadeForGame();
         gameManager = GameManager.getInstance();
 
