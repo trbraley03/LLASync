@@ -10,18 +10,31 @@ public class NarrateTestTest {
     @Test
     public void testNarratePlaySound() {
         // Test that playSound can be called without throwing exceptions
-        assertThrows(NullPointerException.class, () -> Narrator.playSound("Kumusta ka na?"));
+        try {
+            Narrator.playSound("Kumusta ka na?");
+        } catch (NullPointerException e) {
+            fail("Unexpected exception was thrown: " + e.getMessage());
+        }
     }
 
     @Test
     public void testNarratePlaySoundWithNull() {
         // Test that playSound with null throws NullPointerException
-        assertThrows(NullPointerException.class, () -> Narrator.playSound(null));
+        try {
+            Narrator.playSound(null);
+            fail("Expected NullPointerException to be thrown");
+        } catch (NullPointerException e) {
+            // Expected exception, test passes
+        }
     }
 
     @Test
     public void testNarratePlaySoundWithEmptyString() {
         // Test that playSound with an empty string does not throw exceptions
-        assertThrows(NullPointerException.class, () -> Narrator.playSound(""));
+        try {
+            Narrator.playSound("");
+        } catch (NullPointerException e) {
+            fail("Unexpected exception was thrown: " + e.getMessage());
+        }
     }
 }
