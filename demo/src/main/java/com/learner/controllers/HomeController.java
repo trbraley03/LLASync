@@ -16,8 +16,13 @@ public class HomeController {
     private Button signUpButton;
 
     @FXML
+    private void goToLogin() throws IOException {
+        App.setRoot("login");
+    }
+
+    @FXML
     private void goToSignup() throws IOException {
         //Narrator.playSound("Kumusta mundo!");
-        App.setRoot("test");
+        App.setRoot("signup");
     }
 }

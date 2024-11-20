@@ -3,13 +3,10 @@ package com.learner.controllers;
 import java.io.IOException;
 
 import com.learner.game.App;
-import com.learner.model.Facade;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 public class SignUpController {
 
@@ -17,38 +14,22 @@ public class SignUpController {
     private Button backButton;
 
     @FXML
-    private Button enterButton;
+    private Button signupButton;
 
     @FXML
-    private TextField enterDisplayName;
-
-    @FXML
-    private TextField enterEmail;
-
-    @FXML
-    private PasswordField enterPassword;
-
-    @FXML
-    private TextField enterUsername;
-
-    private final Facade facade = Facade.getInstance();
-
-    @FXML
-    void backPage(MouseEvent event) throws IOException {
-        // back button action
-        App.setRoot("primary");
+    void goToHome(ActionEvent event) throws IOException{
+        App.setRoot("home");
     }
 
     @FXML
-    void submitSignup(MouseEvent event) {
-        String email = enterEmail.getText();
-        String username = enterUsername.getText();
-        String displayName = enterDisplayName.getText();
-        String password = enterPassword.getText();
+    void submitSignup(ActionEvent event) throws IOException{
+        //String email = emailBox.getText(); 
+        //String username = usernameBox.getText(); 
+        //String displayName = displayNameBox.getText(); 
+        //String password = passwordBox.getText(); 
+        //Facade facade = Facade.getInstance();
+        //facade.registerUser(email, username, displayName, password); 
 
-        String result = facade.registerUser(email, username, displayName, password);
-        System.out.println(result);
-
+        App.setRoot("home");
     }
-
 }

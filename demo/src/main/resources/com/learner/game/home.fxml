@@ -16,7 +16,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button fx:id="loginButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Login">
+      <Button fx:id="loginButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#goToLogin" prefHeight="50.0" prefWidth="120.0" text="Login">
          <VBox.margin>
             <Insets top="120.0" />
          </VBox.margin>
