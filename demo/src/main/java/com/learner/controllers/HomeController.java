@@ -2,7 +2,7 @@ package com.learner.controllers;
 
 import java.io.IOException;
 
-import com.learner.narration.Narrator;
+import com.learner.game.App;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,12 +11,13 @@ public class HomeController {
 
     @FXML
     private Button loginButton;
-
+        
     @FXML
     private Button signUpButton;
 
     @FXML
-    private void helloWorldButton() throws IOException {
-        Narrator.playSound("Kumusta mundo!");
+    private void goToSignup() throws IOException {
+        //Narrator.playSound("Kumusta mundo!");
+        App.setRoot("test");
     }
 }

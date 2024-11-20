@@ -16,7 +16,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button fx:id="loginButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#helloWorldButton" prefHeight="50.0" prefWidth="120.0" text="Login">
+      <Button fx:id="loginButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Login">
          <VBox.margin>
             <Insets top="120.0" />
          </VBox.margin>
@@ -24,7 +24,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="signUpButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Signup">
+      <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#goToSignup" prefHeight="50.0" prefWidth="120.0" text="Signup">
          <font>
             <Font size="24.0" />
          </font>

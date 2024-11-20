@@ -1,6 +1,10 @@
 package com.learner.controllers;
 
+import java.io.IOException;
+
+import com.learner.game.App;
 import com.learner.model.Facade;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -30,8 +34,9 @@ public class SignUpController {
     private final Facade facade = Facade.getInstance();
 
     @FXML
-    void backPage(MouseEvent event) {
+    void backPage(MouseEvent event) throws IOException {
         // back button action
+        App.setRoot("primary");
     }
 
     @FXML
