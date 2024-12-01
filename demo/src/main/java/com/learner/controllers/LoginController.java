@@ -30,7 +30,7 @@ public class LoginController {
 
     @FXML
     void goToMain(ActionEvent event) throws IOException {
-        //App.setRoot("main");
+        App.setRoot("setLangAndDiff");
     }
 
 }

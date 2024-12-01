@@ -1,7 +1,6 @@
 package com.learner.model;
 
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 import com.learner.model.innerdata.TextObject;
@@ -9,25 +8,12 @@ import com.learner.model.questions.Question;
 
 public class FacadeForGame {
 
-    private final GameManager gameManager = GameManager.getInstance();
     private Game currentGame;
     private int currentTextObjectIndex;
     private int currentQuizIndex;
 
-    public String selectGame(UUID gameUUID) {
-        currentGame = gameManager.findGameByUUID(gameUUID);
-        if (currentGame == null) return "Game not found.";
-        currentTextObjectIndex = 0;
-        currentQuizIndex = 0;
-        return "Game '" + currentGame.getGameTitle() + "' selected. Starting content navigation.";
-    }
-
-    public ArrayList<String> getAvailableGames(UUID languageUUID, Difficulty difficulty) {
-        ArrayList<String> games = new ArrayList<>();
-        for (Game game : gameManager.getGamesByDifficulty(languageUUID, difficulty)) {
-            games.add(game.getGameTitle());
-        }
-        return games;
+    public void selectGame(Game game) {
+        currentGame = game;
     }
 
     public String showCurrentTextObject() {
@@ -38,7 +24,7 @@ public class FacadeForGame {
 
     public String nextTextObject() {
         if (currentGame == null || currentTextObjectIndex >= currentGame.getTextObjects().size() - 1) {
-            return "You've reached the end of the content. Ready to start the quiz.";
+            return null;
         }
         currentTextObjectIndex++;
         return showCurrentTextObject();
@@ -46,7 +32,7 @@ public class FacadeForGame {
 
     public String previousTextObject() {
         if (currentGame == null || currentTextObjectIndex <= 0) {
-            return "You're at the beginning of the content.";
+            return null;
         }
         currentTextObjectIndex--;
         return showCurrentTextObject();

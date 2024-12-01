@@ -2,6 +2,8 @@ package com.learner.game;
 
 import java.io.IOException;
 
+import com.learner.model.Facade;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,6 +19,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        Facade.getInstance().loadData();
         scene = new Scene(loadFXML("home"), 640, 480);
         stage.setScene(scene);
         stage.show();

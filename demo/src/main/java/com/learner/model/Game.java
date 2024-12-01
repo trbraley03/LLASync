@@ -167,6 +167,7 @@ public class Game {
     public Difficulty getDifficulty() { return difficulty; }
     public UUID getUUID() { return uuid; }
     public GameInfo getInfo() { return info; }
+    public GameCategory getCategory() { return category; }
 
     // toString method for debugging
     @Override
