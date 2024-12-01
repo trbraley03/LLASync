@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Results" translateX="22.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" right="200.0" />
+         </VBox.margin>
+      </Label>
+      <Label text="You Passed" translateX="9.0" translateY="30.0">
+         <VBox.margin>
+            <Insets left="200.0" right="200.0" />
+         </VBox.margin>
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <StackPane prefHeight="39.0" prefWidth="600.0" translateY="44.0">
+         <children>
+            <Circle fill="#efefef" radius="18.0" stroke="BLACK" strokeType="INSIDE" translateX="-7.0" />
+            <Label text="✓" translateX="-6.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <Label text="100%" translateX="271.0" translateY="109.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="Your Score" translateX="250.0" translateY="45.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button id="NewGameButton" fx:id="NewGameButton" mnemonicParsing="false" onAction="#goToMain" prefHeight="27.0" prefWidth="74.0" text="New Game" translateX="335.0" translateY="115.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+      <Button id="HomeButton" fx:id="HomeButton" mnemonicParsing="false" onAction="#goToMain" text="Home" translateX="7.0" translateY="87.0">
+         <VBox.margin>
+            <Insets left="200.0" right="200.0" />
+         </VBox.margin>
+      </Button>
+      <Button id="PlayAgainbutton" fx:id="PlayAgainButton" mnemonicParsing="false" onAction="#goToMain" text="Play again" translateX="10.0" translateY="62.0">
+         <VBox.margin>
+            <Insets left="250.0" right="250.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
