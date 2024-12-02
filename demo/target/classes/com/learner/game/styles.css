@@ -1,0 +1,22 @@
+.root {
+    -fx-font-size: 16pt;
+    -fx-font-family: "Helvetica";
+    -fx-base: #87C7D1;
+    -fx-background: #f2f2f2;
+}
+
+.button {
+    -fx-background-color: #8B9eb7;
+    -fx-text-fill: white;
+}
+
+.unique {
+    -fx-text-fill: blue;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-effect: dropshadow(three-pass-box, rgba(95, 95, 95, 0.6), 5, 0.0, 0, 1);
+}

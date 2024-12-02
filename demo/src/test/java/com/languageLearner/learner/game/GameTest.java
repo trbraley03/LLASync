@@ -9,6 +9,7 @@ import org.junit.Test;
 import com.learner.model.Difficulty;
 import com.learner.model.Game;
 import com.learner.model.GameManager;
+import com.learner.model.innerdata.GameCategory;
 import com.learner.model.innerdata.GameInfo;
 import com.learner.model.innerdata.TextObject;
 import com.learner.model.loadwrite.DataConstants;
@@ -37,7 +38,7 @@ public class GameTest {
         ArrayList<Question> newQuestionList = new ArrayList<Question>();
         GameInfo newGameInfo = new GameInfo("", "", newList, "", "", "", UUID.randomUUID());
         UUID newGameUUID = UUID.randomUUID();
-        Game newGame = new Game(UUID.fromString("1bafb0ae-3462-4ec3-9cc2-a98ff2898e72"), "New Game", Difficulty.EASY, newGameUUID, newGameInfo, newTextList, newQuestionList);
+        Game newGame = new Game(UUID.fromString("1bafb0ae-3462-4ec3-9cc2-a98ff2898e72"), "New Game", Difficulty.EASY, newGameUUID, GameCategory.WORD, newGameInfo, newTextList, newQuestionList);
         gameManager.addGame(newGame);
 
         assertNotNull(gameManager.findGameByUUID(newGameUUID));
@@ -51,7 +52,7 @@ public class GameTest {
         ArrayList<Question> newQuestionList = new ArrayList<Question>();
         GameInfo newGameInfo = new GameInfo("", "", newList, "", "", "", UUID.randomUUID());
         UUID newGameUUID = UUID.randomUUID();
-        Game newGame = new Game(UUID.fromString("1bafb0ae-3462-4ec3-9cc2-a98ff2898e72"), "New Game", Difficulty.EASY, newGameUUID, newGameInfo, newTextList, newQuestionList);
+        Game newGame = new Game(UUID.fromString("1bafb0ae-3462-4ec3-9cc2-a98ff2898e72"), "New Game", Difficulty.EASY, newGameUUID, GameCategory.WORD, newGameInfo, newTextList, newQuestionList);
 
         UUID questionUUID = UUID.randomUUID();
         ArrayList<String> newOptionsList = new ArrayList<String>();

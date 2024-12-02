@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.SettingsController">
+   <children>
+      <Label text="Setting">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailBox" alignment="TOP_LEFT" promptText="Change email address" translateY="-60.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" right="200.0" top="100.0" />
+         </VBox.margin>
+      </TextField>
+      <Label pickOnBounds="false" text="Email" textAlignment="CENTER" translateX="-1.0" translateY="-100.0" VBox.vgrow="NEVER">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets right="450.0" />
+         </VBox.margin>
+      </Label>
+      <TextField fx:id="passwordBox" promptText="Change password" translateY="-60.0">
+         <VBox.margin>
+            <Insets left="200.0" right="200.0" />
+         </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label pickOnBounds="false" text="Password" textAlignment="CENTER" translateY="-100.0" VBox.vgrow="NEVER">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets right="450.0" />
+         </VBox.margin>
+      </Label>
+      <Label text="Username" textAlignment="CENTER" translateY="-60.0">translateY="-40.0"
+         <font>
+            <Font size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets right="450.0" />
+         </VBox.margin>
+      </Label>
+      <TextField fx:id="UserBox" prefHeight="40.0" prefWidth="319.0" promptText="Change Username" translateY="-100.0">
+         <VBox.margin>
+            <Insets left="200.0" right="200.0" />
+         </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label text="Display name" translateY="-60.0">
+         <VBox.margin>
+            <Insets left="-30.0" right="450.0" />
+         </VBox.margin>
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="displaybox" promptText="Change display name" translateY="-100.0">
+         <VBox.margin>
+            <Insets left="200.0" right="200.0" />
+         </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="backButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToHome" text="&lt; Back" translateX="-300.0" translateY="-40.0" />
+   </children>
+</VBox>

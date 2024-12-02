@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.UUID;
 
+import com.learner.model.innerdata.GameCategory;
 import com.learner.model.innerdata.TextObject;
 import com.learner.model.questions.Question;
 
@@ -71,6 +72,16 @@ public class GameManager {
         return new ArrayList<>(languages.keySet());
     }    
 
+    // public ArrayList<String> getLanguageNames() {
+    //     ArrayList<String> languageNames = new ArrayList<>();
+
+    //     for (Language language : languages.keySet()) {
+    //         languageNames.add(language.getLanguageName());
+    //     }
+
+    //     return languageNames;
+    // }
+
     /**
      * Add a game to all HashMaps where the game / game uuid needs to be accounted for
      */
@@ -100,6 +111,58 @@ public class GameManager {
     public Collection<Game> getAllGames() {
         return games.values();
     }
+
+    /**
+     * Method to grab needed games by category
+     */
+    public HashMap<GameCategory, ArrayList<Game>> getGamesByCategory(UUID languageUUID, Difficulty difficulty) {
+        HashMap<GameCategory, ArrayList<Game>> categoryMap = new HashMap<>();
+        
+        // Select the appropriate difficulty map
+        HashMap<UUID, ArrayList<UUID>> difficultyMap;
+        switch (difficulty) {
+            case EASY: difficultyMap = easyGameUUIDs; break;
+            case MEDIUM: difficultyMap = mediumGameUUIDs; break;
+            case HARD: difficultyMap = hardGameUUIDs; break;
+            default: return categoryMap;
+        }
+        
+        // Retrieve game UUIDs for the specified language
+        ArrayList<UUID> gameUUIDs = difficultyMap.getOrDefault(languageUUID, new ArrayList<>());
+        
+        // Organize games by category
+        for (UUID gameUUID : gameUUIDs) {
+            Game game = games.get(gameUUID);
+            if (game != null) {
+                categoryMap.computeIfAbsent(game.getCategory(), k -> new ArrayList<>()).add(game);
+            }
+        }
+        return categoryMap;
+    }
+
+    public Language findLanguage(String lang) {
+        // Iterate through the keys (Language objects) in the languages map
+        for (Language language : languages.keySet()) {
+            // Compare the input string with the language name (case-insensitive)
+            if (language.getLanguageName().equalsIgnoreCase(lang)) {
+                return language; // Return the matching Language object
+            }
+        }
+        return null; // Return null if no match is found
+    }
+
+    public Difficulty findDifficulty(String diff) {
+        switch (diff) {
+            case "easy":
+                return Difficulty.EASY;
+            case "medium":
+                return Difficulty.MEDIUM;
+            case "hard":
+                return Difficulty.HARD;
+        }
+        return null;
+    }
+
 
 // TextObject Management
 

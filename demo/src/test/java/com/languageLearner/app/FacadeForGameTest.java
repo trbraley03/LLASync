@@ -5,7 +5,6 @@ import java.util.UUID;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,6 +14,7 @@ import com.learner.model.Game;
 import com.learner.model.GameManager;
 import com.learner.model.Language;
 import com.learner.model.User;
+import com.learner.model.innerdata.GameCategory;
 import com.learner.model.innerdata.GameInfo;
 import com.learner.model.innerdata.TextObject;
 import com.learner.model.questions.Question;
@@ -64,7 +64,7 @@ public class FacadeForGameTest {
             textObjects.add(textObject);
         }
 
-        testGame = new Game(languageUUID, "Test Game", Difficulty.EASY, gameUUID, gameInfo, textObjects, questions);
+        testGame = new Game(languageUUID, "Test Game", Difficulty.EASY, gameUUID, GameCategory.WORD, gameInfo, textObjects, questions);
         gameManager.addGame(testGame);
 
         // Adding FITB questions bc those don't rely on additional factors

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.UUID;
 
+import com.learner.model.innerdata.GameCategory;
 import com.learner.model.innerdata.GameInfo;
 import com.learner.model.innerdata.TextObject;
 import com.learner.model.loadwrite.DataConstants;
@@ -17,17 +18,31 @@ public class Game {
     private final String gameTitle;
     private final Difficulty difficulty;
     private final UUID uuid;            
+    private final GameCategory category;
     private final ArrayList<TextObject> textObjects; // Stores TextObject instances
     private final ArrayList<Question> questions;     // Stores Question instances
     private final GameInfo info;
     private final ArrayList<Question> pulledQuestions;
     private int currentTextIndex = 0; // Tracks current TextObject index
 
-    public Game(UUID languageUUID, String gameTitle, Difficulty difficulty, UUID uuid, GameInfo info, ArrayList<TextObject> textObjects, ArrayList<Question> questions) {
+    /**
+     * Constructor of a Game
+     * 
+     * @param languageUUID
+     * @param gameTitle
+     * @param difficulty
+     * @param uuid
+     * @param category
+     * @param info
+     * @param textObjects
+     * @param questions
+     */
+    public Game(UUID languageUUID, String gameTitle, Difficulty difficulty, UUID uuid, GameCategory category, GameInfo info, ArrayList<TextObject> textObjects, ArrayList<Question> questions) {
         this.languageUUID = languageUUID;
         this.gameTitle = gameTitle;
         this.difficulty = difficulty;
         this.uuid = uuid;
+        this.category = category;
         this.info = info;
         this.textObjects = textObjects;
         this.questions = questions;
@@ -152,6 +167,7 @@ public class Game {
     public Difficulty getDifficulty() { return difficulty; }
     public UUID getUUID() { return uuid; }
     public GameInfo getInfo() { return info; }
+    public GameCategory getCategory() { return category; }
 
     // toString method for debugging
     @Override
@@ -162,6 +178,7 @@ public class Game {
           .append("Language UUID: ").append(languageUUID).append("\n")
           .append("Difficulty: ").append(difficulty).append("\n")
           .append("Game UUID: ").append(uuid).append("\n")
+          .append("Game Category: ").append(category).append("\n")
           .append("Info: ").append(info != null ? info.toString() : "No Info Available").append("\n")
           .append("TextObjects: ").append(textObjects.isEmpty() ? "No TextObjects" : textObjects.size()).append("\n")
           .append("Questions: ").append(questions.isEmpty() ? "No Questions" : questions.size()).append("\n");

@@ -12,6 +12,8 @@ module com.learner.game {
     requires org.slf4j.simple;
     requires software.amazon.awssdk.awscore;
     requires software.amazon.eventstream;
+    requires javafx.graphics;
+    requires javafx.base;
 
     opens com.learner.game to javafx.fxml;
     exports com.learner.game;

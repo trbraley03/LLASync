@@ -5,9 +5,9 @@
             "UUID": "1bafb0ae-3462-4ec3-9cc2-a98ff2898e72",
             "GAMES": [
                 {
-                    "GAME": "colorsGame",
-                    "DIFF": "easy",
-                    "CATEGORY:": "wordGame", 
+                    "GAME_TITLE": "colors game",
+                    "DIFFICULTY": "easy",
+                    "CATEGORY:": "word game", 
                     "UUID": "8ce4fefc-a539-4546-9d7e-0ac8778f8de5",
                     "INFO": {
                         "description": "Welcome to the easy colors game. First, you will learn each color (red, green, and blue), then you will conquer the brain blaster!",
@@ -88,9 +88,9 @@
             "UUID": "d9d2caae-e27d-4de7-9b2a-8a784f5fbb12",
             "GAMES": [
                 {
-                    "GAME": "colorsGame",
-                    "DIFF": "easy",
-                    "CATEGORY:": "wordGame", 
+                    "GAME": "colors game",
+                    "DIFFICULTY": "easy",
+                    "CATEGORY:": "word game", 
                     "UUID": "b8d6fae7-2ecb-4427-bc9a-31e8fa5bc2e3",
                     "INFO": {
                         "description": "Welcome to the easy colors game! First, you will learn each color (red, green, and blue), then complete a quiz!",
@@ -138,12 +138,12 @@
                             "UUID": "e25af2d5-6d3c-42d8-915f-d3d3f9c4e6a7"
                         },
                         {
-                            "question": "Which color does 'verde' represent?",
+                            "question": "Which is the english word for 'verde'?",
                             "choices": ["green", "red", "blue"],
                             "UUID": "d2c4b7af-f918-4e4b-85b8-35d1f8c2dbf4"
                         },
                         {
-                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
+                            "question": "What color is the sky?",
                             "choices": ["azul", "rojo", "verde"],
                             "UUID": "5b3e5efb-36de-498f-a0bc-82c4b9c9f6c3"
                         }
