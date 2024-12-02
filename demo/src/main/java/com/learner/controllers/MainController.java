@@ -26,8 +26,8 @@ public class MainController {
     private Button settingsButton;
 
     @FXML
-    public void goToPlay(ActionEvent event) {
-
+    public void goToPlay(ActionEvent event) throws IOException {
+        App.setRoot("setLangAndDiff");
     }
 
     @FXML
