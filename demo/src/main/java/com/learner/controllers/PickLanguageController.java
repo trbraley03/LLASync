@@ -1,11 +1,9 @@
 package com.learner.controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import com.learner.game.App;
 import com.learner.model.Facade;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -35,38 +33,20 @@ public class PickLanguageController {
 
     @FXML
     void selectFilipino(MouseEvent event) {
-        ArrayList<String> languages = facade.getAvailableLanguages();
-        int filipinoIndex = languages.indexOf("filipino");
-        if (filipinoIndex != -1) {
-            String result = facade.selectLanguage(filipinoIndex);
-            System.out.println(result);
-        } else {
-            System.out.println("Filipino language not found.");
-        }
+        facade.selectLanguage("filipino");
+        // make it go to diffuculty page
     }
 
     @FXML
     void selectFrench(MouseEvent event) {
-        ArrayList<String> languages = facade.getAvailableLanguages();
-        int frenchIndex = languages.indexOf("french");
-        if (frenchIndex != -1) {
-            String result = facade.selectLanguage(frenchIndex);
-            System.out.println(result);
-        } else {
-            System.out.println("French language not found.");
-        }
+        facade.selectLanguage("french");
+        // make it go to diffuculty page
     }
 
     @FXML
     void selectSpanish(MouseEvent event) {
-        ArrayList<String> languages = facade.getAvailableLanguages();
-        int spanishIndex = languages.indexOf("spanish");
-        if (spanishIndex != -1) {
-            String result = facade.selectLanguage(spanishIndex);
-            System.out.println(result);
-        } else {
-            System.out.println("Spanish language not found.");
-        }
+        facade.selectLanguage("spanish");
+        // make it go to diffuculty page
     }
 
 }

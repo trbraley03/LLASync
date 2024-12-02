@@ -20,17 +20,17 @@
             <Font size="48.0" />
          </font>
       </Text>
-      <ImageView fx:id="filipinoButton" fitHeight="150.0" fitWidth="200.0" onDragDetected="#selectFilipino" pickOnBounds="true" preserveRatio="true" translateX="-230.0" translateY="83.0">
+      <ImageView fx:id="filipinoButton" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#selectFilipino" pickOnBounds="true" preserveRatio="true" translateX="-230.0" translateY="83.0">
          <image>
             <Image url="@../../../../../../../../../../../Flags/Filipino.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="spanishButton" fitHeight="150.0" fitWidth="200.0" onDragDetected="#selectSpanish" pickOnBounds="true" preserveRatio="true" translateX="2.0" translateY="-50.0">
+      <ImageView fx:id="spanishButton" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#selectSpanish" pickOnBounds="true" preserveRatio="true" translateX="2.0" translateY="-50.0">
          <image>
             <Image url="@../../../../../../../../../../../Flags/Spanish.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="frenchButton" fitHeight="150.0" fitWidth="200.0" onDragDetected="#selectFrench" pickOnBounds="true" preserveRatio="true" translateX="231.0" translateY="-181.0">
+      <ImageView fx:id="frenchButton" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#selectFrench" pickOnBounds="true" preserveRatio="true" translateX="231.0" translateY="-181.0">
          <image>
             <Image url="@../../../../../../../../../../../Flags/French.png" />
          </image>
