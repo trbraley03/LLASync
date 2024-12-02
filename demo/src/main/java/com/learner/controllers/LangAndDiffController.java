@@ -25,7 +25,7 @@ public class LangAndDiffController {
     private TextField languageBox;
 
     @FXML
-    private Button logout;
+    private Button backButton;
 
     @FXML
     private Button setLangAndDiff;
@@ -48,8 +48,8 @@ public class LangAndDiffController {
     }
 
     @FXML
-    private void logout(ActionEvent event) throws IOException {
-        App.setRoot("home");
+    private void goToMain(ActionEvent event) throws IOException {
+        App.setRoot("main");
     }
 
 }
