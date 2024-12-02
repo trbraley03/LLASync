@@ -10,6 +10,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+/**
+ * Temporary Controller until screens are completed
+ * Two text boxes for setting language & difficulty
+ */
 public class LangAndDiffController {
 
     Facade facade = Facade.getInstance();
