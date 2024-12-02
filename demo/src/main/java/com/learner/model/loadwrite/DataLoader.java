@@ -39,6 +39,7 @@ public class DataLoader {
                 JSONObject languageJson = (JSONObject) languageObj;
                 UUID languageUUID = UUID.fromString((String) languageJson.get(DataConstants.UUID));
                 String languageName = (String) languageJson.get(DataConstants.LANG);
+                System.out.println("Lang name:" + languageName); // debug
 
                 Language language = new Language(languageUUID, languageName);
                 gameManager.initializeLanguage(language);
@@ -47,9 +48,12 @@ public class DataLoader {
                 for (Object gameObj : gamesArray) {
                     JSONObject gameJson = (JSONObject) gameObj;
                     UUID gameUUID = UUID.fromString((String) gameJson.get(DataConstants.UUID));
-                    String gameTitle = (String) gameJson.get(DataConstants.GAME_TITLE);
+                    String gameTitle = (String) gameJson.get(DataConstants.GAME);
+                    // System.out.println("Game Title:" + gameTitle); // debug
                     Difficulty difficulty = Difficulty.valueOf(((String) gameJson.get(DataConstants.DIFFICULTY)).toUpperCase());
-                    GameCategory category = GameCategory.valueOf(((String) gameJson.get(DataConstants.CATEGORY)).toLowerCase());
+                    // System.out.println("Diff:" + difficulty); // debug
+                    GameCategory category = GameCategory.valueOf((((String) gameJson.get(DataConstants.CATEGORY))).toUpperCase());
+                    // System.out.println("Cate:" + category); // debug
 
                     GameInfo gameInfo = GameInfo.fromJson((JSONObject) gameJson.get(DataConstants.INFO), gameUUID);
                     ArrayList<TextObject> textObjects = parseTextObjects((JSONArray) gameJson.get(DataConstants.TEXT), gameUUID);

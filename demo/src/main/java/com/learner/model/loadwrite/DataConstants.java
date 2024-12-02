@@ -31,7 +31,7 @@ public class DataConstants {
     public static final String TEXT = "TEXT";
 
     // GAME ATTRIBUTES
-    public static final String GAME_TITLE = "GAME_TITLE";
+    public static final String GAME = "GAME";
     public static final String DIFFICULTY = "DIFFICULTY";
     public static final String CATEGORY = "CATEGORY";
 

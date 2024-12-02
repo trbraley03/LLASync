@@ -19,7 +19,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Facade.getInstance().loadData();
         scene = new Scene(loadFXML("home"), 640, 480);
         stage.setScene(scene);
         stage.show();
@@ -35,6 +34,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        Facade.getInstance().loadData();
         launch();
     }
 

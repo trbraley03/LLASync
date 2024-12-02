@@ -24,8 +24,17 @@ public enum GameCategory {
         return category;
     }
 
-    @Override
-    public String toString() {
-        return category;
-    }
+    //  /**
+    //  * Find a GameCategory by its category name (case-insensitive).
+    //  * @param category the category name to search for
+    //  * @return the corresponding GameCategory, or null if not found
+    //  */
+    // public static GameCategory fromCategory(String category) {
+    //     for (GameCategory gameCategory : values()) {
+    //         if (gameCategory.getCategory().equalsIgnoreCase(category)) {
+    //             return gameCategory;
+    //         }
+    //     }
+    //     throw new IllegalArgumentException("Invalid game category: " + category);
+    // }
 }
