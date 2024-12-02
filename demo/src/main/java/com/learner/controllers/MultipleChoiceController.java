@@ -1,6 +1,11 @@
 package com.learner.controllers;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
 public class MultipleChoiceController {
+
     @FXML
     private Button homeButton;
 
@@ -8,12 +13,12 @@ public class MultipleChoiceController {
     private Button questionButton;
 
     @FXML
-    void goToHome(ActionEvent event) {
+    public void goToHome(ActionEvent event) {
 
     }
 
     @FXML
-    void goToResults(ActionEvent event) {
+    public void goToResults(ActionEvent event) {
 
     }
 }
