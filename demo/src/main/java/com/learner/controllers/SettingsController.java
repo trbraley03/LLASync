@@ -1,5 +1,9 @@
 package com.learner.controllers;
 
+import java.io.IOException;
+
+import com.learner.game.App;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,8 +27,8 @@ public class SettingsController {
     private TextField passwordBox;
 
     @FXML
-    void goToHome(ActionEvent event) {
-
+    public void goToMain (ActionEvent event) throws IOException {
+        App.setRoot("main");
     }
 
 }
