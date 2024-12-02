@@ -1,14 +1,17 @@
 package com.learner.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
+import com.learner.game.App;
 import com.learner.model.Difficulty;
 import com.learner.model.Facade;
 import com.learner.model.Game;
 import com.learner.model.Language;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -23,6 +26,9 @@ public class GameSelectController implements Initializable {
 
     @FXML
     private VBox mainVbox;
+
+    @FXML
+    private Button backButton;
 
     @FXML
     private Label title; // Language + difficulty + "games"
@@ -57,5 +63,10 @@ public class GameSelectController implements Initializable {
         }
 
         title.setText(currentDifficulty.getLabel() + " " + currentLanguage.getLanguageName() + " Games");
+    }
+
+    @FXML
+    public void goToSetLangAndDiff(ActionEvent event) throws IOException{
+        App.setRoot("setLangAndDiff");
     }
 }

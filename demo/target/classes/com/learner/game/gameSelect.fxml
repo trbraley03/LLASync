@@ -17,5 +17,6 @@
                 <VBox fx:id="mainVbox" spacing="10" alignment="CENTER" />
             </content>
         </ScrollPane>
+        <Button fx:id="backButton" mnemonicParsing="false" onAction="#goToSetLangAndDiff" text="&lt; Back" translateX="-300.0" />
     </children>
 </VBox>
