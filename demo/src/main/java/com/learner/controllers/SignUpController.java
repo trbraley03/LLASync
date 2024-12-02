@@ -17,12 +17,12 @@ public class SignUpController {
     private Button signupButton;
 
     @FXML
-    void goToHome(ActionEvent event) throws IOException{
+    public void goToHome(ActionEvent event) throws IOException{
         App.setRoot("home");
     }
 
     @FXML
-    void submitSignup(ActionEvent event) throws IOException{
+    public void submitSignup(ActionEvent event) throws IOException{
         //String email = emailBox.getText(); 
         //String username = usernameBox.getText(); 
         //String displayName = displayNameBox.getText(); 

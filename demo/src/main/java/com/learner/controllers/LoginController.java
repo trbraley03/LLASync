@@ -24,13 +24,13 @@ public class LoginController {
     private TextField passwordBox;
 
     @FXML
-    void goToHome(ActionEvent event) throws IOException {
+    public void goToHome(ActionEvent event) throws IOException {
         App.setRoot("home");
     }
 
     @FXML
-    void goToMain(ActionEvent event) throws IOException {
-        App.setRoot("setLangAndDiff");
+    public void goToMain(ActionEvent event) throws IOException {
+        App.setRoot("main");
     }
 
 }
