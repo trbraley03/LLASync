@@ -16,6 +16,7 @@ import com.learner.model.GameManager;
 import com.learner.model.Language;
 import com.learner.model.User;
 import com.learner.model.UserList;
+import com.learner.model.innerdata.GameCategory;
 import com.learner.model.innerdata.GameInfo;
 import com.learner.model.innerdata.TextObject;
 import com.learner.model.questions.MultipleChoiceQuestion;
@@ -32,28 +33,33 @@ public class DataLoader {
 
         try (FileReader reader = new FileReader(gameDataFilePath)) {
             JSONObject jsonData = (JSONObject) parser.parse(reader);
-            JSONArray languagesArray = (JSONArray) jsonData.get("LANGUAGES");
+            JSONArray languagesArray = (JSONArray) jsonData.get(DataConstants.LANGUAGES);
 
             for (Object languageObj : languagesArray) {
                 JSONObject languageJson = (JSONObject) languageObj;
-                UUID languageUUID = UUID.fromString((String) languageJson.get("UUID"));
-                String languageName = (String) languageJson.get("LANG");
+                UUID languageUUID = UUID.fromString((String) languageJson.get(DataConstants.UUID));
+                String languageName = (String) languageJson.get(DataConstants.LANG);
+                System.out.println("Lang name:" + languageName); // debug
 
                 Language language = new Language(languageUUID, languageName);
                 gameManager.initializeLanguage(language);
 
-                JSONArray gamesArray = (JSONArray) languageJson.get("GAMES");
+                JSONArray gamesArray = (JSONArray) languageJson.get(DataConstants.GAMES);
                 for (Object gameObj : gamesArray) {
                     JSONObject gameJson = (JSONObject) gameObj;
-                    UUID gameUUID = UUID.fromString((String) gameJson.get("UUID"));
-                    String gameTitle = (String) gameJson.get("GAME");
-                    Difficulty difficulty = Difficulty.valueOf(((String) gameJson.get("DIFF")).toUpperCase());
+                    UUID gameUUID = UUID.fromString((String) gameJson.get(DataConstants.UUID));
+                    String gameTitle = (String) gameJson.get(DataConstants.GAME);
+                    // System.out.println("Game Title:" + gameTitle); // debug
+                    Difficulty difficulty = Difficulty.valueOf(((String) gameJson.get(DataConstants.DIFFICULTY)).toUpperCase());
+                    // System.out.println("Diff:" + difficulty); // debug
+                    GameCategory category = GameCategory.valueOf((((String) gameJson.get(DataConstants.CATEGORY))).toUpperCase());
+                    // System.out.println("Cate:" + category); // debug
 
-                    GameInfo gameInfo = GameInfo.fromJson((JSONObject) gameJson.get("INFO"), gameUUID);
-                    ArrayList<TextObject> textObjects = parseTextObjects((JSONArray) gameJson.get("TEXT"), gameUUID);
-                    ArrayList<Question> questions =  parseQuestions((JSONArray) gameJson.get("QUESTIONS"), gameUUID, languageUUID);
+                    GameInfo gameInfo = GameInfo.fromJson((JSONObject) gameJson.get(DataConstants.INFO), gameUUID);
+                    ArrayList<TextObject> textObjects = parseTextObjects((JSONArray) gameJson.get(DataConstants.TEXT), gameUUID);
+                    ArrayList<Question> questions =  parseQuestions((JSONArray) gameJson.get(DataConstants.QUESTIONS), gameUUID, languageUUID);
 
-                    Game game = new Game(languageUUID, gameTitle, difficulty, gameUUID, gameInfo, textObjects, questions);
+                    Game game = new Game(languageUUID, gameTitle, difficulty, gameUUID, category, gameInfo, textObjects, questions);
                     gameManager.addGame(game);
                 }
             }
@@ -78,10 +84,10 @@ public class DataLoader {
         ArrayList<Question> questions = new ArrayList<>();
         for (Object questionObj : questionsArray) {
             JSONObject questionJson = (JSONObject) questionObj;
-            UUID questionUUID = UUID.fromString((String) questionJson.get("UUID"));
-            String questionText = (String) questionJson.get("question");
+            UUID questionUUID = UUID.fromString((String) questionJson.get(DataConstants.UUID));
+            String questionText = (String) questionJson.get(DataConstants.QUESTION);
 
-            JSONArray choicesJson = (JSONArray) questionJson.get("choices");
+            JSONArray choicesJson = (JSONArray) questionJson.get(DataConstants.CHOICES);
             ArrayList<String> options = new ArrayList<>();
             for (Object choice : choicesJson) {
                 options.add((String) choice);

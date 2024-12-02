@@ -26,4 +26,5 @@ public enum Difficulty {
     public String getLabel() {
         return label;
     }
+    
 }

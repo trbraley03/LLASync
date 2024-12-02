@@ -2,6 +2,8 @@ package com.learner.game;
 
 import java.io.IOException;
 
+import com.learner.model.Facade;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,6 +34,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        Facade.getInstance().loadData();
         launch();
     }
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.GameSelectController" spacing="10" alignment="CENTER">
+    <children>
+        <!-- Title Label -->
+        <Label fx:id="title" text="Language + Difficulty Games" style="-fx-font-size: 36px;" />
+
+        <!-- ScrollPane to hold game categories -->
+        <ScrollPane fitToWidth="true" prefHeight="480.0" prefWidth="720.0">
+            <content>
+                <VBox fx:id="mainVbox" spacing="10" alignment="CENTER" />
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>
