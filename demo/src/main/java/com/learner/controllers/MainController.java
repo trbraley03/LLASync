@@ -36,8 +36,8 @@ public class MainController {
     }
 
     @FXML
-    public void goToSettings(ActionEvent event) {
-
+    public void goToSettings(ActionEvent event) throws IOException {
+        App.setRoot("settings");
     }
 
     @FXML
