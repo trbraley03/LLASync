@@ -15,8 +15,8 @@ public class Facade {
 
     private Language currentLanguage;
     private Difficulty currentDifficulty;
-
     private Game currentGame;
+
     private User currentUser;
 
     private Facade() {
@@ -40,6 +40,10 @@ public class Facade {
 
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public Game getCurrentGame() {
+        return currentGame;
     }
 
     // Data loading
@@ -152,12 +156,12 @@ public class Facade {
         return gameFacade.showCurrentTextObject();
     }
 
-    public String nextTextObject() {
-        return gameFacade.nextTextObject();
+    public String getNextTextObject() {
+        return gameFacade.getNextTextObject();
     }
 
-    public String previousTextObject() {
-        return gameFacade.previousTextObject();
+    public String getPreviousTextObject() {
+        return gameFacade.getPreviousTextObject();
     }
 
     public String startQuiz() {
@@ -172,8 +176,25 @@ public class Facade {
         return gameFacade.validateQuizAnswer(answer);
     }
 
+    public int getCurrentTextObjectIndex() {
+        return gameFacade.getCurrentTextObjectIndex();
+    }
+
+    public int getMaxTextObjectIndex() {
+        return gameFacade.getMaxTextObjectIndex();
+    }
+
+    public int getCurrentQuizIndex() {
+        return gameFacade.getCurrentQuestionIndex();
+    }
+
+    public void setTextObjectIndex(int newIndex) {
+        gameFacade.setTextObjectIndex(newIndex);
+    }
+
     public String endGameSession() {
         if (currentUser == null || currentLanguage == null) return "No active game session.";
         return gameFacade.endGameSession(currentUser, currentLanguage.getUUID());
     }
+
 }

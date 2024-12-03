@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" stylesheets="@styles.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.LangAndDiffController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.LangAndDiffController">
    <children>
-      <Label text="Set Language and Difficulty">
+      <Label styleClass="title" text="Set Language and Difficulty">
          <font>
             <Font size="48.0" />
          </font>
@@ -54,6 +54,6 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="backButton" mnemonicParsing="false" onAction="#goToMain" text=" Back" translateX="-300.0" translateY="40.0" />
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#goToMain" text="&lt; Back" translateX="-300.0" translateY="60.0" />
    </children>
 </VBox>

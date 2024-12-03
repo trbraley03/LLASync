@@ -77,6 +77,9 @@ public class Game {
         // Check if we are at the last TextObject
         if (currentTextIndex < textObjects.size() - 1) {
             currentTextIndex++;
+        } else {
+            currentTextIndex = 0;
+            return null;
         }
         
         // Return the current TextObject, which will either be the next one or the last one if we've reached the end
@@ -93,10 +96,26 @@ public class Game {
         // Check if we are at the first TextObject
         if (currentTextIndex > 0) {
             currentTextIndex--;
+        } else {
+            return null;
         }
 
         // Return the current TextObject, which will either be the previous one or the first one if we've reached the start
         return textObjects.get(currentTextIndex);
+    }
+
+    public int getCurrentTextObjectIndex() {
+        return currentTextIndex;
+    }
+
+    public int getMaxTextObjectIndex() {
+        return textObjects.size() - 1;
+    }
+
+    public void setTextObjectIndex(int newIndex) {
+        if(newIndex >= 0 && newIndex <= getMaxTextObjectIndex()) {
+            currentTextIndex = newIndex;
+        }
     }
 
     // Method to add a Question to the Game
