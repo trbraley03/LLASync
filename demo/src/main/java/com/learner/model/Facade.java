@@ -15,8 +15,8 @@ public class Facade {
 
     private Language currentLanguage;
     private Difficulty currentDifficulty;
-
     private Game currentGame;
+
     private User currentUser;
 
     private Facade() {
@@ -40,6 +40,10 @@ public class Facade {
 
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public Game getCurrentGame() {
+        return currentGame;
     }
 
     // Data loading

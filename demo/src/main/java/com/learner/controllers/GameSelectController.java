@@ -58,10 +58,13 @@ public class GameSelectController implements Initializable {
             // Set up the event handler
             gameButton.setOnAction(event -> {
                 UUID clickedUUID = (UUID) gameButton.getUserData();
-                System.out.println("Button clicked! UUID: " + clickedUUID + " " + game.getGameTitle());
+                // System.out.println("Button clicked! UUID: " + clickedUUID + " " + game.getGameTitle());
+                facade.selectGame(clickedUUID);
+                switch(facade.getCurrentGame().getCategory()) {
+                    case GameCategory.STORY:
+                }
             });
         }
-
         title.setText(currentDifficulty.getLabel() + " " + currentLanguage.getLanguageName() + " Games");
     }
 

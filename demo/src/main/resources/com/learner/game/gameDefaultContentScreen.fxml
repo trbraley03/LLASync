@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.GameDefaultContentScreen">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.GameDefaultContentController">
    <children>
       <Label fx:id="title" text="Title">
          <font>
@@ -28,7 +28,7 @@
             <Insets top="20.0" />
          </opaqueInsets>
       </VBox>
-      <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBackToPreviousGameScreen" text="&lt; Back" translateX="-300.0" translateY="40.0" />
-      <Button fx:id="nextButton" mnemonicParsing="false" onAction="#goToNextGameScreen" text="Next &gt;" translateX="300.0" translateY="-5.0" />
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBackToPreviousGameScreen" styleClass="nav-button" text="&lt; Back" translateX="-300.0" translateY="40.0" />
+      <Button fx:id="nextButton" mnemonicParsing="false" onAction="#goToNextGameScreen" styleClass="nav-button" text="Next &gt;" translateX="300.0" translateY="-5.0" />
    </children>
 </VBox>
