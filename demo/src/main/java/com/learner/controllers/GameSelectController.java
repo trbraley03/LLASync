@@ -20,9 +20,9 @@ import javafx.scene.layout.VBox;
 
 public class GameSelectController implements Initializable {
 
-    Language currentLanguage;
-    Difficulty currentDifficulty;
-    Facade facade = Facade.getInstance();
+    private final Facade facade = Facade.getInstance();
+    private final Language currentLanguage = facade.getCurrentLanguage();
+    private final Difficulty currentDifficulty = facade.getCurrentDifficulty();
 
     @FXML
     private VBox mainVbox;
@@ -42,9 +42,6 @@ public class GameSelectController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        currentLanguage = facade.getCurrentLanguage();
-        currentDifficulty = facade.getCurrentDifficulty();
-
         for(Game game : facade.getAvailableGames()) {
             Button gameButton = new Button(game.getGameTitle());
 
@@ -58,18 +55,26 @@ public class GameSelectController implements Initializable {
             // Set up the event handler
             gameButton.setOnAction(event -> {
                 UUID clickedUUID = (UUID) gameButton.getUserData();
-                // System.out.println("Button clicked! UUID: " + clickedUUID + " " + game.getGameTitle());
                 facade.selectGame(clickedUUID);
-                switch(facade.getCurrentGame().getCategory()) {
-                    case GameCategory.STORY:
+
+                try {
+                    goToGameIntroduction(event);
+                } catch (IOException e) {
+                    e.printStackTrace(); 
                 }
+                
             });
         }
         title.setText(currentDifficulty.getLabel() + " " + currentLanguage.getLanguageName() + " Games");
     }
 
     @FXML
-    public void goToSetLangAndDiff(ActionEvent event) throws IOException{
+    private void goToSetLangAndDiff(ActionEvent event) throws IOException {
         App.setRoot("setLangAndDiff");
+    }
+
+    @FXML
+    private void goToGameIntroduction(ActionEvent event) throws IOException{
+        App.setRoot("gameIntroScreen");
     }
 }

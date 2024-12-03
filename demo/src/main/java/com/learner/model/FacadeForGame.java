@@ -9,37 +9,46 @@ import com.learner.model.questions.Question;
 public class FacadeForGame {
 
     private Game currentGame;
-    private int currentTextObjectIndex;
-    private int currentQuizIndex;
+    private int currentQuestionIndex;
 
     public void selectGame(Game game) {
         currentGame = game;
     }
 
+    public int getCurrentTextObjectIndex() {
+        return currentGame.getCurrentTextObjectIndex();
+    }
+
+    public int getCurrentQuestionIndex() {
+        return currentQuestionIndex;
+    }
+
     public String showCurrentTextObject() {
-        if (currentGame == null || currentGame.getTextObjects().isEmpty()) return "No content available.";
-        TextObject textObject = currentGame.getTextObjects().get(currentTextObjectIndex);
+        TextObject textObject = currentGame.getCurrentTextObject();
         return formatTextObjectContent(textObject);
     }
 
-    public String nextTextObject() {
-        if (currentGame == null || currentTextObjectIndex >= currentGame.getTextObjects().size() - 1) {
-            return null;
-        }
-        currentTextObjectIndex++;
+    public String getNextTextObject() {
+        currentGame.getNextTextObject();
         return showCurrentTextObject();
     }
 
-    public String previousTextObject() {
-        if (currentGame == null || currentTextObjectIndex <= 0) {
-            return null;
-        }
-        currentTextObjectIndex--;
+    public String getPreviousTextObject() {
+        currentGame.getPreviousTextObject();
         return showCurrentTextObject();
     }
 
+    public int getMaxTextObjectIndex() {
+        return currentGame.getMaxTextObjectIndex();
+    }
+
+    public void setTextObjectIndex(int newIndex) {
+        currentGame.setTextObjectIndex(newIndex);
+    }
+
+    // Store language in the game, switch how its being accessed from facade
     private String formatTextObjectContent(TextObject textObject) {
-        return String.format("Filipino: %s\nEnglish: %s\nExample: %s\nHelper: %s",
+        return String.format(Facade.getInstance().getCurrentLanguage().getLanguageName() + ": %s\nEnglish: %s\nExample: %s\nHelper: %s",
                 textObject.getText(),
                 textObject.getEnglishText(),
                 textObject.getLinkedText(),
@@ -49,18 +58,18 @@ public class FacadeForGame {
     public String startQuiz() {
         if (currentGame == null) return "No game selected.";
         currentGame.pullQuestions();
-        currentQuizIndex = 0;
+        currentQuestionIndex = 0;
         return "Quiz started. Answer the following questions.";
     }
 
     public String getNextQuizQuestion() {
         if (currentGame == null) return "No game selected.";
-        Question question = currentGame.getQuestion(currentQuizIndex++);
+        Question question = currentGame.getQuestion(currentQuestionIndex++);
         return (question != null) ? question.getQuestionText() : "Quiz complete!";
     }
 
     public boolean validateQuizAnswer(String answer) {
-        Question question = currentGame.getQuestion(currentQuizIndex - 1);
+        Question question = currentGame.getQuestion(currentQuestionIndex - 1);
         return question != null && question.validateAnswer(answer);
     }
 

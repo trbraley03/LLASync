@@ -8,7 +8,7 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.GameDefaultContentController">
    <children>
-      <Label fx:id="title" text="Title">
+      <Label fx:id="title" styleClass="title" text="Title">
          <font>
             <Font size="48.0" />
          </font>
