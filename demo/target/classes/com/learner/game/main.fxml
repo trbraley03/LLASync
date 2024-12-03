@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -12,7 +14,6 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Button fx:id="profileButton" mnemonicParsing="false" onAction="#makeOptionsVisible" prefHeight="55.0" prefWidth="55.0" text="Profile" translateX="-300.0" translateY="-50.0" />
       <Label text="What would you like to do today?">
          <font>
             <Font name="System Bold" size="24.0" />
@@ -28,11 +29,19 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutToHome" prefHeight="25.0" prefWidth="55.0" text="Logout" translateX="-300.0" translateY="-235.0" visible="false" />
-      <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#goToSettings" prefHeight="25.0" prefWidth="55.0" text="Settings" translateX="-300.0" translateY="-230.0" visible="false">
+      <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutToHome" prefHeight="25.0" prefWidth="55.0" text="Logout" translateX="-300.0" translateY="-190.0" visible="false">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#goToSettings" prefHeight="25.0" prefWidth="55.0" text="Settings" translateX="-300.0" translateY="-185.0" visible="false">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
+      <ImageView fx:id="profileButton" fitHeight="55.0" fitWidth="55.0" onMouseClicked="#makeOptionsVisible" pickOnBounds="true" preserveRatio="true" translateX="-300.0" translateY="-300.0">
+         <image>
+            <Image url="@profile_picture.png" />
+         </image>
+      </ImageView>
    </children>
 </VBox>
