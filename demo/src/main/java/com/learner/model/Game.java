@@ -23,6 +23,7 @@ public class Game {
     private final ArrayList<Question> questions;     // Stores Question instances
     private final GameInfo info;
     private final ArrayList<Question> pulledQuestions;
+    private int correctlyAnswered;
     private int currentTextIndex = 0; // Tracks current TextObject index
 
     /**
@@ -46,6 +47,7 @@ public class Game {
         this.info = info;
         this.textObjects = textObjects;
         this.questions = questions;
+        correctlyAnswered = 0;
         pulledQuestions = new ArrayList<>();
     }
 
@@ -126,6 +128,14 @@ public class Game {
     // Method to retrieve all Questions in the Game
     public ArrayList<Question> getQuestions() {
         return questions;
+    }
+
+    public int getNumberOfQuestions() {
+        return pulledQuestions.size() - 1;
+    }
+
+    public void answeredQuestionCorrectly() {
+        correctlyAnswered++;
     }
 
     public Question getQuestion(int index) {
