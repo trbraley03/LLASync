@@ -5,10 +5,26 @@
     -fx-background: #f2f2f2;
 }
 
+/* Styling for buttons */
+
+/* Default coloring for a button & buttons text */
 .button {
     -fx-background-color: #8B9eb7;
     -fx-text-fill: white;
 }
+
+/* Style for navagation buttons (back buttons, next buttons, etc.) */
+.nav-button {
+    -fx-background-color: #8B9eb7;
+    -fx-text-fill: white;
+}
+
+.translate-button {
+    -fx-background-color: #00673a;
+    -fx-text-fill: white;
+}
+
+/* Styling for text */
 
 .unique {
     -fx-text-fill: blue;
@@ -20,3 +36,16 @@
     -fx-text-fill: #000000;
     -fx-effect: dropshadow(three-pass-box, rgba(95, 95, 95, 0.6), 5, 0.0, 0, 1);
 }
+
+.learning-content-text {
+    font-size: 16px;
+    -fx-text-fill: #000000;
+}
+
+.story-content-text {
+    font-size: 14px;
+    -fx-text-fill: #000000;
+}
+
+/* Styling for miscellaneous elements */
+
