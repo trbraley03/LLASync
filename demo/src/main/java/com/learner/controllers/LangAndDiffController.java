@@ -7,6 +7,8 @@ import com.learner.model.Facade;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -41,7 +43,12 @@ public class LangAndDiffController {
         facade.selectLanguage(language);
         facade.selectDifficulty(difficulty);
         if(facade.getCurrentDifficulty() == null || facade.getCurrentLanguage() == null) {
-            System.out.println("Retry");
+            // System.out.println("Retry");
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Invalid");
+            alert.setHeaderText(null);
+            alert.setContentText("Language or difficulty is invalid.");
+            alert.showAndWait();
         } else {
             App.setRoot("gameSelect");
         }

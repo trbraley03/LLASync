@@ -23,6 +23,7 @@ public class Game {
     private final ArrayList<Question> questions;     // Stores Question instances
     private final GameInfo info;
     private final ArrayList<Question> pulledQuestions;
+    private int correctlyAnswered;
     private int currentTextIndex = 0; // Tracks current TextObject index
 
     /**
@@ -46,6 +47,7 @@ public class Game {
         this.info = info;
         this.textObjects = textObjects;
         this.questions = questions;
+        correctlyAnswered = 0;
         pulledQuestions = new ArrayList<>();
     }
 
@@ -77,6 +79,9 @@ public class Game {
         // Check if we are at the last TextObject
         if (currentTextIndex < textObjects.size() - 1) {
             currentTextIndex++;
+        } else {
+            currentTextIndex = 0;
+            return null;
         }
         
         // Return the current TextObject, which will either be the next one or the last one if we've reached the end
@@ -93,10 +98,26 @@ public class Game {
         // Check if we are at the first TextObject
         if (currentTextIndex > 0) {
             currentTextIndex--;
+        } else {
+            return null;
         }
 
         // Return the current TextObject, which will either be the previous one or the first one if we've reached the start
         return textObjects.get(currentTextIndex);
+    }
+
+    public int getCurrentTextObjectIndex() {
+        return currentTextIndex;
+    }
+
+    public int getMaxTextObjectIndex() {
+        return textObjects.size() - 1;
+    }
+
+    public void setTextObjectIndex(int newIndex) {
+        if(newIndex >= 0 && newIndex <= getMaxTextObjectIndex()) {
+            currentTextIndex = newIndex;
+        }
     }
 
     // Method to add a Question to the Game
@@ -107,6 +128,14 @@ public class Game {
     // Method to retrieve all Questions in the Game
     public ArrayList<Question> getQuestions() {
         return questions;
+    }
+
+    public int getNumberOfQuestions() {
+        return pulledQuestions.size() - 1;
+    }
+
+    public void answeredQuestionCorrectly() {
+        correctlyAnswered++;
     }
 
     public Question getQuestion(int index) {

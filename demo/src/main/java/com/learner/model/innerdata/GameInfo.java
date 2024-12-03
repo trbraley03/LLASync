@@ -75,15 +75,12 @@ public class GameInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(description).append("\n\n")
-          .append(objective).append("\n\n")
-          .append("Instructions:\n")
-          .append(instructionsToString()).append("\n")
-          .append("Getting Started:\n");
-        sb.append("  Intro Concept:\n").append(introConcept).append("\n\n")
-          .append("  Example Usage:\n").append(exampleUsage).append("\n\n")
+        sb.append(introConcept).append("\n\n")
+          .append(exampleUsage).append("\n\n")
           .append("Pro Tip:\n")
           .append(gameTip).append("\n\n");
+        sb.append("Instructions:\n")
+          .append(instructionsToString());
         
         return sb.toString();
     }
