@@ -4,28 +4,37 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 
-public class GameIntroScreenController {
+public class GameStoryContentController {
 
     @FXML
     private Button backButton;
 
     @FXML
-    private Label introText;
+    private Label gameContentText;
 
     @FXML
     private Button nextButton;
 
     @FXML
-    private Label title;
+    private ImageView storyImage;
 
     @FXML
-    private void goToGameSelect(ActionEvent event) {
+    private Button translateButton;
+
+    @FXML
+    private void goBackToPreviousGameScreen(ActionEvent event) {
 
     }
 
     @FXML
     private void goToNextGameScreen(ActionEvent event) {
+
+    }
+
+    @FXML
+    private void translateText(ActionEvent event) {
 
     }
 
