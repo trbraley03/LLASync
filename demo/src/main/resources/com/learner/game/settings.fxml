@@ -14,7 +14,7 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <TextField fx:id="emailBox" alignment="TOP_LEFT" promptText="Change email address" translateY="-60.0">
+      <TextField fx:id="emailBox" alignment="TOP_LEFT" promptText="Change email address" translateY="-100.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -22,15 +22,15 @@
             <Insets left="200.0" right="200.0" top="100.0" />
          </VBox.margin>
       </TextField>
-      <Label pickOnBounds="false" text="Email" textAlignment="CENTER" translateX="-1.0" translateY="-100.0" VBox.vgrow="NEVER">
+      <Label pickOnBounds="false" text="Email" textAlignment="CENTER" translateY="-140.0" VBox.vgrow="NEVER">
          <font>
             <Font size="24.0" />
          </font>
          <VBox.margin>
-            <Insets right="450.0" />
+            <Insets left="30.0" right="450.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="passwordBox" promptText="Change password" translateY="-60.0">
+      <TextField fx:id="passwordBox" promptText="Change password" translateY="-100.0">
          <VBox.margin>
             <Insets left="200.0" right="200.0" />
          </VBox.margin>
@@ -38,7 +38,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label pickOnBounds="false" text="Password" textAlignment="CENTER" translateY="-100.0" VBox.vgrow="NEVER">
+      <Label pickOnBounds="false" text="Password" textAlignment="CENTER" translateY="-140.0" VBox.vgrow="NEVER">
          <font>
             <Font size="24.0" />
          </font>
@@ -46,7 +46,7 @@
             <Insets right="450.0" />
          </VBox.margin>
       </Label>
-      <Label text="Username" textAlignment="CENTER" translateY="-60.0">translateY="-40.0"
+      <Label text="Username" textAlignment="CENTER" translateY="-100.0">translateY="-40.0"
          <font>
             <Font size="24.0" />
          </font>
@@ -54,7 +54,7 @@
             <Insets right="450.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="UserBox" prefHeight="40.0" prefWidth="319.0" promptText="Change Username" translateY="-100.0">
+      <TextField fx:id="UserBox" prefHeight="40.0" prefWidth="319.0" promptText="Change Username" translateY="-140.0">
          <VBox.margin>
             <Insets left="200.0" right="200.0" />
          </VBox.margin>
@@ -62,7 +62,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label text="Display name" translateY="-60.0">
+      <Label text="Display name" translateY="-100.0">
          <VBox.margin>
             <Insets left="-30.0" right="450.0" />
          </VBox.margin>
@@ -70,7 +70,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="displaybox" promptText="Change display name" translateY="-100.0">
+      <TextField fx:id="displaybox" promptText="Change display name" translateY="-140.0">
          <VBox.margin>
             <Insets left="200.0" right="200.0" />
          </VBox.margin>
@@ -79,5 +79,14 @@
          </font>
       </TextField>
       <Button fx:id="backButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToMain" text="&lt; Back" translateX="-300.0" translateY="-40.0" />
+      <Label text="Profile picture" translateY="-150.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="-30.0" right="450.0" />
+         </VBox.margin>
+      </Label>
+      <Button fx:id="fileSelectButton" mnemonicParsing="false" onAction="#selectPicture" text="Select file" translateY="-190.0" />
    </children>
 </VBox>

@@ -7,6 +7,8 @@ import com.learner.game.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class MainController {
 
@@ -17,7 +19,7 @@ public class MainController {
     private Button playButton;
 
     @FXML
-    private Button profileButton;
+    private ImageView profileButton;
 
     @FXML
     private Button progressButton;
@@ -27,7 +29,7 @@ public class MainController {
 
     @FXML
     public void goToPlay(ActionEvent event) throws IOException {
-        App.setRoot("setLangAndDiff");
+        App.setRoot("setDifficulty");
     }
 
     @FXML
@@ -46,7 +48,7 @@ public class MainController {
     }
 
     @FXML
-    public void makeOptionsVisible(ActionEvent event) throws IOException{
+    public void makeOptionsVisible(MouseEvent event) throws IOException{
         logoutButton.setVisible(!logoutButton.isVisible());
         settingsButton.setVisible(!settingsButton.isVisible());
     }
