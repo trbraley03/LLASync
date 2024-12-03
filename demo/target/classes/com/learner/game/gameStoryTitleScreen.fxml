@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.GameStoryTitleController">
+   <children>
+      <Label text="   ">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" minHeight="350.0" prefHeight="100.0" prefWidth="720.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="114.0">
+               <image>
+                  <Image url="@../../../../../../../../../Downloads/coverPiece.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="title" text="Title">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="200.0" fitWidth="114.0" rotate="180.0">
+               <image>
+                  <Image url="@../../../../../../../../../Downloads/coverPiece.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Button fx:id="translateButton" mnemonicParsing="false" onAction="#translateText" text="Translate" translateY="-5.0" />
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBackToPreviousGameScreen" text="&lt; Back" translateX="-300.0" translateY="-40.0" />
+      <Button fx:id="nextButton" mnemonicParsing="false" onAction="#goToNextGameScreen" text="Next &gt;" translateX="300.0" translateY="-85.0" />
+   </children>
+</VBox>
