@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -7,7 +8,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox prefHeight="200.0" prefWidth="73.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Game" translateX="284.0">
                <font>
@@ -18,15 +19,21 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Button fx:id="HomeButton" mnemonicParsing="false" styleClass="nav-button" text="Home" translateX="508.0" translateY="-46.0" />
-            <Button fx:id="LeftOption1" mnemonicParsing="false" styleClass="matching-button" text="Berde" translateX="185.0" translateY="32.0" />
-            <Button fx:id="RightOption1" mnemonicParsing="false" styleClass="matching-button" text="Blue" translateX="349.0" translateY="-8.0" />
-            <Button fx:id="LeftOption3" mnemonicParsing="false" styleClass="matching-button" text="Pula" translateX="182.0" translateY="78.0" />
-            <Button fx:id="LeftOption2" mnemonicParsing="false" styleClass="matching-button" text="Asul" translateX="184.0" translateY="-25.0" />
-            <Button fx:id="RightOption2" mnemonicParsing="false" styleClass="matching-button" text="Red" translateX="348.0" translateY="-69.0" />
+            <Button fx:id="HomeButton" minHeight="34.0" minWidth="7.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="78.0" styleClass="nav-button" stylesheets="@styles.css" text="Home" translateX="521.0" translateY="-54.0">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+            <Button fx:id="LeftOption1" mnemonicParsing="false" prefWidth="66.0" styleClass="matching-button" text="Berde" translateX="185.0" translateY="32.0" />
+            <Button fx:id="RightOption1" mnemonicParsing="false" prefHeight="37.0" prefWidth="66.0" styleClass="matching-button" text="Blue" translateX="351.0" />
+            <Button fx:id="LeftOption3" mnemonicParsing="false" prefWidth="66.0" styleClass="matching-button" text="Pula" translateX="185.0" translateY="57.0" />
+            <Button fx:id="LeftOption2" mnemonicParsing="false" prefWidth="66.0" styleClass="matching-button" text="Asul" translateX="184.0" translateY="-20.0" />
+            <Button fx:id="RightOption2" mnemonicParsing="false" prefHeight="40.0" prefWidth="66.0" styleClass="matching-button" text="Red" translateX="352.0" translateY="-54.0" />
          </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </VBox>
-      <Button fx:id="RightOption3" mnemonicParsing="false" styleClass="matching-button" text="Green" translateX="335.0" translateY="-42.0" />
-      <Button fx:id="submitButton" mnemonicParsing="false" text="Submit" translateX="501.0" translateY="7.0" />
+      <Button fx:id="RightOption3" mnemonicParsing="false" prefWidth="66.0" styleClass="matching-button" text="Green" translateX="351.0" translateY="-37.0" />
+      <Button fx:id="submitButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="98.0" styleClass="nav-button" stylesheets="@styles.css" text="Submit" translateX="255.0" />
    </children>
 </VBox>

@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="Game" translateX="286.0">
+      <Label styleClass="title" stylesheets="@styles.css" text="Game" translateX="286.0">
          <VBox.margin>
             <Insets />
          </VBox.margin>
@@ -17,7 +16,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="homeButton" mnemonicParsing="false" onAction="#goToHome" text="Home" translateX="540.0" translateY="-21.0" />
+      <Button fx:id="homeButton" mnemonicParsing="false" onAction="#goToHome" prefHeight="30.0" prefWidth="78.0" styleClass="nav-button" stylesheets="@styles.css" text="Home" translateX="518.0" translateY="-26.0" />
       <Label text="Multiple Choice Question" translateX="209.0" translateY="60.0">
          <VBox.margin>
             <Insets />
@@ -31,17 +30,17 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="questionButton" mnemonicParsing="false" onAction="#goToResults" text="Pula" translateX="200.0" translateY="247.0">
+      <Button fx:id="questionButton" mnemonicParsing="false" onAction="#goToResults" styleClass="multiplechoice-button" stylesheets="@styles.css" text="Pula" translateX="200.0" translateY="132.0">
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </Button>
-      <Button fx:id="questionButton" mnemonicParsing="false" onAction="#goToResults" text="Berde" translateX="271.0" translateY="222.0">
+      <Button fx:id="questionButton" mnemonicParsing="false" onAction="#goToResults" styleClass="multiplechoice-button" stylesheets="@styles.css" text="Berde" translateX="272.0" translateY="93.0">
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </Button>
-      <Button fx:id="questionButton" mnemonicParsing="false" onAction="#goToResults" text="Asul" translateX="354.0" translateY="195.0">
+      <Button fx:id="questionButton" mnemonicParsing="false" onAction="#goToResults" styleClass="multiplechoice-button" stylesheets="@styles.css" text="Asul" translateX="354.0" translateY="55.0">
          <VBox.margin>
             <Insets />
          </VBox.margin>
