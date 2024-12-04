@@ -48,10 +48,16 @@
 }
 
 .matching-button  {
-    -fx-font-size: 18px;
+    -fx-font-size: 15px;
     -fx-pref-width: flex;
     -fx-background-color: #8B9eb7;
 
+}
+
+.multiplechoice-button {
+    -fx-font-size: 18px;
+    -fx-pref-width: flex;
+    -fx-background-color: #8B9eb7;
 }
 
 /* Styling for miscellaneous elements */
