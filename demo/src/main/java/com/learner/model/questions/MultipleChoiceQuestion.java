@@ -65,6 +65,10 @@ public class MultipleChoiceQuestion extends Question {
         return correctAnswerIndex;
     }
 
+    public String getCorrectAnswer() {
+        return options.get(correctAnswerIndex); 
+    }
+
     // Not used for this question type
     // Multiple choice questions are pre-etablished, no generation needed
     @Override

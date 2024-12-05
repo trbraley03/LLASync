@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import com.learner.model.loadwrite.DataConstants;
 import com.learner.model.loadwrite.DataLoader;
+import com.learner.model.questions.Question;
 
 public class Facade {
 
@@ -164,11 +165,15 @@ public class Facade {
         return gameFacade.getPreviousTextObject();
     }
 
-    public String startQuiz() {
+    public Question startQuiz() {
         return gameFacade.startQuiz();
     }
 
-    public String getNextQuizQuestion() {
+    public Question getQuizQuestion() {
+        return gameFacade.getQuizQuestion();
+    }
+
+    public Question getNextQuizQuestion() {
         return gameFacade.getNextQuizQuestion();
     }
 
@@ -184,9 +189,9 @@ public class Facade {
         return gameFacade.getMaxTextObjectIndex();
     }
 
-    public int getCurrentQuizIndex() {
-        return gameFacade.getCurrentQuestionIndex();
-    }
+    // public int getCurrentQuizIndex() {
+    //     return gameFacade.getCurrentQuestionIndex();
+    // }
 
     public void setTextObjectIndex(int newIndex) {
         gameFacade.setTextObjectIndex(newIndex);

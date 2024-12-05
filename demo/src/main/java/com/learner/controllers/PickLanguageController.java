@@ -17,7 +17,7 @@ public class PickLanguageController {
     private ImageView filipinoButton;
 
     @FXML
-    private ImageView frenchButton;
+    private ImageView portugueseButton;
 
     @FXML
     private Button homeButton;
@@ -39,8 +39,8 @@ public class PickLanguageController {
     }
 
     @FXML
-    void selectFrench(MouseEvent event) {
-        facade.selectLanguage("french");
+    void selectPortuguese(MouseEvent event) {
+        facade.selectLanguage("portuguese");
         // make it go to diffuculty page
     }
 

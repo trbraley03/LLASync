@@ -13,9 +13,9 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <VBox alignment="CENTER" prefHeight="320.0" prefWidth="720.0">
+      <VBox alignment="CENTER_LEFT" prefHeight="320.0" prefWidth="720.0">
          <children>
-            <Label fx:id="introText" text="Text">
+            <Label fx:id="introText" maxWidth="700.0" styleClass="learning-content-text" text="Text" wrapText="true">
                <opaqueInsets>
                   <Insets top="20.0" />
                </opaqueInsets>
@@ -27,6 +27,9 @@
          <opaqueInsets>
             <Insets top="20.0" />
          </opaqueInsets>
+         <VBox.margin>
+            <Insets left="40.0" right="40.0" />
+         </VBox.margin>
       </VBox>
       <Button fx:id="exitButton" mnemonicParsing="false" onAction="#goToGameSelect" styleClass="nav-button" text="&lt; Exit" translateX="-300.0" translateY="40.0" />
       <Button fx:id="nextButton" mnemonicParsing="false" onAction="#goToNextGameScreen" styleClass="nav-button" text="Next &gt;" translateX="300.0" translateY="-5.0" />

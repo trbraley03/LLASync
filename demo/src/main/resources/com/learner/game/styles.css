@@ -6,12 +6,51 @@
     -fx-background: #5b5f78;
 }
 
+/* Default textfield styling*/
+.text-field {
+    -fx-font-size: 14px;
+    -fx-text-fill: black;      /* Text color */
+    -fx-background-color: #5b5f78; /* Background color */
+    -fx-border-color: rgb(255, 255, 255);    /* Border color */
+    -fx-border-width: 0.5px;     /* Border thickness */
+    -fx-border-radius: 10px;           /* Border corner radius */
+    -fx-background-radius: 6px;       /* Background corner radius */
+    -fx-padding: 5px;          /* Inner padding */
+    -fx-prompt-text-fill: #7d7d7d; /* Prompt text color */
+}
+
 /* Styling for buttons */
 
 /* Default coloring for a button & buttons text */
 .button {
     -fx-background-color: #8B9eb7;
     -fx-text-fill: white;
+    -fx-transition: all 0.3s ease;
+}
+
+.button:focused {
+    -fx-border-color: #a6a59f; /* Highlight border color */
+    -fx-border-width: 2px;     /* Border width */
+}
+
+.button:active {
+    -fx-background-color: #276570; /* Darker background when clicked */
+}
+
+.button:disabled {
+    -fx-opacity: 1; /* Prevent dimming */
+    -fx-text-fill: white; /* Set the text color to match the normal state */
+}
+
+.game-selection-button {
+    -fx-pref-width: 92px;
+    -fx-pref-height: 78px;
+    -fx-background-color: #e8ebf0;
+    -fx-text-fill: white;
+}
+
+.game-select-text {
+    
 }
 
 /* Style for navagation buttons (back buttons, next buttons, etc.) */
@@ -25,27 +64,65 @@
     -fx-text-fill: white;
 }
 
-/* Styling for text */
-
-.unique {
-    -fx-text-fill: blue;
+.left-matching-button  {
+    -fx-font-size: 14px;
+    -fx-pref-width: 145;
+    -fx-pref-height: 70;
+    -fx-background-color: #525252;
+    -fx-border-color: #8B9eb7;
+    -fx-border-radius: 2px;
 }
 
+.right-matching-button  {
+    -fx-font-size: 14px;
+    -fx-pref-width: 145;
+    -fx-pref-height: 70;
+    -fx-border-color: white;
+    -fx-border-radius: 2px;
+    -fx-background-color:  #8B9eb7;
+}
+
+/* Styling for text */
+
 .title {
-    font-size: 24px;
-    font-weight: bold;
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
     -fx-text-fill: #000000;
     -fx-effect: dropshadow(three-pass-box, rgba(95, 95, 95, 0.6), 5, 0.0, 0, 1);
 }
 
+.heading {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1c1b1b;
+}
+
 .learning-content-text {
-    font-size: 16px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #000000;
+}
+
+.question-text {
+    -fx-font-size: 24px;
     -fx-text-fill: #000000;
 }
 
 .story-content-text {
-    font-size: 14px;
+    -fx-font-size: 14px;
     -fx-text-fill: #000000;
+}
+
+.multiplechoice-button {
+    -fx-font-size: 18px;
+    -fx-pref-width: flex;
+    -fx-background-color: #8B9eb7;
+}
+
+.exit-button {
+    -fx-fit-width: 20px;
+    -fx-fit-height: 20px;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
 }
 
 /* Styling for miscellaneous elements */

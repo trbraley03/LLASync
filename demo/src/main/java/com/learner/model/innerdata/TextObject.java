@@ -4,6 +4,8 @@ import java.util.UUID;
 
 import org.json.simple.JSONObject;
 
+import com.learner.model.Facade;
+
 /**
  * TextObject <-- Game <--- Difficulty & Language
  */
@@ -81,19 +83,18 @@ public class TextObject {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append("TEXT OBJ:\n")
-        .append("Text: ").append(text).append("\n")
-        .append("English Text: ").append(englishText).append("\n")
-        .append("Linked Text: ").append(linkedText).append("\n")
-        .append("English Linked Text: ").append(englishLinkedText).append("\n")
-        .append("Helper Text: ").append(helperText).append("\n")
-        .append("UUID: ").append(uuid).append("\n")
-        .append("Game UUID: ").append(gameUUID).append("\n")
-        .append("-End of text obj-\n");
-        
-        return sb.toString();
+        return String.format(Facade.getInstance().getCurrentLanguage().getLanguageName() + ": %s\nEnglish: %s\nExample: %s\nHelper: %s",
+            this.getText(),
+            this.getEnglishText(),
+            this.getLinkedText(),
+            this.getHelperText());
+    }
+
+    public String toString(boolean translate) {
+        if(translate) { 
+            return this.getText();
+        } 
+        return this.getEnglishText();
     }
 
 }

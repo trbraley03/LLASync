@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.questions.FITBQuestionController">
+   <children>
+      <Label fx:id="title" styleClass="title" text="Title">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Fill-in-the-Blank Question" />
+      <VBox alignment="CENTER" maxWidth="720.0" prefHeight="320.0" prefWidth="720.0" spacing="5.0">
+         <children>
+            <VBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Label fx:id="questionText" styleClass="question-text" text="Text">
+                     <opaqueInsets>
+                        <Insets top="20.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="answerBox" alignment="CENTER" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <Text fx:id="correctOrIncorrectText" fill="#00b530" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct" visible="false">
+                     <font>
+                        <Font name="System Bold Italic" size="32.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="correctAnswerDisplayText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Correct Answer: " visible="false" />
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets top="20.0" />
+         </opaqueInsets>
+      </VBox>
+      <Button fx:id="submit" mnemonicParsing="false" onAction="#submitQuestion" text="Submit" />
+      <ImageView fx:id="exitButton" accessibleRole="BUTTON" fitHeight="51.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true" styleClass="exit-button" translateX="336.0" translateY="-392.0">
+         <image>
+            <Image url="@fmxl-images/exit.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" />
+   </children>
+</VBox>

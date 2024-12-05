@@ -20,13 +20,9 @@ public class MatchingQuestion extends Question {
     private final HashMap<String, String> correctPairs; // Maps each word to its correct meaning
 
     /**
-     * Constructs a MatchingQuestion with a unique identifier, game and language context,
-     * question text, and type set to MATCHING.
+     * Constructs a MatchingQuestion with a unique identifier and type set to MATCHING.
      * 
-     * @param uuid        Unique identifier for the question
-     * @param gameUUID    Unique identifier for the game
-     * @param languageUUID Unique identifier for the language
-     * @param questionText Initial question text
+     * @param uuid Unique identifier for the question
      */
     public MatchingQuestion(UUID uuid) {
         super(uuid, QuestionType.MATCHING);
@@ -43,13 +39,13 @@ public class MatchingQuestion extends Question {
      */
     @Override
     public void generateQuestion() {
-        ArrayList<TextObject> textObjects = new ArrayList<>();                        // Create ArrayList of textObjects
-        TextObject theTextObject = gameManager.findTextObjectByUUID(this.getUUID()); // Retrieve the TextObject using the uuid
-        textObjects.add(theTextObject);                                             // add textObject to arrayList
-        Game game = gameManager.findGameByUUID(gameUUID);                          // Retrive the game
+        ArrayList<TextObject> textObjects = new ArrayList<>();
+        TextObject theTextObject = gameManager.findTextObjectByUUID(this.getUUID());
+        textObjects.add(theTextObject);
+        Game game = gameManager.findGameByUUID(gameUUID);
 
-        // Establish an ArrayList of textObjects
-        for(int i = 0; i < 3; i++) {
+        // Populate with additional text objects
+        for (int i = 0; i < 3; i++) {
             theTextObject = game.getNextTextObject(theTextObject.getUUID());
             textObjects.add(theTextObject);
         }
@@ -64,17 +60,18 @@ public class MatchingQuestion extends Question {
             correctPairs.put(word, meaning);  // Store the correct pair
         }
 
-        // Shuffle rightSide to display options in a random order
+        // Shuffle rightSide for randomized options
         Collections.shuffle(rightSide);
 
-        // Build the question text with shuffled options
+        // Build the question text without numbering or letters
         StringBuilder questionBuilder = new StringBuilder("Match each word with its correct meaning:\n");
-        for (int i = 0; i < leftSide.size(); i++) {
-            questionBuilder.append(i + 1).append(". ").append(leftSide.get(i)).append("\n");
+        questionBuilder.append("Words:\n");
+        for (String word : leftSide) {
+            questionBuilder.append("- ").append(word).append("\n");
         }
-        questionBuilder.append("\nOptions:\n");
-        for (int i = 0; i < rightSide.size(); i++) {
-            questionBuilder.append((char)('A' + i)).append(". ").append(rightSide.get(i)).append("\n");
+        questionBuilder.append("\nMeanings:\n");
+        for (String meaning : rightSide) {
+            questionBuilder.append("- ").append(meaning).append("\n");
         }
 
         this.questionText = questionBuilder.toString();
@@ -83,13 +80,12 @@ public class MatchingQuestion extends Question {
     /**
      * Validates the user's answer by comparing it to the correct pairs.
      * 
-     * @param userAnswer The answer provided by the user, expected in a format where
-     *                   each item is matched with a letter, e.g., "1:B, 2:A, 3:C".
+     * @param userAnswer The answer provided by the user as a mapping of word to meaning.
      * @return true if the user's answer matches the correct pairs, false otherwise.
      */
     @Override
     public boolean validateAnswer(String userAnswer) {
-        // Expected format: "1:A, 2:B, 3:C", where number matches leftSide and letter matches rightSide
+        // Expected format: "word:meaning, word2:meaning2"
         String[] pairs = userAnswer.split(", ");
         if (pairs.length != leftSide.size()) {
             return false;
@@ -98,33 +94,15 @@ public class MatchingQuestion extends Question {
         for (String pair : pairs) {
             String[] match = pair.split(":");
             if (match.length != 2) {
-                return false; // Invalid format if it’s not in "1:A" format
+                return false; // Invalid format if not in "word:meaning" format
             }
 
-            try {
-                // Convert the left index from user input
-                int leftIndex = Integer.parseInt(match[0].trim()) - 1;
-                if (leftIndex < 0 || leftIndex >= leftSide.size()) {
-                    return false;
-                }
+            String word = match[0].trim();
+            String selectedMeaning = match[1].trim();
 
-                // Convert the right letter to index
-                char rightOption = match[1].trim().toUpperCase().charAt(0);
-                int rightIndex = rightOption - 'A';
-                if (rightIndex < 0 || rightIndex >= rightSide.size()) {
-                    return false;
-                }
-
-                // Get the word and selected meaning from leftSide and shuffled rightSide
-                String word = leftSide.get(leftIndex);
-                String selectedMeaning = rightSide.get(rightIndex);
-
-                // Check if the selected meaning matches the correct one in correctPairs
-                if (!correctPairs.get(word).equalsIgnoreCase(selectedMeaning)) {
-                    return false;
-                }
-            } catch (NumberFormatException e) {
-                return false; // Invalid number format in user input
+            // Check if the selected meaning matches the correct one in correctPairs
+            if (!correctPairs.getOrDefault(word, "").equalsIgnoreCase(selectedMeaning)) {
+                return false;
             }
         }
 
@@ -134,7 +112,7 @@ public class MatchingQuestion extends Question {
     /**
      * Gets the list of items on the left side (e.g., words to match).
      * 
-     * @return The left-side items in the question.
+     * @return The leftside items in the question.
      */
     public ArrayList<String> getLeftSide() {
         return leftSide;
@@ -143,7 +121,7 @@ public class MatchingQuestion extends Question {
     /**
      * Gets the list of items on the right side (e.g., meanings or translations).
      * 
-     * @return The right-side items in the question, in randomized order.
+     * @return The rightside items in the question, in randomized order.
      */
     public ArrayList<String> getRightSide() {
         return rightSide;
