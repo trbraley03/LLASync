@@ -26,4 +26,7 @@ module com.learner.game {
 
     opens com.learner.controllers to javafx.fxml;
     exports com.learner.controllers;
+
+    opens com.learner.controllers.questions to javafx.fxml; 
+    exports com.learner.controllers.questions to javafx.fxml; 
 }

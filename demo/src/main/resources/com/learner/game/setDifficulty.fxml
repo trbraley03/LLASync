@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.DifficultySelectController">
    <children>
       <Label text="Select your difficulty level">
@@ -16,17 +15,17 @@
       </Label>
       <ImageView fx:id="easyButton" fitHeight="200.0" fitWidth="176.0" onMouseClicked="#goToEasyGame" translateX="-240.0" translateY="100.0">
          <image>
-            <Image url="@easy.png" />
+            <Image url="@fmxl-images/easy.png" />
          </image>
       </ImageView>
       <ImageView fx:id="hardButton" fitHeight="200.0" fitWidth="176.0" onMouseClicked="#goToHardGame" translateX="240.0" translateY="-100.0">
          <image>
-            <Image url="@hard.png" />
+            <Image url="@fmxl-images/hard.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mediumButton" fitHeight="200.0" fitWidth="175.0" onMouseClicked="#goToMediumGame" translateY="-300.0">
          <image>
-            <Image url="@medium.png" />
+            <Image url="@fmxl-images/medium.png" />
          </image>
       </ImageView>
    </children>

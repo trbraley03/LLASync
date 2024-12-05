@@ -9,7 +9,6 @@ import com.learner.model.questions.Question;
 public class FacadeForGame {
 
     private Game currentGame;
-    private int currentQuestionIndex;
 
     public void selectGame(Game game) {
         currentGame = game;
@@ -17,10 +16,6 @@ public class FacadeForGame {
 
     public int getCurrentTextObjectIndex() {
         return currentGame.getCurrentTextObjectIndex();
-    }
-
-    public int getCurrentQuestionIndex() {
-        return currentQuestionIndex;
     }
 
     public String showCurrentTextObject() {
@@ -55,22 +50,20 @@ public class FacadeForGame {
                 textObject.getHelperText());
     }
 
-    public String startQuiz() {
-        if (currentGame == null) return "No game selected.";
-        currentGame.pullQuestions();
-        currentQuestionIndex = 0;
-        return "Quiz started. Answer the following questions.";
+    public Question startQuiz() {
+        return currentGame.startQuiz();
     }
 
-    public String getNextQuizQuestion() {
-        if (currentGame == null) return "No game selected.";
-        Question question = currentGame.getQuestion(currentQuestionIndex++);
-        return (question != null) ? question.getQuestionText() : "Quiz complete!";
+    public Question getQuizQuestion() {
+        return currentGame.getQuizQuestion();
+    }
+
+    public Question getNextQuizQuestion() {
+        return currentGame.getNextQuizQuestion();
     }
 
     public boolean validateQuizAnswer(String answer) {
-        Question question = currentGame.getQuestion(currentQuestionIndex - 1);
-        return question != null && question.validateAnswer(answer);
+        return currentGame.validateQuizAnswer(answer);
     }
 
     public String endGameSession(User user, UUID languageUUID) {

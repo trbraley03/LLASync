@@ -7,23 +7,26 @@ import java.util.UUID;
 import com.learner.model.innerdata.GameCategory;
 import com.learner.model.innerdata.GameInfo;
 import com.learner.model.innerdata.TextObject;
-import com.learner.model.loadwrite.DataConstants;
 import com.learner.model.questions.Question;
 import com.learner.model.questions.QuestionFactory;
 import com.learner.model.questions.QuestionType;
 
 public class Game {
 
+    // General info for game
     private final UUID languageUUID;
     private final String gameTitle;
     private final Difficulty difficulty;
     private final UUID uuid;            
     private final GameCategory category;
-    private final ArrayList<TextObject> textObjects; // Stores TextObject instances
-    private final ArrayList<Question> questions;     // Stores Question instances
+    private final ArrayList<TextObject> textObjects; // Stores TextObject instances for this game
+    private final ArrayList<Question> questions;     // Stores Question instances for this game
     private final GameInfo info;
-    private final ArrayList<Question> pulledQuestions;
+
+    // Info for an active game
+    private final ArrayList<Question> quizQuestions;
     private int correctlyAnswered;
+    private int quizQuestionIndex;
     private int currentTextIndex = 0; // Tracks current TextObject index
 
     /**
@@ -48,7 +51,8 @@ public class Game {
         this.textObjects = textObjects;
         this.questions = questions;
         correctlyAnswered = 0;
-        pulledQuestions = new ArrayList<>();
+        quizQuestionIndex = 0;
+        quizQuestions = new ArrayList<>();
     }
 
     /**
@@ -131,7 +135,7 @@ public class Game {
     }
 
     public int getNumberOfQuestions() {
-        return pulledQuestions.size() - 1;
+        return quizQuestions.size() - 1;
     }
 
     public void answeredQuestionCorrectly() {
@@ -214,63 +218,89 @@ public class Game {
         return sb.toString();
     }
 
-    // we can pull 3 multiple choice and create 2 fill in the blank, 
-    // create 1 matching, and then only give a sequncing if the gameUUID, if within a
-    // list of gameUUIDs that will be stored in gameConstants (bc we only want to give sequence problems when 
-    // the sequence matters, like for a story)
-
     // Pulls a predetermined set of questions based on specified requirements
-    public void pullQuestions() {
-        pulledQuestions.clear();
+    public void pullQuestionsForQuiz() {
+        quizQuestions.clear();
 
         // Generate a random starting index for textObjects
         int startIndex = new Random().nextInt(textObjects.size());
+        int multiChoiceStartIndex = new Random().nextInt(questions.size());
 
         // Pull 3 Multiple Choice Questions
-        addQuestionsByType(QuestionType.MULTIPLE_CHOICE, 3, startIndex);
-
-        // Pull 2 Fill in the Blank Questions
-        addQuestionsByType(QuestionType.FITB, 2, startIndex);
-
-        // Pull 1 Matching Question
-        addQuestionsByType(QuestionType.MATCHING, 1, startIndex);
+        addQuestionsByType(QuestionType.MULTIPLE_CHOICE, 3, multiChoiceStartIndex);
 
         // Pull 1 Sequencing Question if the game is eligible for sequencing (story games for example)
-        if (DataConstants.SEQUENCING_GAMES.contains(uuid)) {
+        if (category == GameCategory.STORY) {
             addQuestionsByType(QuestionType.SEQUENCING, 1, startIndex);
+        } else {
+            // Pull 2 Fill in the Blank Questions
+            addQuestionsByType(QuestionType.FITB, 2, startIndex);
+
+            // Pull 1 Matching Question
+            addQuestionsByType(QuestionType.MATCHING, 1, startIndex);
         }
     }
 
     // Helper method to add a specific number of questions of a given type, starting from a given index
-    public void addQuestionsByType(QuestionType type, int count, int startIndex) {
+    public void addQuestionsByType(QuestionType type, int count, int index) {
         int added = 0;
-        int currentIndex = startIndex;
 
         while (added < count) {
-            UUID questionUUID = textObjects.get(currentIndex).getUUID();
             Question question;
             if(type != QuestionType.MULTIPLE_CHOICE) {
+                UUID questionUUID = textObjects.get(index).getUUID();
                 question = QuestionFactory.createQuestion(type, questionUUID);
-            } else {
-                question = getQuestion(questionUUID);
-            }
-            pulledQuestions.add(question);
-            added++;
 
-            // Move to the next index, wrapping around to 0 if we reach the end of textObjects
-            currentIndex = (currentIndex + 1) % textObjects.size();
+                // Move to the next index, wrapping around to 0 if we reach the end of textObjects
+                index = (index + 1) % textObjects.size();
+            } else {
+                question = getQuestion(index);
+                // Move to the next index, wrapping around to 0 if we reach the end of questions list
+                index = (index + 1) % questions.size();
+            }
+            quizQuestions.add(question);
+            added++;
         }
     }
 
-    public ArrayList<Question> getPulledQuestions() {
-        return pulledQuestions;
+    public Question startQuiz() {
+        pullQuestionsForQuiz();
+        quizQuestionIndex = 0;
+        System.out.println(getQuestions());
+        System.out.println(getQuizQuestions());
+        return getQuizQuestion();
     }
 
-    public Question getNextQuestion(int index) {
-        if (index >= 0 && index < pulledQuestions.size()) {
-            return pulledQuestions.get(index);
+    public ArrayList<Question> getQuizQuestions() {
+        return quizQuestions;
+    }
+
+    public Question getQuizQuestion() {
+        return getQuizQuestion(quizQuestionIndex);
+    }
+
+    public Question getQuizQuestion(int index) {
+        if (index >= 0 && index < quizQuestions.size()) {
+            return quizQuestions.get(index);
         }
         return null;
     }
+
+    public Question getNextQuizQuestion() {
+        quizQuestionIndex++;
+        if (quizQuestionIndex >= 0 && quizQuestionIndex < quizQuestions.size()) {
+            return quizQuestions.get(quizQuestionIndex);
+        }
+        return null;
+    }
+
+    public boolean validateQuizAnswer(String answer) {
+        Question question = getQuizQuestion();
+        if (question != null && question.validateAnswer(answer)) {
+            answeredQuestionCorrectly();
+        }
+        return false;
+    }
+   
 
 }
