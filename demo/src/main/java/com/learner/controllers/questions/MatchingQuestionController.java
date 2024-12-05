@@ -1,6 +1,5 @@
 package com.learner.controllers.questions;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,26 +9,29 @@ import java.util.ResourceBundle;
 import com.learner.model.Facade;
 import com.learner.model.questions.MatchingQuestion;
 
-import javafx.animation.ParallelTransition;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.util.Duration;
 
 public class MatchingQuestionController implements Initializable {
-
     private final Facade facade = Facade.getInstance();
     private MatchingQuestion currentQuestion = (MatchingQuestion) facade.getQuizQuestion();
 
     private final HashMap<Button, String> leftButtonMap = new HashMap<>();
     private final HashMap<Button, String> rightButtonMap = new HashMap<>();
+    private final List<Pair<Button, Button>> selectedPairs = new ArrayList<>(3);
 
-    private Button buttonClicked1;
-    private Button buttonClicked2;
+    private Button selectedLeftButton;
+    private Button selectedRightButton;
+
+    private final String[] colors = {"-fx-background-color: lightpink;", "-fx-background-color: teal;", "-fx-background-color: lightorange;"};
+    private final List<String> availableColors = new ArrayList<>(List.of(colors));
+
+    @FXML
+    private Button clearButton;
 
     @FXML
     private ImageView exitButton;
@@ -62,102 +64,122 @@ public class MatchingQuestionController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         title.setText(facade.getCurrentGame().getGameTitle());
         loadQuestion();
+        submit.setDisable(true); // Disable submit button initially
     }
 
     private void loadQuestion() {
-        // Get data from the MatchingQuestion
         ArrayList<String> leftSide = currentQuestion.getLeftSide();
         ArrayList<String> rightSide = currentQuestion.getRightSide();
 
-        // Map left-side words to left buttons
         List<Button> leftButtons = List.of(leftButton1, leftButton2, leftButton3);
         for (int i = 0; i < 3; i++) {
             Button button = leftButtons.get(i);
             button.setText(leftSide.get(i));
             leftButtonMap.put(button, leftSide.get(i));
+            button.setOnAction(event -> handleLeftButtonClick(button));
         }
 
-        // Map shuffled right-side words to right buttons
         List<Button> rightButtons = List.of(rightButton1, rightButton2, rightButton3);
         for (int i = 0; i < 3; i++) {
             Button button = rightButtons.get(i);
             button.setText(rightSide.get(i));
             rightButtonMap.put(button, rightSide.get(i));
+            button.setOnAction(event -> handleRightButtonClick(button));
         }
+    }
+
+    private void handleLeftButtonClick(Button button) {
+        if (selectedLeftButton != null) {
+            selectedLeftButton.setStyle(""); // Reset previous left button style
+        }
+        selectedLeftButton = button;
+        selectedLeftButton.setStyle(availableColors.get(0)); // Highlight selected left button
+
+        if (selectedRightButton != null) {
+            pairButtons(selectedLeftButton, selectedRightButton);
+        }
+    }
+
+    private void handleRightButtonClick(Button button) {
+        if (selectedRightButton != null) {
+            selectedRightButton.setStyle(""); // Reset previous right button style
+        }
+        selectedRightButton = button;
+        selectedRightButton.setStyle(availableColors.get(0)); // Highlight selected right button
+
+        if (selectedLeftButton != null) {
+            pairButtons(selectedLeftButton, selectedRightButton);
+        }
+    }
+
+    private void pairButtons(Button leftButton, Button rightButton) {
+        String color = availableColors.remove(0);
+        selectedPairs.add(new Pair<>(leftButton, rightButton));
+        leftButton.setStyle(color);
+        rightButton.setStyle(color);
+
+        selectedLeftButton = null;
+        selectedRightButton = null;
+
+        submit.setDisable(false); // Enable submit button when a pair is selected
+        disableButtons(leftButton, rightButton); // Disable the selected pair
+    }
+
+    private void disableButtons(Button leftButton, Button rightButton) {
+        leftButton.setDisable(true);
+        rightButton.setDisable(true);
+    }
+
+    @FXML
+    void clearAllPairLinks(ActionEvent event) {
+        for (Pair<Button, Button> pair : selectedPairs) {
+            pair.getKey().setStyle("");
+            pair.getValue().setStyle("");
+            pair.getKey().setDisable(false);
+            pair.getValue().setDisable(false);
+        }
+        selectedPairs.clear();
+        availableColors.clear();
+        availableColors.addAll(List.of(colors));
+        submit.setDisable(true); // Disable submit button
     }
 
     @FXML
     void submitQuestion(ActionEvent event) {
         // Validate answers
-        boolean allCorrect = true;
+        int correctCount = 0;
 
-        // Check matches between left and right buttons
-        for (Button leftButton : leftButtonMap.keySet()) {
-            String leftWord = leftButtonMap.get(leftButton);
-            String selectedMeaning = getSelectedMeaningFor(leftButton);
+        for (Pair<Button, Button> pair : selectedPairs) {
+            String leftWord = leftButtonMap.get(pair.getKey());
+            String selectedMeaning = rightButtonMap.get(pair.getValue());
 
-            // Assuming validateAnswer only checks the provided meaning
-            if (!currentQuestion.validateAnswer(selectedMeaning)) {
-                allCorrect = false;
-                break;
+            if (currentQuestion.validateAnswer(leftWord + ":" + selectedMeaning)) {
+                correctCount++;
             }
         }
 
-        // Handle the result
-        if (allCorrect) {
-            try {
-                continueButton();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("Incorrect answers! Try again.");
+        // Print the number of correct answers to the terminal
+        System.out.println(correctCount + "/3 correct answers");
+
+        // Disable clear button after submitting
+        clearButton.setDisable(true);
+    }
+
+    private static class Pair<K, V> {
+        private final K key;
+        private final V value;
+
+        public Pair(K key, V value) {
+            this.key = key;
+            this.value = value;
         }
-    }
 
-    private void continueButton() throws IOException {
-        
-    }
+        public K getKey() {
+            return key;
+        }
 
-    private String getSelectedMeaningFor(Button leftButton) {
-        return null;
-    }
-
-    /**
-     * Switch the positions of two buttons with animation.
-     *
-     * @param button1 The first button to switch
-     * @param button2 The second button to switch
-     */
-    private void animateSwitch(Button button1, Button button2) {
-        // Get initial positions
-        double button1X = button1.getLayoutX();
-        double button1Y = button1.getLayoutY();
-        double button2X = button2.getLayoutX();
-        double button2Y = button2.getLayoutY();
-
-        // Create TranslateTransition for button1
-        TranslateTransition transition1 = new TranslateTransition(Duration.seconds(1), button1);
-        transition1.setByX(button2X - button1X);
-        transition1.setByY(button2Y - button1Y);
-
-        // Create TranslateTransition for button2
-        TranslateTransition transition2 = new TranslateTransition(Duration.seconds(1), button2);
-        transition2.setByX(button1X - button2X);
-        transition2.setByY(button1Y - button2Y);
-
-        // Combine both animations into a ParallelTransition
-        ParallelTransition parallelTransition = new ParallelTransition(transition1, transition2);
-
-        // Play the animation
-        parallelTransition.play();
-
-        // Update positions after the animation to maintain correct state
-        parallelTransition.setOnFinished(event -> {
-            button1.setLayoutX(button2X);
-            button1.setLayoutY(button2Y);
-            button2.setLayoutX(button1X);
-            button2.setLayoutY(button1Y);
-        });
+        public V getValue() {
+            return value;
+        }
     }
 }

@@ -22,7 +22,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button fx:id="leftButton1" disable="true" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" styleClass="left-matching-button" text="Button" />
+                  <Button fx:id="leftButton1" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" styleClass="left-matching-button" text="Button" />
                   <Button fx:id="rightButton1" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" styleClass="right-matching-button" text="Button">
                      <opaqueInsets>
                         <Insets />
@@ -32,7 +32,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button fx:id="leftButton2" disable="true" mnemonicParsing="false" styleClass="left-matching-button" text="Button" />
+                  <Button fx:id="leftButton2" mnemonicParsing="false" styleClass="left-matching-button" text="Button" />
                   <Button fx:id="rightButton2" mnemonicParsing="false" styleClass="right-matching-button" text="Button" />
                </children>
                <opaqueInsets>
@@ -41,12 +41,21 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button fx:id="leftButton3" disable="true" mnemonicParsing="false" styleClass="left-matching-button" text="Button" />
+                  <Button fx:id="leftButton3" mnemonicParsing="false" styleClass="left-matching-button" text="Button" />
                   <Button fx:id="rightButton3" mnemonicParsing="false" styleClass="right-matching-button" text="Button" />
                </children>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></HBox>
+            <HBox alignment="CENTER" maxHeight="60.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="clearButton" maxHeight="28.0" minHeight="19.0" mnemonicParsing="false" onAction="#clearAllPairLinks" prefHeight="28.0" prefWidth="50.0" styleClass="button-inverse" text="CLEAR">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
          </children>
          <opaqueInsets>
             <Insets top="10.0" />

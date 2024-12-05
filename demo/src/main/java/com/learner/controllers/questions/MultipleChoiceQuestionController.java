@@ -23,6 +23,9 @@ public class MultipleChoiceQuestionController implements Initializable {
     private MultipleChoiceQuestion currentQuestion;
     private String selectedAnswer; 
 
+    // @FXML
+    // private Button audioButton;
+
     @FXML
     private HBox hboxForChoiceButtons;
 
@@ -140,6 +143,11 @@ public class MultipleChoiceQuestionController implements Initializable {
     private void handleOptionSelection(String option) {
         selectedAnswer = option; // Store the selected answer
     }
+
+    // @FXML
+    // void playAudio(ActionEvent event) {
+    //     Narrator.playSound(questionText.getText());
+    // }   
     
     // REMOVE
     @FXML
@@ -147,4 +155,6 @@ public class MultipleChoiceQuestionController implements Initializable {
         // Navigate to the next part of the application (e.g., results or another question type)
         System.out.println("Next button clicked.");
     }
+
+    
 }

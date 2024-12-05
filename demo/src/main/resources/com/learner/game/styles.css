@@ -42,6 +42,28 @@
     -fx-text-fill: white; /* Set the text color to match the normal state */
 }
 
+.button-inverse {
+    -fx-background-color:  #5b5f78;
+    -fx-text-fill: white;
+    -fx-border-color: #8B9eb7;
+    -fx-border-radius: 2px;
+    -fx-transition: all 0.3s ease;
+}
+
+.button-inverse:focused {
+    -fx-border-color: #425e82;; /* Highlight border color */
+    -fx-border-width: 2px;     /* Border width */
+}
+
+.button-inverse:active {
+    -fx-background-color: #9c9c9c; /* Darker background when clicked */
+}
+
+.button-inverse:disabled {
+    -fx-opacity: 1; /* Prevent dimming */
+    -fx-text-fill: #8B9eb7;; /* Set the text color to match the normal state */
+}
+
 .game-selection-button {
     -fx-pref-width: 92px;
     -fx-pref-height: 78px;
@@ -77,6 +99,16 @@
     -fx-font-size: 14px;
     -fx-pref-width: 145;
     -fx-pref-height: 70;
+    -fx-border-color: white;
+    -fx-border-radius: 2px;
+    -fx-background-color:  #8B9eb7;
+}
+
+.audio-button {
+    -fx-min-width: 50px;
+    -fx-min-width: 50px;
+    -fx-max-width: 50px;
+    -fx-max-width: 50px;
     -fx-border-color: white;
     -fx-border-radius: 2px;
     -fx-background-color:  #8B9eb7;
