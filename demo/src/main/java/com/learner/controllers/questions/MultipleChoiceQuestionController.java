@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.learner.controllers.GameOutroController;
 import com.learner.model.Facade;
 import com.learner.model.questions.MultipleChoiceQuestion;
 
@@ -75,6 +76,17 @@ public class MultipleChoiceQuestionController implements Initializable {
     
     @FXML
     private void submitQuestion(ActionEvent event) throws IOException {
+
+        if(submitButton.getText().equals("Continue")) { // Go to next
+            continueButton();
+        } else if (submitButton.getText().equals("Reveal Answer")) { // If user gets question wrong
+            revealAnswer();
+        } else { // Default first use of the button
+            submitButton();
+        }
+    }
+
+    private void submitButton() {
         if (currentQuestion != null && selectedAnswer != null) {
             boolean isCorrect = currentQuestion.validateAnswer(selectedAnswer);
     
@@ -92,19 +104,48 @@ public class MultipleChoiceQuestionController implements Initializable {
                     } else {
                         btn.setStyle(""); // Reset style for other buttons
                     }
-                    
+
                     // Disable the button after submission
                     btn.setDisable(true); // Disable the button so it can't be clicked again
                 }
             });
+
+            if(isCorrect) {
+                submitButton.setText("Continue");
+            } else {
+                submitButton.setText("Reveal Answer");
+            }
         }
+    }
+
+    private void revealAnswer() {
+
+        hboxForChoiceButtons.getChildren().forEach(node -> {
+            if (node instanceof Button) {
+                Button btn = (Button) node;
+                String answerText = btn.getText();
+
+                // Check / compare button to answers 
+                if (answerText.equals(currentQuestion.getCorrectAnswer())) {
+                    btn.setStyle("-fx-background-color: green; -fx-text-fill: white;"); // Correct answer
+                } else {
+                    btn.setStyle("-fx-background-color: red; -fx-text-fill: white;"); // Incorrect answer
+                } 
+            }
+        });
+
+        submitButton.setText("Continue");
+    }
+
+    private void continueButton() throws IOException {
+        GameOutroController.directQuestion(facade.getNextQuizQuestion());
     }
     
     private void handleOptionSelection(String option) {
         selectedAnswer = option; // Store the selected answer
     }
     
-
+    // REMOVE
     @FXML
     private void goToNext(ActionEvent event) throws IOException {
         // Navigate to the next part of the application (e.g., results or another question type)

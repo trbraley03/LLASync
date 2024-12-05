@@ -59,7 +59,7 @@ public class GameOutroController implements Initializable {
         directQuestion(question);
     }
  
-    public void directQuestion(Question question) throws IOException {
+    public static void directQuestion(Question question) throws IOException {
         if(question instanceof SequencingQuestion) {
             App.setRoot("sequencingQuestion");
         } else if (question instanceof FITBQuestion) {
@@ -69,7 +69,7 @@ public class GameOutroController implements Initializable {
         } else if (question instanceof MultipleChoiceQuestion) {
             App.setRoot("multipleChoiceQuestion");
         } else {
-            System.err.println("none");
+            App.setRoot("results");
         }
     }
 
