@@ -1,5 +1,8 @@
 package com.learner.controllers.questions;
 
+import com.learner.model.Facade;
+import com.learner.model.questions.MatchingQuestion;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +12,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 public class MatchingQuestionController {
+
+    private final Facade facade = Facade.getInstance();
+    private MatchingQuestion currentQuestion = (MatchingQuestion) facade.getQuizQuestion();
 
     @FXML
     private ImageView exitButton;

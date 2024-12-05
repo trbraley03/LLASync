@@ -19,8 +19,7 @@ import javafx.scene.text.Text;
 
 public class MultipleChoiceQuestionController implements Initializable {
 
-    Facade facade = Facade.getInstance();
-
+    private final Facade facade = Facade.getInstance();
     private MultipleChoiceQuestion currentQuestion;
     private String selectedAnswer; 
 

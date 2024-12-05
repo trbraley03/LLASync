@@ -19,36 +19,49 @@
          </font>
       </Label>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Fill-in-the-Blank Question" />
-      <VBox alignment="CENTER" maxWidth="720.0" prefHeight="320.0" prefWidth="720.0" spacing="40.0">
+      <VBox alignment="CENTER" maxWidth="720.0" prefHeight="320.0" prefWidth="720.0" spacing="5.0">
          <children>
-            <Label fx:id="questionText" styleClass="question-text" text="Text">
-               <opaqueInsets>
-                  <Insets top="20.0" />
-               </opaqueInsets>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField alignment="CENTER" maxWidth="500.0" prefHeight="40.0" prefWidth="400.0">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </TextField>
+            <VBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Label fx:id="questionText" styleClass="question-text" text="Text">
+                     <opaqueInsets>
+                        <Insets top="20.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="answerBox" alignment="CENTER" maxWidth="500.0" prefHeight="40.0" prefWidth="400.0">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <Text fx:id="correctOrIncorrectText" fill="#00b530" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct" visible="false">
+                     <font>
+                        <Font name="System Bold Italic" size="32.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="correctAnswerDisplayText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Correct Answer: " visible="false" />
+               </children>
+            </VBox>
          </children>
          <opaqueInsets>
             <Insets top="20.0" />
          </opaqueInsets>
       </VBox>
-      <Button fx:id="sumbit" mnemonicParsing="false" onAction="#sumbitQuestion" text="Sumbit" />
+      <Button fx:id="submit" mnemonicParsing="false" onAction="#submitQuestion" text="Submit" />
       <ImageView fx:id="exitButton" accessibleRole="BUTTON" fitHeight="51.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true" styleClass="exit-button" translateX="336.0" translateY="-392.0">
          <image>
             <Image url="@fmxl-images/exit.png" />
          </image>
       </ImageView>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="nextButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#goToNext" styleClass="nav-button" text="Next &gt;" translateX="-10.0" translateY="-5.0" visible="false" />
-         </children>
-      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" />
    </children>
 </VBox>
