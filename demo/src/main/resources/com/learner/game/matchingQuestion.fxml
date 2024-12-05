@@ -17,10 +17,10 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Text fx:id="questionTypeText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Matching Question" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Matching Question" />
       <VBox alignment="CENTER" maxWidth="720.0" prefHeight="320.0" prefWidth="720.0" spacing="5.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
                <children>
                   <Button fx:id="leftButton1" mnemonicParsing="false" styleClass="matching-button" text="Button" />
                   <Button fx:id="rightButton1" mnemonicParsing="false" styleClass="matching-button" text="Button">
@@ -30,7 +30,7 @@
                   </Button>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
                <children>
                   <Button fx:id="leftButton2" mnemonicParsing="false" styleClass="matching-button" text="Button" />
                   <Button fx:id="rightButton2" mnemonicParsing="false" styleClass="matching-button" text="Button" />
@@ -39,7 +39,7 @@
                   <Insets />
                </opaqueInsets>
             </HBox>
-            <HBox fx:id="hboxForChoiceButtons" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
                <children>
                   <Button fx:id="leftButton3" mnemonicParsing="false" styleClass="matching-button" text="Button" />
                   <Button fx:id="rightButton3" mnemonicParsing="false" styleClass="matching-button" text="Button" />
@@ -52,7 +52,7 @@
             <Insets top="10.0" />
          </opaqueInsets>
       </VBox>
-      <Button fx:id="sumbit" mnemonicParsing="false" onAction="#sumbitQuestion" text="Sumbit" />
+      <Button fx:id="submit" mnemonicParsing="false" onAction="#submitQuestion" text="Submit" />
       <ImageView fx:id="exitButton" accessibleRole="BUTTON" fitHeight="51.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true" styleClass="exit-button" translateX="336.0" translateY="-391.0">
          <image>
             <Image url="@fmxl-images/exit.png" />

@@ -2,6 +2,7 @@ package com.learner.controllers.questions;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import com.learner.controllers.GameOutroController;
@@ -21,6 +22,7 @@ public class FITBQuestionController implements Initializable {
     private final Facade facade = Facade.getInstance();
     private FITBQuestion currentQuestion = (FITBQuestion) facade.getQuizQuestion();
     private String selectedAnswer; 
+    private String[] encouragement = {"Great job!", "Keep it up!", "You're doing great!"};
 
     @FXML
     private TextField answerBox;
@@ -43,6 +45,7 @@ public class FITBQuestionController implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        title.setText(facade.getCurrentGame().getGameTitle());
         questionText.setText(currentQuestion.getQuestionText());
     }
 
@@ -61,7 +64,9 @@ public class FITBQuestionController implements Initializable {
         boolean isCorrect = currentQuestion.validateAnswer(selectedAnswer);
 
         if(isCorrect) {
+            correctAnswerDisplayText.setText(getEncouragement());
             correctOrIncorrectText.setVisible(true);
+            correctAnswerDisplayText.setVisible(true);
         } else {
             correctOrIncorrectText.setText("Incorrect");
             correctOrIncorrectText.setStyle("-fx-fill: red;");
@@ -70,6 +75,12 @@ public class FITBQuestionController implements Initializable {
             correctAnswerDisplayText.setVisible(true);
         }
         submit.setText("Continue");
+    }
+
+    public String getEncouragement() {
+        Random random = new Random();
+        int index = random.nextInt(encouragement.length); // Generate a random index
+        return encouragement[index];
     }
 
     private void continueButton() throws IOException {

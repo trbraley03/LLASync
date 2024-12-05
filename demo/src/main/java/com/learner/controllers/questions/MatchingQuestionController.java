@@ -1,26 +1,25 @@
 package com.learner.controllers.questions;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import com.learner.model.Facade;
 import com.learner.model.questions.MatchingQuestion;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
 
-public class MatchingQuestionController {
+public class MatchingQuestionController implements Initializable {
 
     private final Facade facade = Facade.getInstance();
     private MatchingQuestion currentQuestion = (MatchingQuestion) facade.getQuizQuestion();
 
     @FXML
     private ImageView exitButton;
-
-    @FXML
-    private HBox hboxForChoiceButtons;
 
     @FXML
     private Button leftButton1;
@@ -32,9 +31,6 @@ public class MatchingQuestionController {
     private Button leftButton3;
 
     @FXML
-    private Text questionTypeText;
-
-    @FXML
     private Button rightButton1;
 
     @FXML
@@ -44,14 +40,24 @@ public class MatchingQuestionController {
     private Button rightButton3;
 
     @FXML
-    private Button sumbit;
+    private Button submit;
 
     @FXML
     private Label title;
 
-    @FXML
-    void sumbitQuestion(ActionEvent event) {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        title.setText(facade.getCurrentGame().getGameTitle());
+        loadQuestion();
+    }
 
+    private void loadQuestion() {
+
+    }
+
+    @FXML
+    void submitQuestion(ActionEvent event) {
+        
     }
 
 }

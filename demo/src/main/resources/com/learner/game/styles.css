@@ -6,6 +6,19 @@
     -fx-background: #5b5f78;
 }
 
+/* Default textfield styling*/
+.text-field {
+    -fx-font-size: 14px;
+    -fx-text-fill: black;      /* Text color */
+    -fx-background-color: #5b5f78; /* Background color */
+    -fx-border-color: rgb(255, 255, 255);    /* Border color */
+    -fx-border-width: 0.5px;     /* Border thickness */
+    -fx-border-radius: 10px;           /* Border corner radius */
+    -fx-background-radius: 6px;       /* Background corner radius */
+    -fx-padding: 5px;          /* Inner padding */
+    -fx-prompt-text-fill: #7d7d7d; /* Prompt text color */
+}
+
 /* Styling for buttons */
 
 /* Default coloring for a button & buttons text */

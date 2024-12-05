@@ -43,10 +43,7 @@ public class MultipleChoiceQuestionController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Set the game title in the UI
         title.setText(facade.getCurrentGame().getGameTitle());
-
-        // Load and display the first question
         loadQuestion();
     }
 
