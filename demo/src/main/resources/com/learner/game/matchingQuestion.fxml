@@ -20,29 +20,29 @@
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Matching Question" />
       <VBox alignment="CENTER" maxWidth="720.0" prefHeight="320.0" prefWidth="720.0" spacing="5.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button fx:id="leftButton1" mnemonicParsing="false" styleClass="matching-button" text="Button" />
-                  <Button fx:id="rightButton1" mnemonicParsing="false" styleClass="matching-button" text="Button">
+                  <Button fx:id="leftButton1" disable="true" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" styleClass="left-matching-button" text="Button" />
+                  <Button fx:id="rightButton1" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" styleClass="right-matching-button" text="Button">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </Button>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button fx:id="leftButton2" mnemonicParsing="false" styleClass="matching-button" text="Button" />
-                  <Button fx:id="rightButton2" mnemonicParsing="false" styleClass="matching-button" text="Button" />
+                  <Button fx:id="leftButton2" disable="true" mnemonicParsing="false" styleClass="left-matching-button" text="Button" />
+                  <Button fx:id="rightButton2" mnemonicParsing="false" styleClass="right-matching-button" text="Button" />
                </children>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button fx:id="leftButton3" mnemonicParsing="false" styleClass="matching-button" text="Button" />
-                  <Button fx:id="rightButton3" mnemonicParsing="false" styleClass="matching-button" text="Button" />
+                  <Button fx:id="leftButton3" disable="true" mnemonicParsing="false" styleClass="left-matching-button" text="Button" />
+                  <Button fx:id="rightButton3" mnemonicParsing="false" styleClass="right-matching-button" text="Button" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -51,6 +51,9 @@
          <opaqueInsets>
             <Insets top="10.0" />
          </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
       </VBox>
       <Button fx:id="submit" mnemonicParsing="false" onAction="#submitQuestion" text="Submit" />
       <ImageView fx:id="exitButton" accessibleRole="BUTTON" fitHeight="51.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true" styleClass="exit-button" translateX="336.0" translateY="-391.0">
@@ -58,10 +61,6 @@
             <Image url="@fmxl-images/exit.png" />
          </image>
       </ImageView>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="nextButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#goToNext" styleClass="nav-button" text="Next &gt;" translateX="-10.0" translateY="-5.0" visible="false" />
-         </children>
-      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" />
    </children>
 </VBox>

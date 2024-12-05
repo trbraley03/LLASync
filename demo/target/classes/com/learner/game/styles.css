@@ -64,6 +64,24 @@
     -fx-text-fill: white;
 }
 
+.left-matching-button  {
+    -fx-font-size: 14px;
+    -fx-pref-width: 145;
+    -fx-pref-height: 70;
+    -fx-background-color: #525252;
+    -fx-border-color: #8B9eb7;
+    -fx-border-radius: 2px;
+}
+
+.right-matching-button  {
+    -fx-font-size: 14px;
+    -fx-pref-width: 145;
+    -fx-pref-height: 70;
+    -fx-border-color: white;
+    -fx-border-radius: 2px;
+    -fx-background-color:  #8B9eb7;
+}
+
 /* Styling for text */
 
 .title {
@@ -92,13 +110,6 @@
 .story-content-text {
     -fx-font-size: 14px;
     -fx-text-fill: #000000;
-}
-
-.matching-button  {
-    -fx-font-size: 15px;
-    -fx-pref-width: flex;
-    -fx-background-color: #8B9eb7;
-
 }
 
 .multiplechoice-button {

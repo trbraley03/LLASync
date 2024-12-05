@@ -8,4 +8,5 @@ public class SequencingQuestionController {
     private final Facade facade = Facade.getInstance();
     private SequencingQuestion currentQuestion = (SequencingQuestion) facade.getQuizQuestion();
     
+    
 }
