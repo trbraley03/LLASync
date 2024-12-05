@@ -13,7 +13,7 @@ public class HomeController {
     private Button loginButton;
         
     @FXML
-    private Button signUpButton;
+    private Button signupButton;
 
     @FXML
     private void goToLogin() throws IOException {
