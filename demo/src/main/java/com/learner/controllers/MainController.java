@@ -1,16 +1,19 @@
 package com.learner.controllers;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import com.learner.game.App;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class MainController {
+public class MainController implements Initializable{
 
     @FXML
     private Button logoutButton;
@@ -51,6 +54,11 @@ public class MainController {
     public void makeOptionsVisible(MouseEvent event) throws IOException{
         logoutButton.setVisible(!logoutButton.isVisible());
         settingsButton.setVisible(!settingsButton.isVisible());
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        profileButton.setImage(ImageModel.getCurrentImage());;
     }
 
 }
