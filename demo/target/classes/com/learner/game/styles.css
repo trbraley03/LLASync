@@ -6,7 +6,7 @@
     -fx-background: #5b5f78;
 }
 
-/* Default textfield styling*/
+/* Default textfield styling */
 .text-field {
     -fx-font-size: 14px;
     -fx-text-fill: black;      /* Text color */
@@ -20,12 +20,11 @@
 }
 
 /* Styling for buttons */
-
-/* Default coloring for a button & buttons text */
 .button {
     -fx-background-color: #8B9eb7;
     -fx-text-fill: white;
     -fx-transition: all 0.3s ease;
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
 .button:focused {
@@ -40,19 +39,21 @@
 .button:disabled {
     -fx-opacity: 1; /* Prevent dimming */
     -fx-text-fill: white; /* Set the text color to match the normal state */
+    -fx-cursor: default; /* Default cursor when button is disabled */
 }
 
+/* Inverse button styling */
 .button-inverse {
     -fx-background-color:  #5b5f78;
     -fx-text-fill: white;
     -fx-border-color: #8B9eb7;
     -fx-border-radius: 2px;
     -fx-transition: all 0.3s ease;
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
 .button-inverse:focused {
-    -fx-border-color: #425e82;; /* Highlight border color */
-    -fx-border-width: 2px;     /* Border width */
+    -fx-border-color: #425e82; /* Highlight border color */
 }
 
 .button-inverse:active {
@@ -61,47 +62,71 @@
 
 .button-inverse:disabled {
     -fx-opacity: 1; /* Prevent dimming */
-    -fx-text-fill: #8B9eb7;; /* Set the text color to match the normal state */
+    -fx-text-fill: #8B9eb7; /* Set the text color to match the normal state */
+    -fx-cursor: default; /* Default cursor when button is disabled */
 }
 
+/* Styling for image buttons */
+.image-button {
+    -fx-padding: 10; /* Adds padding around the image */
+    -fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0); /* Button-like gradient */
+    -fx-background-radius: 10; /* Slightly round the background corners */
+    -fx-border-color: #888; /* Border color */
+    -fx-border-radius: 10; /* Match the background radius for consistency */
+    -fx-border-width: 1; /* Border width */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.0, 1, 1); /* Shadow for depth */
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
+}
+
+.image-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #e0e0e0, #c0c0c0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.0, 2, 2);
+}
+
+.image-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #d0d0d0, #b0b0b0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.0, 1, 1);
+}
+
+/* Additional button styles */
 .game-selection-button {
     -fx-pref-width: 92px;
     -fx-pref-height: 78px;
     -fx-background-color: #e8ebf0;
     -fx-text-fill: white;
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
-.game-select-text {
-    
-}
-
-/* Style for navagation buttons (back buttons, next buttons, etc.) */
 .nav-button {
     -fx-background-color: #8B9eb7;
     -fx-text-fill: white;
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
 .translate-button {
     -fx-background-color: #00673a;
     -fx-text-fill: white;
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
-.left-matching-button  {
+.left-matching-button {
     -fx-font-size: 14px;
     -fx-pref-width: 145;
     -fx-pref-height: 70;
     -fx-background-color: #525252;
     -fx-border-color: #8B9eb7;
     -fx-border-radius: 2px;
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
-.right-matching-button  {
+.right-matching-button {
     -fx-font-size: 14px;
     -fx-pref-width: 145;
     -fx-pref-height: 70;
     -fx-border-color: white;
     -fx-border-radius: 2px;
     -fx-background-color:  #8B9eb7;
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
 .audio-button {
@@ -112,15 +137,14 @@
     -fx-border-color: white;
     -fx-border-radius: 2px;
     -fx-background-color:  #8B9eb7;
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
 /* Styling for text */
-
 .title {
     -fx-font-size: 38px;
     -fx-font-weight: bold;
     -fx-text-fill: white;
-    -fx-effect: dropshadow(three-pass-box, rgba(95, 95, 95, 0.6), 5, 0.0, 0, 1);
 }
 
 .heading {
@@ -156,29 +180,3 @@
     -fx-pref-width: 20px;
     -fx-pref-height: 20px;
 }
-
-.image-button {
-    -fx-padding: 10; /* Adds padding around the image */
-    -fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0); /* Button-like gradient */
-    -fx-background-radius: 10; /* Slightly round the background corners */
-    -fx-border-color: #888; /* Border color */
-    -fx-border-radius: 10; /* Match the background radius for consistency */
-    -fx-border-width: 1; /* Border width */
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.0, 1, 1); /* Shadow for depth */
-    -fx-cursor: hand; /* Changes cursor to hand on hover */
-}
-
-.image-button:hover {
-    -fx-background-color: linear-gradient(to bottom, #e0e0e0, #c0c0c0);
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.0, 2, 2);
-}
-
-.image-button:pressed {
-    -fx-background-color: linear-gradient(to bottom, #d0d0d0, #b0b0b0);
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.0, 1, 1);
-}
-
-
-
-/* Styling for miscellaneous elements */
-

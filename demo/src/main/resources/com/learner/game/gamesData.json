@@ -1,7 +1,7 @@
 {
     "LANGUAGES": [
         {
-            "LANG": "filipino",
+            "LANG": "Filipino",
             "UUID": "1bafb0ae-3462-4ec3-9cc2-a98ff2898e72",
             "GAMES": [
                 {
@@ -84,7 +84,7 @@
             ]
         },
         {
-            "LANG": "spanish",
+            "LANG": "Spanish",
             "UUID": "d9d2caae-e27d-4de7-9b2a-8a784f5fbb12",
             "GAMES": [
                 {
@@ -152,7 +152,7 @@
             ]
         },
         {
-            "LANG": "portuguese",
+            "LANG": "Portuguese",
             "UUID": "1f02e345-92b9-41c8-89e1-79d2ae13ad58",
             "GAMES": [
                 {
