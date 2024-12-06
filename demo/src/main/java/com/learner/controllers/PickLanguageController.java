@@ -28,26 +28,26 @@ public class PickLanguageController {
     private Facade facade = Facade.getInstance();
 
     @FXML
-    void goToHome(ActionEvent event) throws IOException {
+    private void goToHome(ActionEvent event) throws IOException {
         App.setRoot("home");
     }
 
     @FXML
-    void selectFilipino(MouseEvent event) {
+    private void selectFilipino(MouseEvent event) throws IOException {
         facade.selectLanguage("filipino");
-        // make it go to diffuculty page
+        App.setRoot("setDifficulty");
     }
 
     @FXML
-    void selectPortuguese(MouseEvent event) {
+    private void selectPortuguese(MouseEvent event) throws IOException {
         facade.selectLanguage("portuguese");
-        // make it go to diffuculty page
+        App.setRoot("setDifficulty");
     }
 
     @FXML
-    void selectSpanish(MouseEvent event) {
+    private void selectSpanish(MouseEvent event) throws IOException {
         facade.selectLanguage("spanish");
-        // make it go to diffuculty page
+        App.setRoot("setDifficulty");
     }
 
 }

@@ -192,5 +192,9 @@ public class User {
 
             return completedTitles;
         }
+
+        public int getTotalCompletedGames() {
+            return completedGames.size();
+        }
     }
 }
