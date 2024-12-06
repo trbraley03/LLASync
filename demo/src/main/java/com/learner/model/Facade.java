@@ -63,14 +63,19 @@ public class Facade {
         User user = userList.login(email, password);
         if (user != null) {
             currentUser = user;
+            System.out.println("success");
             return true;
         }
+        System.out.println("failed");
         return false;
     }
 
-    public boolean registerUser(String email, String username, String displayName, String password) {
-        User newUser = new User(email, username, displayName, password);
-        return userList.addUser(newUser);
+    /**
+     * If string returns as "true", then the user registered successfully,
+     * otherwise the issues with registration are returned as a string
+     */
+    public String registerUser(String email, String username, String displayName, String password) {
+        return userList.registerUser(email, username, displayName, password);
     }
 
     public void logoutUser() {

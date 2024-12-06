@@ -23,7 +23,7 @@ public class App extends Application {
         Image icon = new Image(getClass().getResourceAsStream("/com/learner/game/fmxl-images/logo.png"));
         stage.getIcons().add(icon); 
         stage.setTitle("HelloLanguage");
-        stage.setResizable(false);          // Make windows non-resizable
+        stage.setResizable(false); // Make windows non-resizable
         scene = new Scene(loadFXML("home"), 720, 480);
         stage.setScene(scene);
         stage.show();

@@ -67,14 +67,28 @@ public class UserList {
     // User login
     public User login(String email, String password) {
         for (User user : users) {
-            System.out.println("Checking user: " + user.getEmail());
             if (user.getEmail().equalsIgnoreCase(email) && user.getPassword().equals(password)) {
-                System.out.println("Login successful for user: " + user.getUsername());
                 return user; // Successful login
             }
         }
-        System.out.println("Login failed: No matching user found for email " + email);
         return null; // Login failed
+    }
+
+    public String registerUser(String email, String username, String displayName, String password) {
+        User newUser = new User(email, username, displayName, password);
+        String result = "";
+        if (addUser(newUser)) {
+            result = "true"; // User added successfully, could remove this line
+        } else {
+            if(isEmailTaken(newUser.getEmail())) {
+                result += "Email already exists";
+            } 
+            if(!result.equals("instance")) {
+                if(!result.equals("")) { result += " and "; } 
+                result += "Username already exists";
+            }
+        }
+        return result;
     }
 
     @Override

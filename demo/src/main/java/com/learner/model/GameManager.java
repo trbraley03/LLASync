@@ -72,6 +72,32 @@ public class GameManager {
         return new ArrayList<>(languages.keySet());
     }    
 
+    public int getTotalNumberOfGames() {
+        return games.size();
+    }
+
+    public int getNumberOfGamesForLanguage(UUID languageUUID) {
+        int count = 0;
+        for (Game game : games.values()) {
+            if (game.getLanguageUUID().equals(languageUUID)) {
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    public int getNumberOfGamesForLanguage(String languageName) {
+        Language language = findLanguage(languageName);
+        if (language != null) {
+            return getNumberOfGamesForLanguage(language.getUUID());
+        }
+        return 0; 
+    }
+
+    public int getNumberOfGamesForLanguage(Language language) {
+        return getNumberOfGamesForLanguage(language.getUUID());
+    }
+
     // public ArrayList<String> getLanguageNames() {
     //     ArrayList<String> languageNames = new ArrayList<>();
 

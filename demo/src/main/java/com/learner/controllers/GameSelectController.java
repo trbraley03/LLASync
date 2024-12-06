@@ -1,5 +1,6 @@
 package com.learner.controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 public class GameSelectController implements Initializable {
@@ -31,23 +34,37 @@ public class GameSelectController implements Initializable {
     private Button backButton;
 
     @FXML
-    private Label title; // Language + difficulty + "games"
-
-    // private HashMap<String, ScrollPane> categoryScrollPanes; // ScrollPane (linked to category)
-
-    // private HashMap<String, HBox> categoryHBoxes; // Hbox (linked to category)
-
-    // private HashMap<String, ArrayList<VBox>> gameBoxes; // ArrayList of VBoxes holding title and button w/ image (linked to category)
+    private Label title;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        for(Game game : facade.getAvailableGames()) {
-            Button gameButton = new Button(game.getGameTitle());
-
-            // Assign UUID to the button 
+        for (Game game : facade.getAvailableGames()) {
+            Button gameButton = new Button();
+            String gameTitle = game.getGameTitle();
             UUID gameUUID = game.getUUID();
             gameButton.setUserData(gameUUID);
+            gameButton.setMaxWidth(98);
+            gameButton.setMaxHeight(85);
+            gameButton.setPrefWidth(98);
+            gameButton.setPrefHeight(85);
+            gameButton.setMinWidth(100);
+            gameButton.setMinHeight(80);
+
+            // Check if the image file exists
+            String imagePath = "/com/learner/game/game-select-icons/" + gameTitle + ".png";
+            URL imageUrl = getClass().getResource(imagePath);
+            if (imageUrl != null) {
+                // Set the button's graphic to the image
+                ImageView imageView = new ImageView(new Image(imageUrl.toString()));
+                imageView.setFitWidth(100);  // Adjust the width as needed
+                imageView.setFitHeight(100); // Adjust the height as needed
+                imageView.setPreserveRatio(true);
+                gameButton.setGraphic(imageView);
+            } else {
+                // Fallback to setting the button's text to the game name
+                gameButton.setText(gameTitle);
+                System.out.println("image file not found:" + gameTitle);
+            }
 
             // Add the button to your VBox or other container
             mainVbox.getChildren().add(gameButton);
@@ -56,13 +73,11 @@ public class GameSelectController implements Initializable {
             gameButton.setOnAction(event -> {
                 UUID clickedUUID = (UUID) gameButton.getUserData();
                 facade.selectGame(clickedUUID);
-
                 try {
                     goToGameIntroduction(event);
                 } catch (IOException e) {
-                    e.printStackTrace(); 
+                    e.printStackTrace();
                 }
-                
             });
         }
         title.setText(currentDifficulty.getLabel() + " " + currentLanguage.getLanguageName() + " Games");
@@ -76,7 +91,8 @@ public class GameSelectController implements Initializable {
     }
 
     @FXML
-    private void goToGameIntroduction(ActionEvent event) throws IOException{
+    private void goToGameIntroduction(ActionEvent event) throws IOException {
         App.setRoot("gameIntroScreen");
     }
 }
+

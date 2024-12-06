@@ -8,7 +8,7 @@
             "password": "Password2024!",
             "progressTrackers": [
                 {
-                    "languageName": "filipino",
+                    "languageName": "Filipino",
                     "languageUUID": "1bafb0ae-3462-4ec3-9cc2-a98ff2898e72",
                     "completedGames": [
                         {
@@ -27,11 +27,21 @@
                     ]
                 },
                 {
-                    "languageName": "spanish",
+                    "languageName": "Spanish",
                     "languageUUID": "d9d2caae-e27d-4de7-9b2a-8a784f5fbb12",
                     "completedGames": [],
                     "missedQuestions": []
                 }
+            ]
+        },
+        {
+            "uuid": "2e253e1e-33cb-401a-b0a9-9b2fe046e8ea",
+            "email": "0",
+            "username": "0",
+            "displayname": "0",
+            "password": "0",
+            "progressTrackers": [
+
             ]
         }
     ]

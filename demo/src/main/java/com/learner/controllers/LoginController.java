@@ -8,14 +8,19 @@ import java.io.OutputStream;
 import java.net.URISyntaxException;
 
 import com.learner.game.App;
+import com.learner.model.Facade;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 
 public class LoginController {
+
+    private final Facade facade = Facade.getInstance();
 
     @FXML
     private Button backButton;
@@ -40,10 +45,31 @@ public class LoginController {
         File testFile = new File(is.toString());
         FileOutputStream out = new FileOutputStream(testFile);
         copyStream(is, out);
+        is.close();
+        out.close();
         System.out.println(testFile.toString());
         Image defaultPicture = new Image(testFile.toURI().toString());
         ImageModel.setCurrentImage(defaultPicture);
+        if(testFile.exists()) {
+            testFile.delete();
+        }
         App.setRoot("main");
+    }
+
+    private void loginIn() {
+        String email = emailBox.getText(); 
+        String password = passwordBox.getText(); 
+        boolean signedIn = facade.loginUser(email, password);
+        if(signedIn) {
+            App.setRoot("main");
+        } else {
+            // This is a popup and can be switched for better ui alterative
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Failed");
+            alert.setHeaderText(null);
+            alert.setContentText("Login failed. Invalid email or password .");
+            alert.showAndWait();
+        }
     }
 
     public static void copyStream(InputStream in, OutputStream out) throws IOException {

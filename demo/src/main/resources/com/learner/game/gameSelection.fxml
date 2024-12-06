@@ -27,6 +27,9 @@
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
+                     <children>
+                        <Button minHeight="85.0" minWidth="100.0" mnemonicParsing="false" text="Button" />
+                     </children>
                   </HBox>
                </children>
                <VBox.margin>
@@ -40,6 +43,9 @@
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
+                     <children>
+                        <Button minHeight="85.0" minWidth="100.0" mnemonicParsing="false" text="Button" />
+                     </children>
                   </HBox>
                </children>
                <VBox.margin>
@@ -53,12 +59,27 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </Text>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0">
+                     <children>
+                        <Button minHeight="85.0" minWidth="100.0" mnemonicParsing="false" text="Button" />
+                     </children></HBox>
                </children>
             </VBox>
          </children>
       </VBox>
-      <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBackToPreviousGameScreen" styleClass="nav-button" text="&lt; Back" translateX="-300.0" translateY="40.0" />
-      <Button fx:id="nextButton" mnemonicParsing="false" onAction="#goToNextGameScreen" styleClass="nav-button" text="Next &gt;" translateX="300.0" translateY="-5.0" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="700.0">
+               <children>
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBackToPreviousGameScreen" styleClass="nav-button" text="&lt; Back" translateX="20.0" translateY="-10.0" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#goToNextGameScreen" styleClass="nav-button" text="Next &gt;" translateX="-20.0" translateY="-10.0" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
    </children>
 </VBox>
