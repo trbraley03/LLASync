@@ -63,6 +63,42 @@ public class User {
         return password;
     }
 
+    public String changeEmail(String email) {
+        if(UserList.getInstance().isEmailTaken(email)) {
+            return "Email is taken";
+        } else {
+            this.email = email;
+            replaceInList();
+            return "Email changed successfully";
+        }
+    }
+
+    public String changeUsername(String username) {
+        if(UserList.getInstance().isEmailTaken(email)) {
+            return "Username is taken";
+        } else {
+            this.username = username;
+            replaceInList();
+            return "Email changed successfully";
+        }
+    }
+
+    public String changeDisplayName(String displayName) {
+        this.displayName = displayName;
+        replaceInList();
+        return "Password changed successfully";
+    }
+
+    public String changePassword(String password) {
+        this.password = password;
+        replaceInList();
+        return "Password changed successfully";
+    }
+
+    public void replaceInList() {
+        UserList.getInstance().replaceUser(this);
+    }
+
     public HashSet<ProgressTracker> getProgressTrackers() {
         return progressTrackers;
     }
@@ -117,7 +153,7 @@ public class User {
     public class ProgressTracker {
         
         private final ArrayList<Question> missedQuestions; // Stores missed questions directly
-        private final ArrayList<UUID> completedGames;      // Stores UUIDs of completed games
+        private final ArrayList<UUID> completedGames;      // Stores UUIDs of completed games (if the user passes the quiz)
         private final UUID uuid;                           // Equal to languageUUID
         private final String languageName; 
 

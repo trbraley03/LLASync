@@ -41,6 +41,11 @@ public class LoginController {
 
     @FXML
     public void goToMain(ActionEvent event) throws IOException, URISyntaxException {
+        handleProfileImage();
+        loginIn(); // root is set here if login is successful
+    }
+
+    public void handleProfileImage() throws IOException, URISyntaxException {
         InputStream is = getClass().getResourceAsStream("/com/learner/game/profile_picture.png");
         File testFile = new File(is.toString());
         FileOutputStream out = new FileOutputStream(testFile);
@@ -53,15 +58,14 @@ public class LoginController {
         if(testFile.exists()) {
             testFile.delete();
         }
-        App.setRoot("main");
     }
 
-    private void loginIn() {
+    private void loginIn() throws IOException {
         String email = emailBox.getText(); 
         String password = passwordBox.getText(); 
         boolean signedIn = facade.loginUser(email, password);
         if(signedIn) {
-            // App.setRoot("main");
+            App.setRoot("main");
         } else {
             // This is a popup and can be switched for better ui alterative
             Alert alert = new Alert(AlertType.INFORMATION);

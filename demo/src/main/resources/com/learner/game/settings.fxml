@@ -6,98 +6,116 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.SettingsController">
    <children>
-      <Label text="Setting">
+      <Label text="Settings">
          <font>
             <Font size="48.0" />
          </font>
-      </Label>
-      <TextField fx:id="emailBox" alignment="TOP_LEFT" promptText="Change email address" translateY="-100.0">
-         <font>
-            <Font size="18.0" />
-         </font>
          <VBox.margin>
-            <Insets left="200.0" right="200.0" top="100.0" />
-         </VBox.margin>
-      </TextField>
-      <Label pickOnBounds="false" text="Email" textAlignment="CENTER" translateY="-140.0" VBox.vgrow="NEVER">
-         <font>
-            <Font size="24.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="30.0" right="450.0" />
+            <Insets bottom="20.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="passwordBox" promptText="Change password" translateY="-100.0">
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <VBox prefHeight="202.0" prefWidth="111.0" spacing="30.0">
+                     <children>
+                        <Label pickOnBounds="false" text="Email" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Username" textAlignment="CENTER">translateY="-40.0"
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label pickOnBounds="false" text="Password" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Display name">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="27.0">
+                     <children>
+                        <TextField fx:id="emailBox" alignment="TOP_LEFT" promptText="Change email address" styleClass="settings-textboxes">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="UserBox" prefHeight="40.0" prefWidth="319.0" promptText="Change Username" styleClass="settings-textboxes">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="passwordBox" promptText="Change password" styleClass="settings-textboxes">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="displaybox" promptText="Change display name" styleClass="settings-textboxes">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="37.0">
+                     <children>
+                        <Button fx:id="updatePasswordButton" mnemonicParsing="false" onAction="#updatePassword" prefWidth="97.0" styleClass="settings-update-buttons" text="Update" />
+                        <Button fx:id="updateUsernameButton" mnemonicParsing="false" onAction="#updateUsername" styleClass="settings-update-buttons" text="Update" />
+                        <Button fx:id="updateEmailButton" mnemonicParsing="false" onAction="#updateEmail" styleClass="settings-update-buttons" text="Update" />
+                        <Button fx:id="updateDisplaynamebutton" mnemonicParsing="false" onAction="#updateDisplayname" styleClass="settings-update-buttons" text="Update" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="6.0" top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
          <VBox.margin>
-            <Insets left="200.0" right="200.0" />
+            <Insets left="80.0" />
          </VBox.margin>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <Label pickOnBounds="false" text="Password" textAlignment="CENTER" translateY="-140.0" VBox.vgrow="NEVER">
-         <font>
-            <Font size="24.0" />
-         </font>
-         <VBox.margin>
-            <Insets right="450.0" />
-         </VBox.margin>
-      </Label>
-      <Label text="Username" textAlignment="CENTER" translateY="-100.0">translateY="-40.0"
-         <font>
-            <Font size="24.0" />
-         </font>
-         <VBox.margin>
-            <Insets right="450.0" />
-         </VBox.margin>
-      </Label>
-      <TextField fx:id="UserBox" prefHeight="40.0" prefWidth="319.0" promptText="Change Username" translateY="-140.0">
-         <VBox.margin>
-            <Insets left="200.0" right="200.0" />
-         </VBox.margin>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <Label text="Display name" translateY="-100.0">
-         <VBox.margin>
-            <Insets left="-30.0" right="450.0" />
-         </VBox.margin>
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="displaybox" promptText="Change display name" translateY="-140.0">
-         <VBox.margin>
-            <Insets left="200.0" right="200.0" />
-         </VBox.margin>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <Button fx:id="backButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToMain" text="&lt; Back" translateX="-311.0" translateY="-5.0" />
-      <Label text="Profile picture" translateY="-150.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="-30.0" right="450.0" />
-         </VBox.margin>
-      </Label>
-      <Button fx:id="fileSelectButton" mnemonicParsing="false" onAction="#selectPicture" text="Select file" translateY="-190.0" />
-      <ImageView fx:id="profilePicture" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" translateX="150.0" translateY="-250.0">
-         <image>
-            <Image url="@profile_picture.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="updatePasswordButton" mnemonicParsing="false" onAction="#updatePassword" text="Update" translateX="225.0" translateY="-532.0" />
-      <Button fx:id="updateEmailButton" mnemonicParsing="false" onAction="#updateEmail" text="Update" translateX="225.0" translateY="-640.0" />
-      <Button fx:id="updateUsernameButton" mnemonicParsing="false" onAction="#updateUsername" text="Update" translateX="225.0" translateY="-569.0" />
-      <Button fx:id="updateDisplaynamebutton" mnemonicParsing="false" onAction="#updateDisplayname" text="Update" translateX="225.0" translateY="-549.0" />
+      </VBox>
+      <VBox alignment="CENTER" minHeight="180.0" prefHeight="150.0" prefWidth="720.0" spacing="3.0">
+         <children>
+            <Label text="Profile picture">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="profilePicture" fitHeight="76.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@profile_picture.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="fileSelectButton" alignment="CENTER" mnemonicParsing="false" onAction="#selectPicture" prefHeight="25.0" prefWidth="77.0" text="Change Image">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <HBox prefHeight="131.0" prefWidth="720.0">
+         <children>
+            <Button fx:id="backButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToMain" text="&lt; Back" translateX="10.0" translateY="-50.0" />
+         </children>
+      </HBox>
    </children>
 </VBox>

@@ -55,7 +55,7 @@ public class SignUpController {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setHeaderText(null);
-            alert.setContentText("Signup was successful!");
+            alert.setContentText("Sign up was successful!");
             alert.showAndWait();
             App.setRoot("home");
         } else {

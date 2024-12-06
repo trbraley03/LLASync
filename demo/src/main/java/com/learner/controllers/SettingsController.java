@@ -23,7 +23,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class SettingsController implements Initializable{
+
     private FileChooser fileChooser = new FileChooser();
+
     @FXML
     private TextField UserBox;
 
@@ -59,7 +61,7 @@ public class SettingsController implements Initializable{
 
     @FXML
     void updateDisplayname(ActionEvent event) {
-
+        
     }
 
     @FXML
