@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.learner.game.App;
 import com.learner.model.Facade;
+import com.learner.model.Language;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 public class DifficultySelectController implements Initializable {
 
     private final Facade facade = Facade.getInstance();
+    private final Language currentLanguage = facade.getCurrentLanguage();
 
     @FXML
     private Button backButton;
@@ -36,21 +38,21 @@ public class DifficultySelectController implements Initializable {
 
     @FXML
     public void goToEasyGame(MouseEvent event) throws IOException {
-        facade.selectLanguage("filipino");
+        facade.selectLanguage(currentLanguage.getLanguageName());
         facade.selectDifficulty("easy");
         App.setRoot("gameSelect");
     }
 
     @FXML
     public void goToHardGame(MouseEvent event) throws IOException {
-        facade.selectLanguage("filipino");
+        facade.selectLanguage(currentLanguage.getLanguageName());
         facade.selectDifficulty("hard");
         App.setRoot("gameSelect");
     }
 
     @FXML
     public void goToMediumGame(MouseEvent event) throws IOException {
-        facade.selectLanguage("filipino");
+        facade.selectLanguage(currentLanguage.getLanguageName());
         facade.selectDifficulty("medium");
         App.setRoot("gameSelect");
     }
@@ -66,7 +68,7 @@ public class DifficultySelectController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        currentLanguageNameDisplay.setText(facade.getCurrentLanguage().getLanguageName());
+        currentLanguageNameDisplay.setText(currentLanguage.getLanguageName());
     }
 
 }

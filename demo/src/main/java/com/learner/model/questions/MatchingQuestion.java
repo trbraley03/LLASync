@@ -47,7 +47,9 @@ public class MatchingQuestion extends Question {
         // Populate with additional text objects
         for (int i = 0; i < 3; i++) {
             theTextObject = game.getNextTextObject(theTextObject.getUUID());
-            textObjects.add(theTextObject);
+            if(!textObjects.contains(theTextObject)) {
+                textObjects.add(theTextObject);
+            }
         }
 
         // Populate leftSide, rightSide, and correctPairs
@@ -60,8 +62,14 @@ public class MatchingQuestion extends Question {
             correctPairs.put(word, meaning);  // Store the correct pair
         }
 
+        // Debugging: Print the rightSide list before shuffling
+        System.out.println("Right side before shuffling: " + rightSide);
+
         // Shuffle rightSide for randomized options
         Collections.shuffle(rightSide);
+
+        // Debugging: Print the rightSide list after shuffling
+        System.out.println("Right side after shuffling: " + rightSide);
 
         // Build the question text without numbering or letters
         StringBuilder questionBuilder = new StringBuilder("Match each word with its correct meaning:\n");
@@ -108,8 +116,6 @@ public class MatchingQuestion extends Question {
 
         return true; // All pairs matched correctly
     }
-
-    // create method missing
 
     /**
      * Gets the list of items on the left side (e.g., words to match).

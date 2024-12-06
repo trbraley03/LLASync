@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.learner.controllers.GameOutroController;
 import com.learner.model.Facade;
 import com.learner.model.questions.MatchingQuestion;
 
@@ -74,6 +75,10 @@ public class MatchingQuestionController implements Initializable {
     private void loadQuestion() {
         ArrayList<String> leftSide = currentQuestion.getLeftSide();
         ArrayList<String> rightSide = currentQuestion.getRightSide();
+
+        // Debugging: Print the leftSide and rightSide lists
+        System.out.println("Left side: " + leftSide);
+        System.out.println("Right side: " + rightSide);
 
         List<Button> leftButtons = List.of(leftButton1, leftButton2, leftButton3);
         for (int i = 0; i < 3; i++) {
@@ -150,34 +155,42 @@ public class MatchingQuestionController implements Initializable {
 
     @FXML
     private void submitQuestion(ActionEvent event) {
-        // Create a right side to compare with correct right side out of select pairs
-        // use selected pairs, if correct count = 3 then its fully correct
+        if(submit.getText().equals("Submit")) {
+            // Create a right side to compare with correct right side out of select pairs
+            // use selected pairs, if correct count = 3 then its fully correct
 
-        int correctCount = 0;
-        HashMap<String, String> correctPairs = currentQuestion.getCorrectPairs();
+            int correctCount = 0;
+            HashMap<String, String> correctPairs = currentQuestion.getCorrectPairs();
 
-        for (Pair<Button, Button> pair : selectedPairs) {
-            String leftWord = pair.getKey().getText();
-            String selectedMeaning = pair.getValue().getText();
+            for (Pair<Button, Button> pair : selectedPairs) {
+                String leftWord = pair.getKey().getText();
+                String selectedMeaning = pair.getValue().getText();
 
-            if (correctPairs.containsKey(leftWord) && correctPairs.get(leftWord).equals(selectedMeaning)) {
-                correctCount++;
+                if (correctPairs.containsKey(leftWord) && correctPairs.get(leftWord).equals(selectedMeaning)) {
+                    correctCount++;
+                }
+            }
+
+            // Disable clear button after submitting
+            clearButton.setDisable(true);
+            
+            // Print the number of correct answers to the terminal
+            if (correctCount == 3) {
+                correctIncorrectDisplayText.setText("All pairs are correct! Awesome job!");
+                submit.setText("Continue");
+            } else {
+                correctIncorrectDisplayText.setText(correctCount + "/3 correct pairs. Nice Try!");
+                // submit.setText("View Answer"); // can uncomment and add an addiontal element to the if else at a later time
+                submit.setText("Continue");
+            }
+            correctIncorrectDisplayText.setVisible(true);
+        } else if (submit.getText().equals("Continue")) {
+            try {
+                GameOutroController.directQuestion(currentQuestion);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
-
-        // Disable clear button after submitting
-        clearButton.setDisable(true);
-        
-        // Print the number of correct answers to the terminal
-        if (correctCount == 3) {
-            correctIncorrectDisplayText.setText("All pairs are correct! Awesome job!");
-            submit.setText("Continue");
-        } else {
-            correctIncorrectDisplayText.setText(correctCount + "/3 correct pairs. Nice Try!");
-            submit.setText("View Answer");
-        }
-        correctIncorrectDisplayText.setVisible(true);
-
     }
 
     private static class Pair<K, V> {

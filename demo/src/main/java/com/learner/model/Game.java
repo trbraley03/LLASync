@@ -234,7 +234,7 @@ public class Game {
             addQuestionsByType(QuestionType.SEQUENCING, 1, startIndex);
         } else {
             // Pull 2 Fill in the Blank Questions
-            addQuestionsByType(QuestionType.FITB, 3, startIndex);
+            addQuestionsByType(QuestionType.FITB, 2, startIndex);
 
             // Pull 1 Matching Question
             addQuestionsByType(QuestionType.MATCHING, 1, startIndex);
