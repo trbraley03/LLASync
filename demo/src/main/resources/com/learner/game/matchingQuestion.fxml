@@ -47,6 +47,11 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></HBox>
+            <Label fx:id="correctIncorrectDisplayText" text="Text" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
             <HBox alignment="CENTER" maxHeight="60.0" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button fx:id="clearButton" maxHeight="28.0" minHeight="19.0" mnemonicParsing="false" onAction="#clearAllPairLinks" prefHeight="28.0" prefWidth="50.0" styleClass="button-inverse" text="CLEAR">

@@ -109,6 +109,8 @@ public class MatchingQuestion extends Question {
         return true; // All pairs matched correctly
     }
 
+    // create method missing
+
     /**
      * Gets the list of items on the left side (e.g., words to match).
      * 
@@ -125,5 +127,9 @@ public class MatchingQuestion extends Question {
      */
     public ArrayList<String> getRightSide() {
         return rightSide;
+    }
+
+    public HashMap<String, String> getCorrectPairs() {
+        return correctPairs;
     }
 }

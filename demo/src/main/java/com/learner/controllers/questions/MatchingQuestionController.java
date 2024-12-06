@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class MatchingQuestionController implements Initializable {
+
     private final Facade facade = Facade.getInstance();
     private MatchingQuestion currentQuestion = (MatchingQuestion) facade.getQuizQuestion();
 
@@ -27,7 +28,7 @@ public class MatchingQuestionController implements Initializable {
     private Button selectedLeftButton;
     private Button selectedRightButton;
 
-    private final String[] colors = {"-fx-background-color: lightpink;", "-fx-background-color: teal;", "-fx-background-color: lightorange;"};
+    private final String[] colors = {"-fx-background-color: lightpink;", "-fx-background-color: teal;", "-fx-background-color: orange;"};
     private final List<String> availableColors = new ArrayList<>(List.of(colors));
 
     @FXML
@@ -59,6 +60,9 @@ public class MatchingQuestionController implements Initializable {
 
     @FXML
     private Label title;
+
+    @FXML
+    private Label correctIncorrectDisplayText;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -131,7 +135,7 @@ public class MatchingQuestionController implements Initializable {
     }
 
     @FXML
-    void clearAllPairLinks(ActionEvent event) {
+    private void clearAllPairLinks(ActionEvent event) {
         for (Pair<Button, Button> pair : selectedPairs) {
             pair.getKey().setStyle("");
             pair.getValue().setStyle("");
@@ -145,24 +149,35 @@ public class MatchingQuestionController implements Initializable {
     }
 
     @FXML
-    void submitQuestion(ActionEvent event) {
-        // Validate answers
+    private void submitQuestion(ActionEvent event) {
+        // Create a right side to compare with correct right side out of select pairs
+        // use selected pairs, if correct count = 3 then its fully correct
+
         int correctCount = 0;
+        HashMap<String, String> correctPairs = currentQuestion.getCorrectPairs();
 
         for (Pair<Button, Button> pair : selectedPairs) {
-            String leftWord = leftButtonMap.get(pair.getKey());
-            String selectedMeaning = rightButtonMap.get(pair.getValue());
+            String leftWord = pair.getKey().getText();
+            String selectedMeaning = pair.getValue().getText();
 
-            if (currentQuestion.validateAnswer(leftWord + ":" + selectedMeaning)) {
+            if (correctPairs.containsKey(leftWord) && correctPairs.get(leftWord).equals(selectedMeaning)) {
                 correctCount++;
             }
         }
 
-        // Print the number of correct answers to the terminal
-        System.out.println(correctCount + "/3 correct answers");
-
         // Disable clear button after submitting
         clearButton.setDisable(true);
+        
+        // Print the number of correct answers to the terminal
+        if (correctCount == 3) {
+            correctIncorrectDisplayText.setText("All pairs are correct! Awesome job!");
+            submit.setText("Continue");
+        } else {
+            correctIncorrectDisplayText.setText(correctCount + "/3 correct pairs. Nice Try!");
+            submit.setText("View Answer");
+        }
+        correctIncorrectDisplayText.setVisible(true);
+
     }
 
     private static class Pair<K, V> {
