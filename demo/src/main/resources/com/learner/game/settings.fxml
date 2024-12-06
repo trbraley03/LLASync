@@ -80,7 +80,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Button fx:id="backButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToMain" text="&lt; Back" translateX="-300.0" translateY="-40.0" />
+      <Button fx:id="backButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToMain" text="&lt; Back" translateX="-311.0" translateY="-5.0" />
       <Label text="Profile picture" translateY="-150.0">
          <font>
             <Font size="24.0" />
@@ -95,5 +95,9 @@
             <Image url="@profile_picture.png" />
          </image>
       </ImageView>
+      <Button fx:id="updatePasswordButton" mnemonicParsing="false" onAction="#updatePassword" text="Update" translateX="225.0" translateY="-532.0" />
+      <Button fx:id="updateEmailButton" mnemonicParsing="false" onAction="#updateEmail" text="Update" translateX="225.0" translateY="-640.0" />
+      <Button fx:id="updateUsernameButton" mnemonicParsing="false" onAction="#updateUsername" text="Update" translateX="225.0" translateY="-569.0" />
+      <Button fx:id="updateDisplaynamebutton" mnemonicParsing="false" onAction="#updateDisplayname" text="Update" translateX="225.0" translateY="-549.0" />
    </children>
 </VBox>
