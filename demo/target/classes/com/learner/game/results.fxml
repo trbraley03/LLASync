@@ -3,64 +3,62 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.learner.controllers.ResultsController">
    <children>
-      <Label text="Results" translateX="22.0">
+      <Label fx:id="title" styleClass="title" text="Title">
          <font>
             <Font size="48.0" />
          </font>
-         <VBox.margin>
-            <Insets left="200.0" right="200.0" />
-         </VBox.margin>
       </Label>
-      <Label text="You Passed" translateX="9.0" translateY="30.0">
-         <VBox.margin>
-            <Insets left="200.0" right="200.0" />
-         </VBox.margin>
-         <font>
-            <Font size="34.0" />
-         </font>
-      </Label>
-      <StackPane prefHeight="39.0" prefWidth="600.0" translateY="44.0">
+      <VBox alignment="TOP_CENTER" prefHeight="320.0" prefWidth="720.0" spacing="20.0">
          <children>
-            <Circle fill="#efefef" radius="18.0" stroke="BLACK" strokeType="INSIDE" translateX="-7.0" />
-            <Label text="✓" translateX="-6.0">
+            <Label fx:id="passedFailedText" text="You Passed!" textFill="#00961b">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="greenCheck" fitHeight="100.0" fitWidth="100.0" translateX="50.0">
+                     <image>
+                        <Image url="@fmxl-images/green-check.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="redCheck" fitHeight="100.0" fitWidth="100.0" translateX="-50.0" visible="false">
+                     <image>
+                        <Image url="@fmxl-images/red-x.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label fx:id="resultsFractionText" alignment="CENTER" maxWidth="700.0" styleClass="learning-content-text" text="num/num" wrapText="true">
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button minWidth="120.0" mnemonicParsing="false" text="Go Home" />
+                  <Button minWidth="120.0" mnemonicParsing="false" text="Play Again" />
+                  <Button minWidth="120.0" mnemonicParsing="false" text="New Game" />
+               </children>
+            </HBox>
          </children>
-      </StackPane>
-      <Label text="100%" translateX="271.0" translateY="109.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Your Score" translateX="250.0" translateY="45.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button id="NewGameButton" fx:id="NewGameButton" mnemonicParsing="false" onAction="#goToMain" prefHeight="27.0" prefWidth="74.0" text="New Game" translateX="335.0" translateY="115.0">
-         <VBox.margin>
+         <opaqueInsets>
             <Insets />
-         </VBox.margin>
-      </Button>
-      <Button id="HomeButton" fx:id="HomeButton" mnemonicParsing="false" onAction="#goToMain" text="Home" translateX="7.0" translateY="87.0">
+         </opaqueInsets>
          <VBox.margin>
-            <Insets left="200.0" right="200.0" />
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
          </VBox.margin>
-      </Button>
-      <Button id="PlayAgainbutton" fx:id="PlayAgainButton" mnemonicParsing="false" onAction="#goToMain" text="Play again" translateX="10.0" translateY="62.0">
-         <VBox.margin>
-            <Insets left="250.0" right="250.0" />
-         </VBox.margin>
-      </Button>
+      </VBox>
    </children>
 </VBox>

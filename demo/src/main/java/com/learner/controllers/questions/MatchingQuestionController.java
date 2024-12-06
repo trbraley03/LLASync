@@ -186,7 +186,7 @@ public class MatchingQuestionController implements Initializable {
             correctIncorrectDisplayText.setVisible(true);
         } else if (submit.getText().equals("Continue")) {
             try {
-                GameOutroController.directQuestion(currentQuestion);
+                GameOutroController.directQuestion(facade.getNextQuizQuestion());
             } catch (Exception e) {
                 e.printStackTrace();
             }
