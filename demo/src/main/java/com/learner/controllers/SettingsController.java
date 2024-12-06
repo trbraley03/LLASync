@@ -46,6 +46,39 @@ public class SettingsController implements Initializable{
     private ImageView profilePicture;
 
     @FXML
+    private Button updateDisplaynamebutton;
+
+    @FXML
+    private Button updateEmailButton;
+
+    @FXML
+    private Button updatePasswordButton;
+
+    @FXML
+    private Button updateUsernameButton;
+
+    @FXML
+    void updateDisplayname(ActionEvent event) {
+
+    }
+
+    @FXML
+    void updateEmail(ActionEvent event) {
+
+    }
+
+    @FXML
+    void updatePassword(ActionEvent event) {
+
+    }
+
+    @FXML
+    void updateUsername(ActionEvent event) {
+
+    }
+
+
+    @FXML
     public void selectPicture(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         fileChooser.setTitle("Select a new profile picture");
