@@ -61,7 +61,7 @@ public class LoginController {
         String password = passwordBox.getText(); 
         boolean signedIn = facade.loginUser(email, password);
         if(signedIn) {
-            App.setRoot("main");
+            // App.setRoot("main");
         } else {
             // This is a popup and can be switched for better ui alterative
             Alert alert = new Alert(AlertType.INFORMATION);
