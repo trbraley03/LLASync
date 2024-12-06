@@ -119,24 +119,24 @@
 .title {
     -fx-font-size: 38px;
     -fx-font-weight: bold;
-    -fx-text-fill: #000000;
+    -fx-text-fill: white;
     -fx-effect: dropshadow(three-pass-box, rgba(95, 95, 95, 0.6), 5, 0.0, 0, 1);
 }
 
 .heading {
     -fx-font-size: 14px;
     -fx-font-weight: 600;
-    -fx-text-fill: #1c1b1b;
+    -fx-text-fill: white;
 }
 
 .learning-content-text {
     -fx-font-size: 16px;
-    -fx-text-fill: #000000;
+    -fx-text-fill: white;
 }
 
 .question-text {
     -fx-font-size: 24px;
-    -fx-text-fill: #000000;
+    -fx-text-fill: white;
 }
 
 .story-content-text {
@@ -156,6 +156,29 @@
     -fx-pref-width: 20px;
     -fx-pref-height: 20px;
 }
+
+.image-button {
+    -fx-padding: 10; /* Adds padding around the image */
+    -fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0); /* Button-like gradient */
+    -fx-background-radius: 10; /* Slightly round the background corners */
+    -fx-border-color: #888; /* Border color */
+    -fx-border-radius: 10; /* Match the background radius for consistency */
+    -fx-border-width: 1; /* Border width */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.0, 1, 1); /* Shadow for depth */
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
+}
+
+.image-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #e0e0e0, #c0c0c0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.0, 2, 2);
+}
+
+.image-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #d0d0d0, #b0b0b0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.0, 1, 1);
+}
+
+
 
 /* Styling for miscellaneous elements */
 

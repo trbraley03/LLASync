@@ -32,12 +32,12 @@ public class MainController implements Initializable{
 
     @FXML
     public void goToPlay(ActionEvent event) throws IOException {
-        App.setRoot("setDifficulty");
+        App.setRoot("pickLanguage");
     }
 
     @FXML
-    public void goToProgress(ActionEvent event) {
-
+    public void goToProgress(ActionEvent event) throws IOException {
+        App.setRoot("progressTracker");
     }
 
     @FXML
