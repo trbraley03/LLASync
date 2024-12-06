@@ -2,10 +2,10 @@ package com.learner.controllers;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 
@@ -46,7 +46,7 @@ public class SettingsController implements Initializable{
     private ImageView profilePicture;
 
     @FXML
-    public void selectPicture(ActionEvent event) {
+    public void selectPicture(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         fileChooser.setTitle("Select a new profile picture");
         fileChooser.getExtensionFilters().addAll(
@@ -56,7 +56,10 @@ public class SettingsController implements Initializable{
         );
         File selectedFile = fileChooser.showOpenDialog(stage);
         if (selectedFile != null) {
-            Path destination = Paths.get("C:/Users/dunca/Documents/Software Engineering Projects/LLASync/demo/src/main/resources/com/learner/game/" + selectedFile.getName());
+            InputStream is = getClass().getResourceAsStream("/com/learner/game/profile_picture.png");
+            Path tempFile = Files.createTempFile("profile_picture", "png");
+            Files.copy(is, tempFile, StandardCopyOption.REPLACE_EXISTING);
+            Path destination = tempFile.toAbsolutePath();
             try {
                 Files.copy(selectedFile.toPath(), destination, StandardCopyOption.REPLACE_EXISTING);
                 Path source = destination;

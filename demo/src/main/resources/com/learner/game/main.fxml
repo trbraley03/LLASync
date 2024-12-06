@@ -21,7 +21,7 @@
       </Label>
       <Button fx:id="playButton" mnemonicParsing="false" onAction="#goToPlay" prefHeight="77.0" prefWidth="241.0" text="Play a game" textOverrun="CLIP" translateY="50.0">
          <font>
-            <Font size="36.0" />
+            <Font size="24.0" />
          </font>
       </Button>
       <Button fx:id="progressButton" mnemonicParsing="false" onAction="#goToProgress" prefHeight="77.0" prefWidth="241.0" text="View Language Progress" translateY="80.0">
