@@ -46,6 +46,10 @@ public class SignUpController {
         String displayName = displayNameBox.getText(); 
         String password = passwordBox.getText(); 
         String registered = facade.registerUser(email, username, displayName, password); 
+
+        if(email.isEmpty() || username.isEmpty() || displayName.isEmpty() || password.isEmpty()) {
+            registered = "Please fill in all fields";
+        }
         if(registered.equals("true")) {
             // This is a popup and can be removed for better ui alterative 
             Alert alert = new Alert(AlertType.INFORMATION);
