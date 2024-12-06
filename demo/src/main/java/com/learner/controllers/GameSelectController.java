@@ -70,7 +70,9 @@ public class GameSelectController implements Initializable {
 
     @FXML
     private void goToSetLangAndDiff(ActionEvent event) throws IOException {
-        App.setRoot("setLangAndDiff");
+        Difficulty reset = null;
+        facade.selectDifficulty(reset);
+        App.setRoot("setDifficulty");   
     }
 
     @FXML

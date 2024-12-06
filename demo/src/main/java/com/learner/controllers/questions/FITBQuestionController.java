@@ -61,7 +61,8 @@ public class FITBQuestionController implements Initializable {
     private void submitButton() {
         answerBox.setEditable(false);
         selectedAnswer = answerBox.getText();
-        boolean isCorrect = currentQuestion.validateAnswer(selectedAnswer);
+        // boolean isCorrect = currentQuestion.validateAnswer(selectedAnswer); // incorrect use
+        boolean isCorrect = facade.validateQuizAnswer(selectedAnswer);
 
         if(isCorrect) {
             correctAnswerDisplayText.setText(getEncouragement());

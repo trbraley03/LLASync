@@ -20,16 +20,16 @@ public class PickLanguageController {
     private ImageView portugueseButton;
 
     @FXML
-    private Button homeButton;
+    private ImageView spanishButton;
 
     @FXML
-    private ImageView spanishButton;
+    private Button homeButton;
 
     private Facade facade = Facade.getInstance();
 
     @FXML
     private void goToHome(ActionEvent event) throws IOException {
-        App.setRoot("home");
+        App.setRoot("main");
     }
 
     @FXML

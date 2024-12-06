@@ -87,7 +87,8 @@ public class MultipleChoiceQuestionController implements Initializable {
 
     private void submitButton() {
         if (currentQuestion != null && selectedAnswer != null) {
-            boolean isCorrect = currentQuestion.validateAnswer(selectedAnswer);
+            // boolean isCorrect = currentQuestion.validateAnswer(selectedAnswer); // incorrect use
+            boolean isCorrect = facade.validateQuizAnswer(selectedAnswer);
     
             // Change button colors based on correctness
             hboxForChoiceButtons.getChildren().forEach(node -> {

@@ -176,6 +176,7 @@ public class MatchingQuestionController implements Initializable {
             
             // Print the number of correct answers to the terminal
             if (correctCount == 3) {
+                facade.getCurrentGame().answeredQuestionCorrectly(); // used instead of validate answer
                 correctIncorrectDisplayText.setText("All pairs are correct! Awesome job!");
                 submit.setText("Continue");
             } else {

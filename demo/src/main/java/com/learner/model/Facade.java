@@ -78,6 +78,7 @@ public class Facade {
         currentUser = null;
         currentLanguage = null;
         currentDifficulty = null;
+        currentGame = null;
     }
 
     public boolean isUserLoggedIn() {
@@ -179,6 +180,18 @@ public class Facade {
 
     public boolean validateQuizAnswer(String answer) {
         return gameFacade.validateQuizAnswer(answer);
+    }
+
+    public int getNumberOfQuizQuestions() {
+        return currentGame.getNumberOfQuizQuestions();
+    }
+
+    public int getNumberOfQuestionsAnsweredCorrectly() {
+        return currentGame.getNumberOfQuizQuestionAnsweredCorrectly();
+    }
+
+    public double getQuestionAverageResult() {
+        return (double)getNumberOfQuestionsAnsweredCorrectly()/(double)getNumberOfQuizQuestions();
     }
 
     public int getCurrentTextObjectIndex() {

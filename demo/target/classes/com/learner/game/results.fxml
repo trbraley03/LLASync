@@ -47,9 +47,9 @@
             </Label>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button minWidth="120.0" mnemonicParsing="false" text="Go Home" />
-                  <Button minWidth="120.0" mnemonicParsing="false" text="Play Again" />
-                  <Button minWidth="120.0" mnemonicParsing="false" text="New Game" />
+                  <Button fx:id="goHomeButton" minWidth="120.0" mnemonicParsing="false" onAction="#goToHome" text="Go Home" />
+                  <Button fx:id="playAgainButton" minWidth="120.0" mnemonicParsing="false" onAction="#playCurrentGameAgain" text="Play Again" />
+                  <Button fx:id="newGameButton" minWidth="120.0" mnemonicParsing="false" onAction="#goToGameSelect" text="New Game" />
                </children>
             </HBox>
          </children>

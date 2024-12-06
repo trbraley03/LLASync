@@ -26,7 +26,7 @@ public class ProgressTrackerController {
     public ProgressTrackerController() {
         // Access current user's progress tracker
         Facade facade = Facade.getInstance();
-        progressTracker = facade.getCurrentUser().getProgressTracker(facade.getCurrentLanguage().getUUID());
+        // progressTracker = facade.getCurrentUser().getProgressTracker(facade.getCurrentLanguage().getUUID()); // there is no current langauage, this is not set at the main screen
     }
 
     @FXML
@@ -36,7 +36,7 @@ public class ProgressTrackerController {
 
     @FXML
     void goToHome(ActionEvent event) throws IOException {
-        App.setRoot("home");
+        App.setRoot("main");
     }
 
     private void updateProgressBar() {

@@ -23,12 +23,12 @@
             </ImageView>
             <VBox>
                <children>
-                  <Label text="Welcome to Hello Language">
+                  <Label text="Welcome to HelloLanguage">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label text="Level up your forgein language knowledge">
+                  <Label text="Level up your foreign language knowledge">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -50,7 +50,7 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="signupButton" mnemonicParsing="false" onAction="#goToSignup" prefHeight="50.0" prefWidth="140.0" text="Signup">
+            <Button fx:id="signupButton" mnemonicParsing="false" onAction="#goToSignup" prefHeight="50.0" prefWidth="140.0" text="Sign Up">
                <font>
                   <Font size="24.0" />
                </font>

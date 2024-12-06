@@ -16,7 +16,7 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Label fx:id="currentLanguageNameDisplay" styleClass="heading" text="For language">
+      <Label fx:id="currentLanguageNameDisplay" styleClass="heading" text="language">
          <font>
             <Font size="48.0" />
          </font>
@@ -33,14 +33,14 @@
                         <Image url="@fmxl-images/easy.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="hardButton" fitHeight="200.0" fitWidth="176.0" onMouseClicked="#goToHardGame" styleClass="image-button">
-                     <image>
-                        <Image url="@fmxl-images/hard.png" />
-                     </image>
-                  </ImageView>
                   <ImageView fx:id="mediumButton" fitHeight="200.0" fitWidth="175.0" onMouseClicked="#goToMediumGame" styleClass="image-button">
                      <image>
                         <Image url="@fmxl-images/medium.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hardButton" fitHeight="200.0" fitWidth="176.0" onMouseClicked="#goToHardGame" styleClass="image-button">
+                     <image>
+                        <Image url="@fmxl-images/hard.png" />
                      </image>
                   </ImageView>
                </children>

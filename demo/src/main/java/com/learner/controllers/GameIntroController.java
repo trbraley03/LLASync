@@ -40,7 +40,7 @@ public class GameIntroController implements Initializable {
     @FXML
     private void goToGameSelect(ActionEvent event) throws IOException {
         facade.selectGame(null);
-        App.setRoot("setLangAndDiff");
+        App.setRoot("gameSelect");
     }
 
     @FXML

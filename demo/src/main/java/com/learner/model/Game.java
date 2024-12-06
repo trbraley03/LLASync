@@ -266,8 +266,9 @@ public class Game {
     public Question startQuiz() {
         pullQuestionsForQuiz();
         quizQuestionIndex = 0;
-        System.out.println(getQuestions());
-        System.out.println(getQuizQuestions());
+        correctlyAnswered = 0;
+        // System.out.println(getQuestions()); // for debug 
+        // System.out.println(getQuizQuestions()); //for debug
         return getQuizQuestion();
     }
 
@@ -294,10 +295,19 @@ public class Game {
         return null;
     }
 
+    public int getNumberOfQuizQuestions() {
+        return quizQuestions.size();
+    }
+
+    public int getNumberOfQuizQuestionAnsweredCorrectly() {
+        return correctlyAnswered;
+    }
+
     public boolean validateQuizAnswer(String answer) {
         Question question = getQuizQuestion();
         if (question != null && question.validateAnswer(answer)) {
             answeredQuestionCorrectly();
+            return true;
         }
         return false;
     }
