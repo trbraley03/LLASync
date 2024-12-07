@@ -74,19 +74,19 @@ public class User {
     }
 
     public String changeUsername(String username) {
-        if(UserList.getInstance().isEmailTaken(email)) {
+        if(UserList.getInstance().isUsernameTaken(username)) {
             return "Username is taken";
         } else {
             this.username = username;
             replaceInList();
-            return "Email changed successfully";
+            return "Username changed successfully";
         }
     }
 
     public String changeDisplayName(String displayName) {
         this.displayName = displayName;
         replaceInList();
-        return "Password changed successfully";
+        return "Display Name changed successfully";
     }
 
     public String changePassword(String password) {
@@ -221,9 +221,7 @@ public class User {
                 Game game = gameManager.findGameByUUID(gameUUID);
                 if (game != null) {
                     completedTitles.add(game.getDifficulty() + " " + game.getGameTitle());
-                } else {
-                    completedTitles.add("Unknown Game (UUID: " + gameUUID + ")");
-                }
+                } 
             }
 
             return completedTitles;

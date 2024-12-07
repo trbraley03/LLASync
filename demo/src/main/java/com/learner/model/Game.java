@@ -248,8 +248,12 @@ public class Game {
         while (added < count) {
             Question question;
             if(type != QuestionType.MULTIPLE_CHOICE) {
+                // if(type == QuestionType.FITB) {
+
+                // }
                 UUID questionUUID = textObjects.get(index).getUUID();
                 question = QuestionFactory.createQuestion(type, questionUUID);
+
 
                 // Move to the next index, wrapping around to 0 if we reach the end of textObjects
                 index = (index + 1) % textObjects.size();
