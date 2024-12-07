@@ -1278,6 +1278,95 @@
                     ]
                 },
                 {
+                    "GAME": "Foods Game",
+                    "DIFFICULTY": "easy",
+                    "CATEGORY": "word",
+                    "UUID": "19f7cf74-1a94-41e2-870e-260abbcff3ea",
+                    "INFO": {
+                        "description": "Welcome to the easy food game. First, you will learn common food words in Filipino, then you will conquer the brain blaster!",
+                        "objective": "Be able to identify and use the Filipino words for common foods.",
+                        "instructions": [
+                            "Navigate through each of the given foods and review the examples given.",
+                            "When up for the task, you will face the brain blaster."
+                        ],
+                        "prep": {
+                            "introConcept": "In Filipino, food words are used to describe various dishes and ingredients.",
+                            "exampleUsage": "For example, 'Ang saging ay dilaw.' (The banana is yellow.)",
+                            "gameTip": "Remember, food words are used in everyday situations. Think of common foods you eat to help remember."
+                        }
+                    },
+                    "TEXT": [
+                        {
+                            "text": "saging",
+                            "englishText": "banana",
+                            "linkedText": "Ang saging ay dilaw.",
+                            "englishLinkedText": "The banana is yellow.",
+                            "helperText": "Saging means 'banana' in Filipino. It's used to describe the fruit.",
+                            "UUID": "0f89a6e9-3ba3-474d-a941-1f7eaecd0801"
+                        },
+                        {
+                            "text": "karne",
+                            "englishText": "meat",
+                            "linkedText": "Ang karne ay masarap.",
+                            "englishLinkedText": "The meat is delicious.",
+                            "helperText": "Karne means 'meat' in Filipino. It's used to describe the food.",
+                            "UUID": "e8b7e837-b4a0-4f4e-94f3-01596e36f60a"
+                        },
+                        {
+                            "text": "isda",
+                            "englishText": "fish",
+                            "linkedText": "Ang isda ay sariwa.",
+                            "englishLinkedText": "The fish is fresh.",
+                            "helperText": "Isda means 'fish' in Filipino. It's used to describe the food.",
+                            "UUID": "e42a5188-7f19-460e-a223-e49f560890b5"
+                        },
+                        {
+                            "text": "mansanas",
+                            "englishText": "apple",
+                            "linkedText": "Ang mansanas ay pula.",
+                            "englishLinkedText": "The apple is red.",
+                            "helperText": "Mansanas means 'apple' in Filipino. It's used to describe the fruit.",
+                            "UUID": "153f2840-2e03-4e44-8b4b-1ef0016155cb"
+                        },
+                        {
+                            "text": "tinapay",
+                            "englishText": "bread",
+                            "linkedText": "Ang tinapay ay malambot.",
+                            "englishLinkedText": "The bread is soft.",
+                            "helperText": "Tinapay means 'bread' in Filipino. It's used to describe the food.",
+                            "UUID": "cb84be5e-9e46-49e8-ba04-42eb09261d1a"
+                        }
+                    ],
+                    "QUESTIONS": [
+                        {
+                            "question": "What is the Filipino word for banana?",
+                            "choices": [
+                                "saging",
+                                "mansanas",
+                                "tinapay"
+                            ],
+                            "UUID": "9d5eef4d-b3da-49d8-960b-536229a5dee6"
+                        },
+                        {
+                            "question": "How do you say 'apple' in Filipino?",
+                            "choices": [
+                                "mansanas",
+                                "saging",
+                                "tinapay"
+                            ],
+                            "UUID": "9546042b-9cd2-48fd-95c4-9dec57d89400"
+                        },
+                        {
+                            "question": "Tinapay' means 'bread' in Filipino.",
+                            "choices": [
+                                "True",
+                                "False"
+                            ],
+                            "UUID": "220d34f5-e63f-460d-a6da-d8165e605c40"
+                        }
+                    ]
+                },
+                {
                     "GAME": "Three Little Pigs",
                     "DIFFICULTY": "easy",
                     "CATEGORY": "story",
