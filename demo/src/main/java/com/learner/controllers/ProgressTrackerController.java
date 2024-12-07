@@ -8,6 +8,7 @@ import com.learner.model.Facade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 
 public class ProgressTrackerController {
@@ -16,6 +17,9 @@ public class ProgressTrackerController {
 
     @FXML
     private Button backButton;
+
+    @FXML
+    private Label progressLabel;
 
     @FXML
     private ProgressBar gamesCompletedBar;
@@ -33,6 +37,7 @@ public class ProgressTrackerController {
     private void updateProgressBar() {
         int totalGames = facade.getTotalNumberOfGames();
         int completedGames = facade.getTotalNumberOfCompletedGames();
+        progressLabel.setText(facade.getTotalNumberOfCompletedGames() + " out of " + facade.getTotalNumberOfGames() + " completed.");
         double progress = 0.0;
         if (completedGames != 0) {
             progress = (double) completedGames / (double) totalGames;
