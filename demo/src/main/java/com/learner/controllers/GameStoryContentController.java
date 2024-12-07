@@ -1,5 +1,9 @@
 package com.learner.controllers;
 
+import java.io.IOException;
+
+import com.learner.game.App;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -24,17 +28,17 @@ public class GameStoryContentController {
     private Button translateButton;
 
     @FXML
-    private void goBackToPreviousGameScreen(ActionEvent event) {
+    private void goBackToPreviousGameScreen(ActionEvent event) throws IOException {
+        
+    }
+
+    @FXML
+    private void goToNextGameScreen(ActionEvent event) throws IOException  {
 
     }
 
     @FXML
-    private void goToNextGameScreen(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void translateText(ActionEvent event) {
+    private void translateText(ActionEvent event) throws IOException  {
 
     }
 

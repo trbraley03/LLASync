@@ -34,7 +34,7 @@
             </ImageView>
          </children>
       </HBox>
-      <Button fx:id="translateButton" mnemonicParsing="false" onAction="#translateText" styleClass="translate-button" text="Translate" translateY="7.0" />
+      <Button disable="true" mnemonicParsing="false" styleClass="translate-button" text="Translate" translateY="7.0" visible="false" />
       <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBackToPreviousGameScreen" styleClass="nav-button" text="&lt; Back" translateX="-300.0" translateY="-40.0" />
       <Button fx:id="nextButton" mnemonicParsing="false" onAction="#goToNextGameScreen" styleClass="nav-button" text="Next &gt;" translateX="300.0" translateY="-85.0" />
    </children>
