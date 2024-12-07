@@ -14,6 +14,7 @@ module com.learner.game {
     requires software.amazon.eventstream;
     requires javafx.graphics;
     requires javafx.base;
+    requires java.desktop;
 
     opens com.learner.game to javafx.fxml;
     exports com.learner.game;

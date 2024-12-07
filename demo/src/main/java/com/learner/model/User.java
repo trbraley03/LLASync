@@ -1,19 +1,30 @@
 package com.learner.model;
 
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.UUID;
+
+import javax.imageio.ImageIO;
 
 import com.learner.model.questions.Question;
 
 public class User {
 
+    // User information
     private String email;
     private String username;
     private String displayName;
     private String password;
     private UUID uuid;
     private HashSet<ProgressTracker> progressTrackers; // Set of progress trackers for different languages
+
+    // Addional user information settings
     private String profilePicturePath;
     private boolean readQuestionFeedbackAloud;
 
@@ -100,9 +111,89 @@ public class User {
         return "Password changed successfully";
     }
 
-    public void replaceInList() {
+    private void replaceInList() {
         UserList.getInstance().replaceUser(this);
     }
+
+    // Might implement this later
+    public void setProfilePicture(String path, int size) throws IOException {
+        // Ensure the file exists
+        File file = new File(path);
+        if (!file.exists()) {
+            throw new FileNotFoundException("File not found: " + path);
+        }
+    
+        // Detect file type (extension)
+        String fileExtension = getFileExtension(file);
+        if (fileExtension == null || !ImageIO.getImageReadersByFormatName(fileExtension).hasNext()) {
+            throw new IOException("Unsupported file format: " + fileExtension);
+        }
+    
+        // Read and resize the image
+        BufferedImage originalImage = ImageIO.read(file);
+        if (originalImage == null) {
+            throw new IOException("Could not read image from file: " + path);
+        }
+        BufferedImage resizedImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = resizedImage.createGraphics();
+        g.drawImage(originalImage.getScaledInstance(size, size, Image.SCALE_SMOOTH), 0, 0, null);
+        g.dispose();
+    
+        // Generate a new file name and save the resized image
+        String newFileName = UUID.randomUUID().toString() + "." + fileExtension;
+        File outputDir = new File("demo/src/main/resources/com/learner/game/user-profile-pictures/");
+        outputDir.mkdirs(); // Ensure the directory exists
+        File outputfile = new File(outputDir, newFileName);
+        ImageIO.write(resizedImage, fileExtension, outputfile);
+    
+        // Set the profile picture path
+        profilePicturePath = "/com/learner/game/user-profile-pictures/" + newFileName;
+    }
+    
+    private String getFileExtension(File file) {
+        String fileName = file.getName();
+        int dotIndex = fileName.lastIndexOf('.');
+        return (dotIndex > 0 && dotIndex < fileName.length() - 1) ? fileName.substring(dotIndex + 1).toLowerCase() : null;
+    }
+
+    /**
+     * Gets the profile picture path
+     * @return the path to the profile picture
+     */
+    public String getProfilePicturePath() {
+        return profilePicturePath;
+    }
+
+    /**
+     * Sets the readQuestionFeedbackAloud setting
+     * @param readQuestionFeedbackAloud
+     * @return the new value of readQuestionFeedbackAloud
+     */
+    public boolean setReadQuestionFeedbackAloud(boolean readQuestionFeedbackAloud) {
+        this.readQuestionFeedbackAloud = readQuestionFeedbackAloud;
+        return readQuestionFeedbackAloud;
+    }
+
+    /**
+     * Switches the readQuestionFeedbackAloud setting
+     * @return the new value of readQuestionFeedbackAloud
+     */
+    public boolean setReadQuestionFeedbackAloud() {
+        if(readQuestionFeedbackAloud) {
+            return readQuestionFeedbackAloud = false;
+        } 
+        return readQuestionFeedbackAloud = true;
+    }
+
+    /**
+     * Gets the readQuestionFeedbackAloud setting
+     * @return the value of readQuestionFeedbackAloud
+     */
+    public boolean getReadQuestionFeedbackAloud() {
+        return readQuestionFeedbackAloud;
+    }
+
+    // Progress Tracking
 
     public HashSet<ProgressTracker> getProgressTrackers() {
         return progressTrackers;

@@ -23,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class GameSelectController implements Initializable {
@@ -86,9 +87,10 @@ public class GameSelectController implements Initializable {
                     imageView.setPreserveRatio(true);
                     gameButton.setGraphic(imageView);
                 } else {
-                    // Fallback to setting the button's text to the game name
+                    // Fallback to setting the button's text to the game name with size 8 font
                     gameButton.setText(gameTitle);
-                    System.out.println("image file not found:" + gameTitle);
+                    gameButton.setFont(Font.font(10));
+                    // System.out.println("image file not found:" + gameTitle);
                 }
 
                 // Add the button to the appropriate HBox
@@ -107,6 +109,23 @@ public class GameSelectController implements Initializable {
             }
         }
 
+        // Remove empty HBoxes
+        if (hbox1.getChildren().isEmpty()) {
+            hbox1.setVisible(false);
+            hbox1.setManaged(false);
+            category1.setVisible(false);
+        }
+        if (hbox2.getChildren().isEmpty()) {
+            hbox2.setManaged(false);
+            hbox2.setVisible(false);
+            category2.setVisible(false);
+        }
+        if (hbox3.getChildren().isEmpty()) {
+            hbox3.setManaged(false);
+            hbox3.setVisible(false);
+            category3.setVisible(false);
+        }
+
         title.setText(currentDifficulty.getLabel() + " " + currentLanguage.getLanguageName() + " Games");
     }
 
@@ -120,7 +139,7 @@ public class GameSelectController implements Initializable {
                 category2.setText(category.getCategory() + ": " + category.getDescription());
                 return hbox2;
             case STORY:
-            category3.setText(category.getCategory() + ": " + category.getDescription());
+                category3.setText(category.getCategory() + ": " + category.getDescription());
                 return hbox3;
             default:
                 return new HBox(); // Default case, should not happen

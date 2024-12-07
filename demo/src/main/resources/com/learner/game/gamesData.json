@@ -142,7 +142,7 @@
                             "UUID": "1f1b3266-6e18-402d-9cee-def0d6f8939e"
                         },
                         {
-                            "question": "True or False: 'Ang langit ay kulay asul' means 'The sky is blue.'",
+                            "question": "'Ang langit ay kulay asul' means 'The sky is blue.'",
                             "choices": [
                                 "True",
                                 "False"
@@ -170,13 +170,13 @@
                     ]
                 },
                 {
-                    "GAME": "Letter Game",
+                    "GAME": "Diacritics Game",
                     "DIFFICULTY": "easy",
                     "CATEGORY": "alphabet",
                     "UUID": "abca5f0d-4d55-46eb-9bda-bf4c35e656ca",
                     "INFO": {
-                        "description": "Letter Launch: Explore the Alphabet!. First, you will learn about accent letters in Filipino, then you will conquer the brain blaster!",
-                        "objective": "Be able to identify and use accent letters in Filipino.",
+                        "description": "Letter Launch: Explore the Alphabet!. Learn about diacritics/accent letters and learn how they change the pronunciation of letters in Filipino.",
+                        "objective": "Be able to identify and use accent diacritics in Filipino.",
                         "instructions": [
                             "Navigate through each of the given letters and review the examples given.",
                             "When up for the task, you will face the brain blaster."
@@ -184,7 +184,7 @@
                         "prep": {
                             "introConcept": "In Filipino, accent letters are used to indicate stress or pronunciation.",
                             "exampleUsage": "For example, the word 'báhay' (house) uses an accent to indicate the stress on the first syllable.",
-                            "gameTip": "Remember, accent letters can change the meaning of a word, so pay close attention to them."
+                            "gameTip": "Remember, accent letters can change the meaning of a word, so pay close attention to them to how exactly they change them."
                         }
                     },
                     "TEXT": [
@@ -193,7 +193,7 @@
                             "englishText": "a with acute accent",
                             "linkedText": "báhay",
                             "englishLinkedText": "house",
-                            "helperText": "The letter 'á' is used to indicate stress on the first syllable in the word 'báhay' (house).",
+                            "helperText": "The letter 'á' in 'báhay' (house) indicates that the stress is on the first syllable, changing the pronunciation to 'BA-hay'. Acute accent marks point to the right and up.",
                             "UUID": "06acfb73-5ee5-4c7c-a70e-b506366f30aa"
                         },
                         {
@@ -201,15 +201,15 @@
                             "englishText": "e with acute accent",
                             "linkedText": "sikréto",
                             "englishLinkedText": "secret",
-                            "helperText": "The letter 'é' is used to indicate stress on the second syllable in the word 'sikréto' (secret).",
+                            "helperText": "The letter 'é' is used to indicate stress on the second syllable in the word 'sikréto' (secret), changing the pronunciation to 'si-KRE-to'. Acute accent marks point to the right and up.",
                             "UUID": "62c50956-98bb-4959-a698-f318ce5bba51"
                         },
                         {
-                            "text": "í",
-                            "englishText": "i with acute accent",
-                            "linkedText": "bákit",
-                            "englishLinkedText": "why",
-                            "helperText": "The letter 'í' is used to indicate stress on the second syllable in the word 'bákit' (why).",
+                            "text": "ò",
+                            "englishText": "o with grave accent",
+                            "linkedText": "punò",
+                            "englishLinkedText": "full",
+                            "helperText": "The letter 'ò' is used to indicate a glottal stop and stress on the preceding syllable in the word 'punò' (full), changing the pronunciation to 'pu-NO' rather than 'puno'. Grave accent marks point to the left and up.",
                             "UUID": "a090b493-f1a4-4abc-8e7f-00df24b08514"
                         }
                     ],
@@ -218,13 +218,13 @@
                             "question": "What is the accent letter in the word 'báhay'?",
                             "choices": [
                                 "á",
-                                "é",
-                                "í"
+                                "a",
+                                "y"
                             ],
                             "UUID": "70b9cd20-c3ce-47fa-9461-01e935129264"
                         },
                         {
-                            "question": "True or False: The word 'sikréto' uses the letter 'é' to indicate stress.",
+                            "question": "The word 'sikréto' uses the letter 'é' to indicate stress.",
                             "choices": [
                                 "True",
                                 "False"
@@ -232,13 +232,21 @@
                             "UUID": "52dcee91-85a0-4c94-8f0b-5a1655cab09c"
                         },
                         {
-                            "question": "Which word uses the letter 'í' to indicate stress?",
+                            "question": "Which word uses the letter 'ò' to indicate a glottal stop and stress?",
                             "choices": [
-                                "bákit",
+                                "punò",
                                 "sikréto",
                                 "báhay"
                             ],
                             "UUID": "35cb6c40-ef82-4285-b576-da288acd9707"
+                        },
+                        {
+                            "question": "The grave letter mark does not indicate a glottal stop.",
+                            "choices": [
+                                "false",
+                                "true"
+                            ],
+                            "UUID": "186951cd-40e1-42c7-853c-80636fcd87d6"
                         }
                     ]
                 },
@@ -453,7 +461,7 @@
                             "UUID": "6a28af07-1825-4215-bb75-01982100ff18"
                         },
                         {
-                            "question": "True or False: 'Ang bulaklak ay kulay rosas' means 'The flower is pink.'",
+                            "question": "'Ang bulaklak ay kulay rosas' means 'The flower is pink.'",
                             "choices": [
                                 "True",
                                 "False"
@@ -600,7 +608,7 @@
                             "UUID": "e0320cc0-bfd3-490b-b87e-512ba1873b3e"
                         },
                         {
-                            "question": "True or False: 'Tatlo' means 'three' in Filipino.",
+                            "question": "'Tatlo' means 'three' in Filipino.",
                             "choices": [
                                 "True",
                                 "False"
@@ -626,7 +634,7 @@
                             "UUID": "0f51ab35-265d-4b9f-9c13-d3f67636d323"
                         },
                         {
-                            "question": "True or False: 'Anim' means 'six' in Filipino.",
+                            "question": "'Anim' means 'six' in Filipino.",
                             "choices": [
                                 "True",
                                 "False"
@@ -652,7 +660,7 @@
                             "UUID": "a01368a1-ba60-4fb0-81dd-6a039cb97509"
                         },
                         {
-                            "question": "True or False: 'Siyam' means 'nine' in Filipino.",
+                            "question": "'Siyam' means 'nine' in Filipino.",
                             "choices": [
                                 "True",
                                 "False"
@@ -790,7 +798,7 @@
                             "UUID": "7b0802d9-9ff0-4518-aceb-c29f778c3518"
                         },
                         {
-                            "question": "True or False: 'Labing-tatlo' means 'thirteen' in Filipino.",
+                            "question": "'Labing-tatlo' means 'thirteen' in Filipino.",
                             "choices": [
                                 "True",
                                 "False"
@@ -816,7 +824,7 @@
                             "UUID": "7e1f008d-06ab-4e48-9325-ac8dd894bf98"
                         },
                         {
-                            "question": "True or False: 'Labing-anim' means 'sixteen' in Filipino.",
+                            "question": "'Labing-anim' means 'sixteen' in Filipino.",
                             "choices": [
                                 "True",
                                 "False"
@@ -842,7 +850,7 @@
                             "UUID": "0ac0233f-e3d0-4617-98df-ad757950f760"
                         },
                         {
-                            "question": "True or False: 'Labing-siyam' means 'nineteen' in Filipino.",
+                            "question": "'Labing-siyam' means 'nineteen' in Filipino.",
                             "choices": [
                                 "True",
                                 "False"
@@ -948,7 +956,7 @@
                             "UUID": "dbb4f0da-12a9-46af-884b-f169e5e4a0c9"
                         },
                         {
-                            "question": "True or False: 'Limang daan' means 'five hundred' in Filipino.",
+                            "question": "'Limang daan' means 'five hundred' in Filipino.",
                             "choices": [
                                 "True",
                                 "False"
@@ -974,306 +982,12 @@
                             "UUID": "63840646-cbd3-4114-aa96-373d58b76db1"
                         },
                         {
-                            "question": "True or False: 'Isang milyon' means 'one million' in Filipino.",
+                            "question": "'Isang milyon' means 'one million' in Filipino.",
                             "choices": [
                                 "True",
                                 "False"
                             ],
                             "UUID": "263b2668-9647-4254-89cb-8da0a5c99f81"
-                        }
-                    ]
-                },
-                {
-                    "GAME": "Colors Game",
-                    "DIFFICULTY": "easy",
-                    "CATEGORY": "word",
-                    "UUID": "6bd4e6b5-4165-4fdd-a75e-6221b5015a2f",
-                    "INFO": {
-                        "description": "Welcome to the easy colors game. First, you will learn each color (red, green, and blue), then you will conquer the brain blaster!",
-                        "objective": "Be able to identify the Filipino words for each color taught and know the Filipino words for common objects of those colors.",
-                        "instructions": [
-                            "Navigate through each of the given colors and review the examples given.",
-                            "When up for the task, you will face the brain blaster."
-                        ],
-                        "prep": {
-                            "introConcept": "In Filipino, the word for 'color' is 'kulay.'",
-                            "exampleUsage": "To say that something is a color, use 'ay kulay' followed by the color. For example, 'Ang mansanas ay kulay pula.' (The apple is red.)",
-                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits (mga prutas) or plants (mga halaman) to help remember."
-                        }
-                    },
-                    "TEXT": [
-                        {
-                            "text": "pula",
-                            "englishText": "red",
-                            "linkedText": "Ang mansanas ay kulay pula.",
-                            "englishLinkedText": "The apple is red.",
-                            "helperText": "Pula means 'red' in Filipino. It's used the same way as 'red' in English, like describing a red apple (mansanas na pula) or a red car (kotse na pula).",
-                            "UUID": "69b87502-a493-4657-8f29-54b908815e59"
-                        },
-                        {
-                            "text": "berde",
-                            "englishText": "green",
-                            "linkedText": "Ang damo ay kulay berde.",
-                            "englishLinkedText": "The grass is green.",
-                            "helperText": "Berde sounds a bit like 'verdant,' which means green and lush in English. Think of green grass (damo) or trees (mga puno).",
-                            "UUID": "3473452e-b2e8-4a2b-a564-d9bcf878c383"
-                        },
-                        {
-                            "text": "asul",
-                            "englishText": "blue",
-                            "linkedText": "Ang langit ay kulay asul.",
-                            "englishLinkedText": "The sky is blue.",
-                            "helperText": "Asul means 'blue' in Filipino, similar to the color of the sky (langit) or the ocean (karagatan).",
-                            "UUID": "03703cdc-0dc8-40e3-bc48-d83972cf741f"
-                        }
-                    ],
-                    "QUESTIONS": [
-                        {
-                            "question": "What is the Filipino word for red?",
-                            "choices": [
-                                "pula",
-                                "berde",
-                                "asul"
-                            ],
-                            "UUID": "b574d65e-ac18-4adc-bcea-40148e1173d1"
-                        },
-                        {
-                            "question": "Which color does 'berde' represent?",
-                            "choices": [
-                                "green",
-                                "red",
-                                "blue"
-                            ],
-                            "UUID": "d827ab70-1091-440e-aaad-fb9756aeb180"
-                        },
-                        {
-                            "question": "What is the Filipino word for blue?",
-                            "choices": [
-                                "asul",
-                                "pula",
-                                "berde"
-                            ],
-                            "UUID": "34f91207-b32d-4688-b7eb-6c262ae69cc0"
-                        },
-                        {
-                            "question": "Ang langit ay kulay asul.",
-                            "choices": [
-                                "True",
-                                "False"
-                            ],
-                            "UUID": "324e0b03-f890-4c55-8111-b6a170045047"
-                        },
-                        {
-                            "question": "Ang mansanas ay kulay asul.",
-                            "choices": [
-                                "False",
-                                "True"
-                            ],
-                            "UUID": "dc4f18ce-8262-4790-a828-959b3b15c687"
-                        },
-                        {
-                            "question": "The word for 'sky' in Filipino is 'langit'.",
-                            "choices": [
-                                "True",
-                                "False"
-                            ],
-                            "UUID": "6cef4a4c-c0f8-4597-a417-f94dda46463a"
-                        }
-                    ]
-                },
-                {
-                    "GAME": "Colors Game",
-                    "DIFFICULTY": "medium",
-                    "CATEGORY": "word",
-                    "UUID": "2d50cfe7-4c96-4297-8708-af6baf709504",
-                    "INFO": {
-                        "description": "Welcome to the medium colors game. First, you will learn each color (red, green, and blue), then you will conquer the brain blaster!",
-                        "objective": "Be able to identify the Filipino words for each color taught and know the Filipino words for common objects of those colors.",
-                        "instructions": [
-                            "Navigate through each of the given colors and review the examples given.",
-                            "When up for the task, you will face the brain blaster."
-                        ],
-                        "prep": {
-                            "introConcept": "In Filipino, the word for 'color' is 'kulay.'",
-                            "exampleUsage": "To say that something is a color, use 'ay kulay' followed by the color. For example, 'Ang mansanas ay kulay pula.' (The apple is red.)",
-                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits (mga prutas) or plants (mga halaman) to help remember."
-                        }
-                    },
-                    "TEXT": [
-                        {
-                            "text": "pula",
-                            "englishText": "red",
-                            "linkedText": "Ang mansanas ay kulay pula.",
-                            "englishLinkedText": "The apple is red.",
-                            "helperText": "Pula means 'red' in Filipino. It's used the same way as 'red' in English, like describing a red apple (mansanas na pula) or a red car (kotse na pula).",
-                            "UUID": "532731ff-e2eb-429d-bc78-cb4cfe70703c"
-                        },
-                        {
-                            "text": "berde",
-                            "englishText": "green",
-                            "linkedText": "Ang damo ay kulay berde.",
-                            "englishLinkedText": "The grass is green.",
-                            "helperText": "Berde sounds a bit like 'verdant,' which means green and lush in English. Think of green grass (damo) or trees (mga puno).",
-                            "UUID": "39b63e4e-b604-4afd-b51b-622425791cbb"
-                        },
-                        {
-                            "text": "asul",
-                            "englishText": "blue",
-                            "linkedText": "Ang langit ay kulay asul.",
-                            "englishLinkedText": "The sky is blue.",
-                            "helperText": "Asul means 'blue' in Filipino, similar to the color of the sky (langit) or the ocean (karagatan).",
-                            "UUID": "121620f5-fed8-47e2-aab7-0c6b8b806a27"
-                        }
-                    ],
-                    "QUESTIONS": [
-                        {
-                            "question": "What is the Filipino word for red?",
-                            "choices": [
-                                "pula",
-                                "berde",
-                                "asul"
-                            ],
-                            "UUID": "f0fe3c10-8f60-4860-94f6-201e169d26d3"
-                        },
-                        {
-                            "question": "Which color does 'berde' represent?",
-                            "choices": [
-                                "green",
-                                "red",
-                                "blue"
-                            ],
-                            "UUID": "bdb503cd-1add-4230-a7fa-e66c36e93038"
-                        },
-                        {
-                            "question": "What is the Filipino word for blue?",
-                            "choices": [
-                                "asul",
-                                "pula",
-                                "berde"
-                            ],
-                            "UUID": "3e9a6f92-5f1c-492c-9abe-19e31899c792"
-                        },
-                        {
-                            "question": "Ang langit ay kulay asul.",
-                            "choices": [
-                                "True",
-                                "False"
-                            ],
-                            "UUID": "7b76145d-c597-493c-8be9-178f6b63e165"
-                        },
-                        {
-                            "question": "Ang mansanas ay kulay asul.",
-                            "choices": [
-                                "False",
-                                "True"
-                            ],
-                            "UUID": "cc48097f-2b4d-4370-b0d2-0c2635d85e73"
-                        },
-                        {
-                            "question": "The word for 'sky' in Filipino is 'langit'.",
-                            "choices": [
-                                "True",
-                                "False"
-                            ],
-                            "UUID": "483e8fab-53aa-4872-91f2-6cd57de30f81"
-                        }
-                    ]
-                },
-                {
-                    "GAME": "Colors Game",
-                    "DIFFICULTY": "hard",
-                    "CATEGORY": "word",
-                    "UUID": "327da596-dd26-4b90-ab8b-6c3a3b4d5d79",
-                    "INFO": {
-                        "description": "Welcome to the hard colors game. First, you will learn each color (red, green, and blue), then you will conquer the brain blaster!",
-                        "objective": "Be able to identify the Filipino words for each color taught and know the Filipino words for common objects of those colors.",
-                        "instructions": [
-                            "Navigate through each of the given colors and review the examples given.",
-                            "When up for the task, you will face the brain blaster."
-                        ],
-                        "prep": {
-                            "introConcept": "In Filipino, the word for 'color' is 'kulay.'",
-                            "exampleUsage": "To say that something is a color, use 'ay kulay' followed by the color. For example, 'Ang mansanas ay kulay pula.' (The apple is red.)",
-                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits (mga prutas) or plants (mga halaman) to help remember."
-                        }
-                    },
-                    "TEXT": [
-                        {
-                            "text": "pula",
-                            "englishText": "red",
-                            "linkedText": "Ang mansanas ay kulay pula.",
-                            "englishLinkedText": "The apple is red.",
-                            "helperText": "Pula means 'red' in Filipino. It's used the same way as 'red' in English, like describing a red apple (mansanas na pula) or a red car (kotse na pula).",
-                            "UUID": "80b440ff-2ad5-47cf-ad66-e0759756885c"
-                        },
-                        {
-                            "text": "berde",
-                            "englishText": "green",
-                            "linkedText": "Ang damo ay kulay berde.",
-                            "englishLinkedText": "The grass is green.",
-                            "helperText": "Berde sounds a bit like 'verdant,' which means green and lush in English. Think of green grass (damo) or trees (mga puno).",
-                            "UUID": "f738f4ef-fc6d-4fe8-a816-732d5ac9dc3b"
-                        },
-                        {
-                            "text": "asul",
-                            "englishText": "blue",
-                            "linkedText": "Ang langit ay kulay asul.",
-                            "englishLinkedText": "The sky is blue.",
-                            "helperText": "Asul means 'blue' in Filipino, similar to the color of the sky (langit) or the ocean (karagatan).",
-                            "UUID": "034bd602-b360-4a9a-ad09-1ae86ffcccb6"
-                        }
-                    ],
-                    "QUESTIONS": [
-                        {
-                            "question": "What is the Filipino word for red?",
-                            "choices": [
-                                "pula",
-                                "berde",
-                                "asul"
-                            ],
-                            "UUID": "8bd654ff-e165-492f-9584-238cb2d48d95"
-                        },
-                        {
-                            "question": "Which color does 'berde' represent?",
-                            "choices": [
-                                "green",
-                                "red",
-                                "blue"
-                            ],
-                            "UUID": "183b0312-7780-4fa8-b174-b0cdf3eb8055"
-                        },
-                        {
-                            "question": "What is the Filipino word for blue?",
-                            "choices": [
-                                "asul",
-                                "pula",
-                                "berde"
-                            ],
-                            "UUID": "927f7849-270f-4945-9b78-4cd1c926b154"
-                        },
-                        {
-                            "question": "Ang langit ay kulay asul.",
-                            "choices": [
-                                "True",
-                                "False"
-                            ],
-                            "UUID": "268f3176-3400-4e22-a6eb-083f759578d1"
-                        },
-                        {
-                            "question": "Ang mansanas ay kulay asul.",
-                            "choices": [
-                                "False",
-                                "True"
-                            ],
-                            "UUID": "e4a2706d-49c1-45a9-9017-755515ed50c9"
-                        },
-                        {
-                            "question": "The word for 'sky' in Filipino is 'langit'.",
-                            "choices": [
-                                "True",
-                                "False"
-                            ],
-                            "UUID": "cafd49c3-7084-4ba5-834c-3ad6a12f85f2"
                         }
                     ]
                 },
@@ -1526,16 +1240,16 @@
                             "UUID": "387b2f6a-363d-4089-b169-1eb4b25dae85"
                         },
                         {
-                            "text": "‘Walang makakatalo sa akin sa takbuhan,’ sabi ng kuneho.",
-                            "englishText": "‘No one can beat me in a race,’ said the hare.",
+                            "text": "`Walang makakatalo sa akin sa takbuhan,’ sabi ng kuneho.",
+                            "englishText": "`No one can beat me in a race,’ said the hare.",
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
                             "UUID": "7de4e8ea-e073-4f45-860e-240bac90b3e9"
                         },
                         {
-                            "text": "‘Sige nga, subukan natin,’ sabi ng pagong.",
-                            "englishText": "‘Let's see about that,’ said the tortoise.",
+                            "text": "`Sige nga, subukan natin,’ sabi ng pagong.",
+                            "englishText": "`Let's see about that,’ said the tortoise.",
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
@@ -1550,16 +1264,16 @@
                             "UUID": "a055b916-003a-4752-952a-ac3af795fe34"
                         },
                         {
-                            "text": "‘Hindi ka mananalo,’ sabi ng kuneho.",
-                            "englishText": "‘You will not win,’ said the hare.",
+                            "text": "`Hindi ka mananalo,’ sabi ng kuneho.",
+                            "englishText": "`You will not win,’ said the hare.",
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
                             "UUID": "e17b4e56-ff3a-4883-a6e5-05838f1e9147"
                         },
                         {
-                            "text": "‘Tingnan natin,’ sabi ng pagong.",
-                            "englishText": "‘We'll see,’ said the tortoise.",
+                            "text": "`Tingnan natin,’ sabi ng pagong.",
+                            "englishText": "`We'll see,’ said the tortoise.",
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
@@ -1659,13 +1373,185 @@
                             "UUID": "4cc94a78-ddc9-44fe-996f-ba52475030a4"
                         },
                         {
-                            "question": "What color was the hat the hare was wearing?",
+                            "question": "What color hat was the hare wearing?",
                             "choices": [
                                 "pula",
                                 "berde",
                                 "asul"
                             ],
                             "UUID": "b53d31ab-13c2-4565-b58b-38eba8dc6d01"
+                        }
+                    ]
+                },
+                {
+                    "GAME": "Unique Letters Game",
+                    "DIFFICULTY": "easy",
+                    "CATEGORY": "alphabet",
+                    "UUID": "df26f7a9-b562-424c-b779-b3e7f0c4fe24",
+                    "INFO": {
+                        "description": "Unique Letters: Learn about the special characters in the Filipino alphabet.",
+                        "objective": "Be able to identify and use the unique letters in the Filipino alphabet.",
+                        "instructions": [
+                            "Navigate through each of the given letters and review the examples given.",
+                            "When up for the task, you will face the brain blaster."
+                        ],
+                        "prep": {
+                            "introConcept": "In Filipino, there are unique letters that are not found in the English alphabet.",
+                            "exampleUsage": "For example, the letter 'ng' is used in words like 'ngiti' (smile).",
+                            "gameTip": "Remember, these unique letters can change the meaning of a word, so pay close attention to them."
+                        }
+                    },
+                    "TEXT": [
+                        {
+                            "text": "ng",
+                            "englishText": "ng",
+                            "linkedText": "ngiti",
+                            "englishLinkedText": "smile",
+                            "helperText": "The letter 'ng' is pronounced as 'ng' in 'sing'. It is used in words like 'ngiti' (smile).",
+                            "UUID": "26d6e398-8c40-48d9-bad1-f89c00cb9551"
+                        },
+                        {
+                            "text": "ñ",
+                            "englishText": "enye",
+                            "linkedText": "piñata",
+                            "englishLinkedText": "piñata",
+                            "helperText": "The letter 'ñ' is pronounced as 'ny' in 'canyon'. It is used in words borrowed from Spanish, like 'piñata'.",
+                            "UUID": "31b67ea5-dd0b-4acc-a432-6bd5027a5a5f"
+                        },
+                        {
+                            "text": "ng",
+                            "englishText": "ng",
+                            "linkedText": "ngipin",
+                            "englishLinkedText": "tooth",
+                            "helperText": "The letter 'ng' is pronounced as 'ng' in 'sing'. It is used in words like 'ngipin' (tooth).",
+                            "UUID": "3ddf4204-5eb5-4d2d-a33c-037ea8a69aee"
+                        },
+                        {
+                            "text": "ñ",
+                            "englishText": "enye",
+                            "linkedText": "mañana",
+                            "englishLinkedText": "tomorrow",
+                            "helperText": "The letter 'ñ' is pronounced as 'ny' in 'canyon'. It is used in words borrowed from Spanish, like 'mañana'.",
+                            "UUID": "789c519c-0bc2-44cb-909d-004ff6781cf8"
+                        }
+                    ],
+                    "QUESTIONS": [
+                        {
+                            "question": "What is the unique letter in the word 'ngiti'?",
+                            "choices": [
+                                "ng",
+                                "n",
+                                "g"
+                            ],
+                            "UUID": "9f7965b8-8af6-47ef-b4e7-7df49167e177"
+                        },
+                        {
+                            "question": "The letter 'ñ' is used in which word?",
+                            "choices": [
+                                "piñata",
+                                "ngiti",
+                                "ngipin"
+                            ],
+                            "UUID": "67f68384-6b76-4566-b340-57611b4387e8"
+                        },
+                        {
+                            "question": "Which letter is used in the word 'ngipin'?",
+                            "choices": [
+                                "ng",
+                                "ñ",
+                                "n"
+                            ],
+                            "UUID": "5a3f892d-397c-4bc7-9282-e1c0a9befa55"
+                        },
+                        {
+                            "question": "The letter 'ng' is unique to the Filipino alphabet.",
+                            "choices": [
+                                "True",
+                                "False"
+                            ],
+                            "UUID": "d611ccc7-82e5-4093-9106-3863b780cf16"
+                        }
+                    ]
+                },
+                {
+                    "GAME": "Borrowed Letters Game",
+                    "DIFFICULTY": "easy",
+                    "CATEGORY": "alphabet",
+                    "UUID": "2fbeffbb-8975-4fb2-9eee-0bb518ea094b",
+                    "INFO": {
+                        "description": "Learn about letters borrowed from other languages and how they are used in Filipino.",
+                        "objective": "Be able to identify and use borrowed letters in Filipino.",
+                        "instructions": [
+                            "Navigate through each of the given letters and review the examples given.",
+                            "When up for the task, you will face the brain blaster."
+                        ],
+                        "prep": {
+                            "introConcept": "In Filipino, some letters are borrowed from other languages and are used in specific words.",
+                            "exampleUsage": "For example, the letter 'f' is used in words like 'fabrika' (factory).",
+                            "gameTip": "Remember, these borrowed letters can change the meaning of a word, so pay close attention to them."
+                        }
+                    },
+                    "TEXT": [
+                        {
+                            "text": "f",
+                            "englishText": "f",
+                            "linkedText": "fabrika",
+                            "englishLinkedText": "factory",
+                            "helperText": "The letter 'f' is borrowed from Spanish and is used in words like 'fabrika' (factory).",
+                            "UUID": "c9d22cda-5976-49c5-8bcf-cdc24c821907"
+                        },
+                        {
+                            "text": "j",
+                            "englishText": "j",
+                            "linkedText": "jip",
+                            "englishLinkedText": "jeep",
+                            "helperText": "The letter 'j' is borrowed from Spanish and is used in words like 'jip' (jeep).",
+                            "UUID": "7fb66e98-1516-441d-a384-fa5107e36663"
+                        },
+                        {
+                            "text": "ñ",
+                            "englishText": "enye",
+                            "linkedText": "piñata",
+                            "englishLinkedText": "piñata",
+                            "helperText": "The letter 'ñ' is borrowed from Spanish and is used in words like 'piñata'.",
+                            "UUID": "d5da66d7-f172-42ca-8bfe-95c593d3a251"
+                        }
+                    ],
+                    "QUESTIONS": [
+                        {
+                            "question": "What is the borrowed letter in the word 'fabrika'?",
+                            "choices": [
+                                "f",
+                                "b",
+                                "k"
+                            ],
+                            "UUID": "422763ac-44c7-44b9-9973-ff1f29bac6c3"
+                        },
+                        {
+                            "question": "The letter 'j' is used in which word?",
+                            "choices": [
+                                "jip",
+                                "fabrika",
+                                "piñata"
+                            ],
+                            "UUID": "20385f09-252e-4201-9bf1-ea8b48d7dbbe"
+                        },
+                        {
+                            "question": "Which borrowed letter is used in the word 'piñata'?",
+                            "choices": [
+                                "ñ",
+                                "f",
+                                "j"
+                            ],
+                            "UUID": "73b1d9e3-7a5c-4c8d-ad44-d6dcd3e0e3a0"
+                        },
+                        {
+                            "question": "The letter 'f' is borrowed from Spanish.",
+                            "choices": [
+                                "True",
+                                "False"
+                            ],
+                            "UUID": "05f3920c-240d-4af4-8f9c-2e4b87480576"
                         }
                     ]
                 }
@@ -1688,18 +1574,18 @@
                             "When up for the task, you will face the brain blaster."
                         ],
                         "prep": {
-                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
-                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
-                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
+                            "introConcept": "In Spanish, the word for 'color' is the as it is in American English!",
+                            "exampleUsage": "To say that something is a color, use 'es color'. For example, 'La manzana es color roja.' (The apple is red.)",
+                            "gameTip": "Remember, colors often appear in everyday objects! Learn the words of common items like fruits or plants to help you remember."
                         }
                     },
                     "TEXT": [
                         {
                             "text": "rojo",
                             "englishText": "red",
-                            "linkedText": "La manzana es color roja.",
-                            "englishLinkedText": "The apple is red.",
-                            "helperText": "Rojo means 'red' in Spanish. It's used the same way as 'red' in English, like describing a red apple (manzana roja) or a red car (coche rojo).",
+                            "linkedText": "La tomate es color roja.",
+                            "englishLinkedText": "The tomato is red.",
+                            "helperText": "Rojo means 'red' in Spanish. Rojo describes a red tomato (tomate roja) or a red car (coche rojo). Notice the 'a' at the end of 'roja' to match the feminine noun 'tomate.' (Play the gender rules game to learn more on this)",
                             "UUID": "c36d98b9-b9cd-4b79-8a66-afe2d737d401"
                         },
                         {
@@ -1707,7 +1593,7 @@
                             "englishText": "green",
                             "linkedText": "La hierba es color verde.",
                             "englishLinkedText": "The grass is green.",
-                            "helperText": "Verde is similar to 'verdant,' which means green and lush in English. Think of green grass or trees.",
+                            "helperText": "Verde is similar to 'verdant,' which means green and lush in English. Think of green grass (hierba) or trees (árboles).",
                             "UUID": "9f1b9b62-a1e6-4145-935c-5af0f2b25bd1"
                         },
                         {
@@ -1715,7 +1601,7 @@
                             "englishText": "blue",
                             "linkedText": "El cielo es color azul.",
                             "englishLinkedText": "The sky is blue.",
-                            "helperText": "Azul means 'blue' in Spanish, similar to the color of the sky or the ocean.",
+                            "helperText": "Azul means 'blue' in Spanish, similar to the color of the sky (cielo) or the ocean (océano).",
                             "UUID": "471dca8a-5ee4-4a89-9a05-d51a10513449"
                         }
                     ],
@@ -1746,80 +1632,6 @@
                                 "verde"
                             ],
                             "UUID": "4962168c-14f5-428d-9641-3ff945edd558"
-                        }
-                    ]
-                },
-                {
-                    "GAME": "Colors Game",
-                    "DIFFICULTY": "easy",
-                    "CATEGORY": "word",
-                    "UUID": "d78730b7-50e9-4d30-8547-bf16175ac1aa",
-                    "INFO": {
-                        "description": "Welcome to the easy colors game! First, you will learn each color (red, green, and blue), then complete a quiz!",
-                        "objective": "Be able to identify the Spanish words for each color taught and know the Spanish words for common objects of those colors.",
-                        "instructions": [
-                            "Navigate through each of the given colors and review the examples given.",
-                            "When up for the task, you will face the brain blaster."
-                        ],
-                        "prep": {
-                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
-                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
-                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
-                        }
-                    },
-                    "TEXT": [
-                        {
-                            "text": "rojo",
-                            "englishText": "red",
-                            "linkedText": "La manzana es color roja.",
-                            "englishLinkedText": "The apple is red.",
-                            "helperText": "Rojo means 'red' in Spanish. It's used the same way as 'red' in English, like describing a red apple (manzana roja) or a red car (coche rojo).",
-                            "UUID": "f0307778-966d-4555-812b-0f96e95bc74a"
-                        },
-                        {
-                            "text": "verde",
-                            "englishText": "green",
-                            "linkedText": "La hierba es color verde.",
-                            "englishLinkedText": "The grass is green.",
-                            "helperText": "Verde is similar to 'verdant,' which means green and lush in English. Think of green grass or trees.",
-                            "UUID": "d5e0e5a5-9633-4f74-9da2-5ff700de2356"
-                        },
-                        {
-                            "text": "azul",
-                            "englishText": "blue",
-                            "linkedText": "El cielo es color azul.",
-                            "englishLinkedText": "The sky is blue.",
-                            "helperText": "Azul means 'blue' in Spanish, similar to the color of the sky or the ocean.",
-                            "UUID": "3755092b-f9f0-4e56-b92c-f946539c4839"
-                        }
-                    ],
-                    "QUESTIONS": [
-                        {
-                            "question": "What is the Spanish word for red?",
-                            "choices": [
-                                "rojo",
-                                "verde",
-                                "azul"
-                            ],
-                            "UUID": "75586c7d-3e49-435e-8dd7-ae2644e4af9a"
-                        },
-                        {
-                            "question": "Which color does 'verde' represent?",
-                            "choices": [
-                                "green",
-                                "red",
-                                "blue"
-                            ],
-                            "UUID": "aa1ede7f-85a6-4d7d-84e4-6aae2a9fbad4"
-                        },
-                        {
-                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
-                            "choices": [
-                                "azul",
-                                "rojo",
-                                "verde"
-                            ],
-                            "UUID": "5d8e56de-3edc-4c40-9a91-c5f980ec1f76"
                         }
                     ]
                 },
@@ -2170,104 +1982,6 @@
                                 "False"
                             ],
                             "UUID": "4cc14c23-c07b-467f-ae51-9089e30a6f02"
-                        }
-                    ]
-                },
-                {
-                    "GAME": "Colors Game",
-                    "DIFFICULTY": "easy",
-                    "CATEGORY": "word",
-                    "UUID": "2c9b897f-2c9a-42a6-a226-83555852f09e",
-                    "INFO": {
-                        "description": "Welcome to the easy colors game! First, you will learn each color (red, green, and blue), then complete a fun challenge.",
-                        "objective": "Be able to identify the Portuguese words for each color taught and know the Portuguese words for common objects of those colors.",
-                        "instructions": [
-                            "Navigate through each of the given colors and review the examples given.",
-                            "When ready, you will take on the brain blaster."
-                        ],
-                        "prep": {
-                            "introConcept": "In Portuguese, the word for 'color' is 'cor.'",
-                            "exampleUsage": "To say that something is a color, use 'é da cor' followed by the color. For example, 'A maçã é da cor vermelha.' (The apple is red.)",
-                            "gameTip": "Colors often appear in everyday objects! Think of common items like fruits (frutas) or plants (plantas) to help you remember."
-                        }
-                    },
-                    "TEXT": [
-                        {
-                            "text": "vermelho",
-                            "englishText": "red",
-                            "linkedText": "A maçã é da cor vermelha.",
-                            "englishLinkedText": "The apple is red.",
-                            "helperText": "Vermelho means 'red' in Portuguese. It describes things like a red apple (maçã vermelha) or a red car (carro vermelho).",
-                            "UUID": "b8758d09-bdb0-49fe-a146-4760f3e0013b"
-                        },
-                        {
-                            "text": "verde",
-                            "englishText": "green",
-                            "linkedText": "A grama é da cor verde.",
-                            "englishLinkedText": "The grass is green.",
-                            "helperText": "Verde means 'green' in Portuguese, used for grass (grama) or trees (árvores).",
-                            "UUID": "d2957fd1-ff91-4a6c-9e11-9d604dd021ff"
-                        },
-                        {
-                            "text": "azul",
-                            "englishText": "blue",
-                            "linkedText": "O céu é da cor azul.",
-                            "englishLinkedText": "The sky is blue.",
-                            "helperText": "Azul means 'blue' in Portuguese, similar to the color of the sky (céu) or the ocean (oceano).",
-                            "UUID": "09f57970-96d6-4256-95c8-b0a7b3a661cf"
-                        }
-                    ],
-                    "QUESTIONS": [
-                        {
-                            "question": "What is the Portuguese word for red?",
-                            "choices": [
-                                "vermelho",
-                                "verde",
-                                "azul"
-                            ],
-                            "UUID": "62be6f78-9820-4576-94c0-3a67401c849c"
-                        },
-                        {
-                            "question": "Which color does 'verde' represent?",
-                            "choices": [
-                                "green",
-                                "red",
-                                "blue"
-                            ],
-                            "UUID": "5ea6d48a-e02d-47f6-82dd-fc7286b29c76"
-                        },
-                        {
-                            "question": "What is the Portuguese word for blue?",
-                            "choices": [
-                                "azul",
-                                "vermelho",
-                                "verde"
-                            ],
-                            "UUID": "28e0237b-5930-44b3-aef2-9da56e847732"
-                        },
-                        {
-                            "question": "O céu é da cor azul.",
-                            "choices": [
-                                "True",
-                                "False"
-                            ],
-                            "UUID": "16590f16-634a-479d-8a10-b34e8284e604"
-                        },
-                        {
-                            "question": "A maçã é da cor azul.",
-                            "choices": [
-                                "False",
-                                "True"
-                            ],
-                            "UUID": "f5abc402-83c3-4ee5-a837-960a0f3f68f7"
-                        },
-                        {
-                            "question": "The word for 'sky' in Portuguese is 'céu.'",
-                            "choices": [
-                                "True",
-                                "False"
-                            ],
-                            "UUID": "a1619841-693f-42f8-a905-f2357096f8f3"
                         }
                     ]
                 },
