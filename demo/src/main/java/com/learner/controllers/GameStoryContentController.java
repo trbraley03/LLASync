@@ -3,6 +3,9 @@ package com.learner.controllers;
 import java.io.IOException;
 
 import com.learner.game.App;
+import com.learner.model.Difficulty;
+import com.learner.model.Facade;
+import com.learner.model.Language;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +14,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class GameStoryContentController {
+
+    private final Facade facade = Facade.getInstance();
+    private final Language currentLanguage = facade.getCurrentLanguage();
+    private final Difficulty currentDifficulty = facade.getCurrentDifficulty();
 
     @FXML
     private Button backButton;
