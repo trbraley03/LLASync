@@ -1,7 +1,6 @@
 package com.learner.controllers;
 
 import java.io.IOException;
-import java.util.UUID;
 
 import com.learner.game.App;
 import com.learner.model.Facade;
@@ -32,11 +31,11 @@ public class ProgressTrackerController {
     }
 
     private void updateProgressBar() {
-        int totalGames = facade.getCurrentTextObjectIndex();
+        int totalGames = facade.getTotalNumberOfGames();
         int completedGames = facade.getTotalNumberOfCompletedGames();
         double progress = 0.0;
         if (completedGames != 0) {
-            progress = (double) totalGames / (double) completedGames;
+            progress = (double) completedGames / (double) totalGames;
         }
         System.out.println("Progress: " + progress);
         gamesCompletedBar.setProgress(progress);

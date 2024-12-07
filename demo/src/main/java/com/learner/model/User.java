@@ -121,7 +121,6 @@ public class User {
                 return tracker;
             }
         }
-        // addProgressTracker(ProgressTracker tracker)
         return null;
     }
 
@@ -175,7 +174,7 @@ public class User {
     public int getTotalNumberOfCompletedGames() {
         int total = 0;
         for (Language lang : GameManager.getInstance().getAllLanguages()) {
-            total += getProgressTracker(lang.getUUID()).completedGames.size();
+            total += getNumberOfCompletedGames(lang.getUUID());
         }
         return total;
     }

@@ -225,6 +225,10 @@ public class Facade {
         return currentUser.getNumberOfCompletedGames(currentLanguage.getUUID());
     }
 
+    public int getTotalNumberOfGames() {
+        return gameManager.getTotalNumberOfGames();
+    }
+
     public ArrayList<Game> getAvailableGames() {
         return (currentLanguage != null && currentDifficulty != null) 
             ? getAvailableGames(currentLanguage.getUUID(), currentDifficulty) 
