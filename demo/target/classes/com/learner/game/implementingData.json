@@ -232,9 +232,6 @@
                     ]
                 }
             ]
-        }
-    ]
-}
         },
         {
             "LANG": "Spanish",
@@ -359,7 +356,7 @@
                                     "question": "If 'azul' means blue, what color is the sky in Spanish?",
                                     "choices": ["azul", "rojo", "verde"],
                                     "UUID": "e53bdb0a-501a-446b-a6db-b1de6316df7c"
-                                }
+                                },
                                 {
                                     "GAME": "Colors Game",
                                     "DIFFICULTY": "Hard",
@@ -404,7 +401,7 @@
                                             "UUID": "55851b93-74a6-406a-a0b1-26271a7fc5d7"
                                         }
                                         ]
-                                        },  //why duplicate object key
+                                        },  
                                         "QUESTIONS": [
                                             {
                                                 "question": "What is the Spanish word for red?",
@@ -422,7 +419,7 @@
                                                 "UUID": "26d3e577-b9db-4d9f-80c2-4a393cff6eef"
                                             }
                                         ]
-                                        }
+                                        },
                                    
                         {
                             "LANG": "Portuguese",
@@ -506,162 +503,162 @@
                                     ]
                                 }
                             ]
-                        }
+                        },
                         {
-                            "GAME": "Colors Game",
-                            "DIFFICULTY": "medium",
-                            "CATEGORY": "word",
-                            "UUID": "a19d088d-1010-4982-ab13-81a6f2ed7f4b",
-                            "INFO": {
-                                "description": "Welcome to the medium colors game! First, you will learn each color (red, green, and blue), then complete a fun challenge.",
-                                "objective": "Be able to identify the Portuguese words for each color taught and know the Portuguese words for common objects of those colors.",
-                                "instructions": [
-                                    "Navigate through each of the given colors and review the examples given.",
-                                    "When ready, you will take on the brain blaster."
+    "GAME": "Colors Game",
+    "DIFFICULTY": "medium",
+    "CATEGORY": "word",
+    "UUID": "a19d088d-1010-4982-ab13-81a6f2ed7f4b",
+    "INFO": {
+        "description": "Welcome to the medium colors game! First, you will learn each color (red, green, and blue), then complete a fun challenge.",
+        "objective": "Be able to identify the Portuguese words for each color taught and know the Portuguese words for common objects of those colors.",
+        "instructions": [
+            "Navigate through each of the given colors and review the examples given.",
+            "When ready, you will take on the brain blaster."
+        ],
+        "prep": {
+            "introConcept": "In Portuguese, the word for 'color' is 'cor.'",
+            "exampleUsage": "To say that something is a color, use 'é da cor' followed by the color. For example, 'A maçã é da cor vermelha.' (The apple is red.)",
+            "gameTip": "Colors often appear in everyday objects! Think of common items like fruits (frutas) or plants (plantas) to help you remember."
+        }
+    },
+    "TEXT": [
+        {
+            "text": "vermelho",
+            "englishText": "red",
+            "linkedText": "A maçã é da cor vermelha.",
+            "englishLinkedText": "The apple is red.",
+            "helperText": "Vermelho means 'red' in Portuguese. It describes things like a red apple (maçã vermelha) or a red car (carro vermelho).",
+            "UUID": "b26dcb15-8666-4b1b-b9c8-d15500afc7ba"
+        },
+        {
+            "text": "verde",
+            "englishText": "green",
+            "linkedText": "A grama é da cor verde.",
+            "englishLinkedText": "The grass is green.",
+            "helperText": "Verde means 'green' in Portuguese, used for grass (grama) or trees (árvores).",
+            "UUID": "bbf22ba1-47a7-4459-ad00-719e51c3ea96"
+        },
+        {
+            "text": "azul",
+            "englishText": "blue",
+            "linkedText": "O céu é da cor azul.",
+            "englishLinkedText": "The sky is blue.",
+            "helperText": "Azul means 'blue' in Portuguese, similar to the color of the sky (céu) or the ocean (oceano).",
+            "UUID": "d778b345-1f71-402a-b220-b2f8af7cb80f"
+        }
+    ],
+    "QUESTIONS": [
+        {
+            "question": "What is the Portuguese word for red?",
+            "choices": ["vermelho", "verde", "azul"],
+            "UUID": "afdbc6cf-26a6-4af5-b11a-ac403eb5a054"
+        },
+        {
+            "question": "Which color does 'verde' represent?",
+            "choices": ["green", "red", "blue"],
+            "UUID": "d20d0ba7-d8ef-4f1f-983f-c599c447c35d"
+        },
+        {
+            "question": "What is the Portuguese word for blue?",
+            "choices": ["azul", "vermelho", "verde"],
+            "UUID": "ad9e7c40-67cf-4e8f-a70b-73e8f27ce360"
+        },
+        {
+            "question": "O céu é da cor azul.",
+            "choices": ["True", "False"],
+            "UUID": "c28906c7-50da-455b-bce5-ccda046b155d"
+        },
+        {
+            "question": "A maçã é da cor azul.",
+            "choices": ["False", "True"],
+            "UUID": "1f41b764-31fe-4de4-b2f8-65adefecf23e"
+        },
+        {
+            "question": "The word for 'sky' in Portuguese is 'céu.'",
+            "choices": ["True", "False"],
+            "UUID": "ca0e4ffa-f101-4f36-94a4-8cfdc20f9ec3"
+        }
+    ]
+},
+                            {
+                                "GAME": "Colors Game",
+                                "DIFFICULTY": "Hard",
+                                "CATEGORY": "word",
+                                "UUID": "64a7d702-5177-40ad-8d31-712e9b5b9201",
+                                "INFO": {
+                                    "description": "Welcome to the Hard colors game! First, you will learn each color (red, green, and blue), then complete a fun challenge.",
+                                    "objective": "Be able to identify the Portuguese words for each color taught and know the Portuguese words for common objects of those colors.",
+                                    "instructions": [
+                                        "Navigate through each of the given colors and review the examples given.",
+                                        "When ready, you will take on the brain blaster."
+                                    ],
+                                    "prep": {
+                                        "introConcept": "In Portuguese, the word for 'color' is 'cor.'",
+                                        "exampleUsage": "To say that something is a color, use 'é da cor' followed by the color. For example, 'A maçã é da cor vermelha.' (The apple is red.)",
+                                        "gameTip": "Colors often appear in everyday objects! Think of common items like fruits (frutas) or plants (plantas) to help you remember."
+                                    }
+                                },
+                                "TEXT": [
+                                    {
+                                        "text": "vermelho",
+                                        "englishText": "red",
+                                        "linkedText": "A maçã é da cor vermelha.",
+                                        "englishLinkedText": "The apple is red.",
+                                        "helperText": "Vermelho means 'red' in Portuguese. It describes things like a red apple (maçã vermelha) or a red car (carro vermelho).",
+                                        "UUID": "45563f78-cd1e-4e8f-938a-dc938caed37e"
+                                    },
+                                    {
+                                        "text": "verde",
+                                        "englishText": "green",
+                                        "linkedText": "A grama é da cor verde.",
+                                        "englishLinkedText": "The grass is green.",
+                                        "helperText": "Verde means 'green' in Portuguese, used for grass (grama) or trees (árvores).",
+                                        "UUID": "54f1ff80-0053-466a-96ec-dbe6c836a232"
+                                    },
+                                    {
+                                        "text": "azul",
+                                        "englishText": "blue",
+                                        "linkedText": "O céu é da cor azul.",
+                                        "englishLinkedText": "The sky is blue.",
+                                        "helperText": "Azul means 'blue' in Portuguese, similar to the color of the sky (céu) or the ocean (oceano).",
+                                        "UUID": "acafed06-91aa-4ad6-aa74-eee7b6a771a0"
+                                    }
                                 ],
-                                "prep": {
-                                    "introConcept": "In Portuguese, the word for 'color' is 'cor.'",
-                                    "exampleUsage": "To say that something is a color, use 'é da cor' followed by the color. For example, 'A maçã é da cor vermelha.' (The apple is red.)",
-                                    "gameTip": "Colors often appear in everyday objects! Think of common items like fruits (frutas) or plants (plantas) to help you remember."
-                                }
-                            },
-                            "TEXT": [
-                                {
-                                    "text": "vermelho",
-                                    "englishText": "red",
-                                    "linkedText": "A maçã é da cor vermelha.",
-                                    "englishLinkedText": "The apple is red.",
-                                    "helperText": "Vermelho means 'red' in Portuguese. It describes things like a red apple (maçã vermelha) or a red car (carro vermelho).",
-                                    "UUID": "b26dcb15-8666-4b1b-b9c8-d15500afc7ba"
-                                },
-                                {
-                                    "text": "verde",
-                                    "englishText": "green",
-                                    "linkedText": "A grama é da cor verde.",
-                                    "englishLinkedText": "The grass is green.",
-                                    "helperText": "Verde means 'green' in Portuguese, used for grass (grama) or trees (árvores).",
-                                    "UUID": "bbf22ba1-47a7-4459-ad00-719e51c3ea96"
-                                },
-                                {
-                                    "text": "azul",
-                                    "englishText": "blue",
-                                    "linkedText": "O céu é da cor azul.",
-                                    "englishLinkedText": "The sky is blue.",
-                                    "helperText": "Azul means 'blue' in Portuguese, similar to the color of the sky (céu) or the ocean (oceano).",
-                                    "UUID": "d778b345-1f71-402a-b220-b2f8af7cb80f"
-                                }
-                            ],
-                            "QUESTIONS": [
-                                {
-                                    "question": "What is the Portuguese word for red?",
-                                    "choices": ["vermelho", "verde", "azul"],
-                                    "UUID": "afdbc6cf-26a6-4af5-b11a-ac403eb5a054"
-                                },
-                                {
-                                    "question": "Which color does 'verde' represent?",
-                                    "choices": ["green", "red", "blue"],
-                                    "UUID": "d20d0ba7-d8ef-4f1f-983f-c599c447c35d"
-                                },
-                                {
-                                    "question": "What is the Portuguese word for blue?",
-                                    "choices": ["azul", "vermelho", "verde"],
-                                    "UUID": "ad9e7c40-67cf-4e8f-a70b-73e8f27ce360"
-                                },
-                                {
-                                    "question": "O céu é da cor azul.",
-                                    "choices": ["True", "False"],
-                                    "UUID": "c28906c7-50da-455b-bce5-ccda046b155d"
-                                },
-                                {
-                                    "question": "A maçã é da cor azul.",
-                                    "choices": ["False", "True"],
-                                    "UUID": "1f41b764-31fe-4de4-b2f8-65adefecf23e"
-                                },
-                                {
-                                    "question": "The word for 'sky' in Portuguese is 'céu.'",
-                                    "choices": ["True", "False"],
-                                    "UUID": "ca0e4ffa-f101-4f36-94a4-8cfdc20f9ec3"
-                                }
+                                "QUESTIONS": [
+                                    {
+                                        "question": "What is the Portuguese word for red?",
+                                        "choices": ["vermelho", "verde", "azul"],
+                                        "UUID": "edd08bd5-c7a7-4e68-8775-7204fecbcde7"
+                                    },
+                                    {
+                                        "question": "Which color does 'verde' represent?",
+                                        "choices": ["green", "red", "blue"],
+                                        "UUID": "58c7b02d-05ea-4cc9-8865-a5b554a0b4fe"
+                                    },
+                                    {
+                                        "question": "What is the Portuguese word for blue?",
+                                        "choices": ["azul", "vermelho", "verde"],
+                                        "UUID": "1d511ea9-5359-4b42-a0cc-1d9c302f5a32"
+                                    },
+                                    {
+                                        "question": "O céu é da cor azul.",
+                                        "choices": ["True", "False"],
+                                        "UUID": "58d0f58c-1021-4e76-b508-2c1a0b81ffaf"
+                                    },
+                                    {
+                                        "question": "A maçã é da cor azul.",
+                                        "choices": ["False", "True"],
+                                        "UUID": "f8a361b9-55c8-4d9d-a5d6-883a4b65ef07"
+                                    },
+                                    {
+                                        "question": "The word for 'sky' in Portuguese is 'céu.'",
+                                        "choices": ["True", "False"],
+                                        "UUID": "2a5ffe88-7c52-4665-b940-aa1584836690"
+                                    }
                             ]
-                        }
-                        {
-                            "GAME": "Colors Game",
-                            "DIFFICULTY": "Hard",
-                            "CATEGORY": "word",
-                            "UUID": "64a7d702-5177-40ad-8d31-712e9b5b9201",
-                            "INFO": {
-                                "description": "Welcome to the Hard colors game! First, you will learn each color (red, green, and blue), then complete a fun challenge.",
-                                "objective": "Be able to identify the Portuguese words for each color taught and know the Portuguese words for common objects of those colors.",
-                                "instructions": [
-                                    "Navigate through each of the given colors and review the examples given.",
-                                    "When ready, you will take on the brain blaster."
-                                ],
-                                "prep": {
-                                    "introConcept": "In Portuguese, the word for 'color' is 'cor.'",
-                                    "exampleUsage": "To say that something is a color, use 'é da cor' followed by the color. For example, 'A maçã é da cor vermelha.' (The apple is red.)",
-                                    "gameTip": "Colors often appear in everyday objects! Think of common items like fruits (frutas) or plants (plantas) to help you remember."
-                                }
-                            },
-                            "TEXT": [
-                                {
-                                    "text": "vermelho",
-                                    "englishText": "red",
-                                    "linkedText": "A maçã é da cor vermelha.",
-                                    "englishLinkedText": "The apple is red.",
-                                    "helperText": "Vermelho means 'red' in Portuguese. It describes things like a red apple (maçã vermelha) or a red car (carro vermelho).",
-                                    "UUID": "45563f78-cd1e-4e8f-938a-dc938caed37e"
-                                },
-                                {
-                                    "text": "verde",
-                                    "englishText": "green",
-                                    "linkedText": "A grama é da cor verde.",
-                                    "englishLinkedText": "The grass is green.",
-                                    "helperText": "Verde means 'green' in Portuguese, used for grass (grama) or trees (árvores).",
-                                    "UUID": "54f1ff80-0053-466a-96ec-dbe6c836a232"
-                                },
-                                {
-                                    "text": "azul",
-                                    "englishText": "blue",
-                                    "linkedText": "O céu é da cor azul.",
-                                    "englishLinkedText": "The sky is blue.",
-                                    "helperText": "Azul means 'blue' in Portuguese, similar to the color of the sky (céu) or the ocean (oceano).",
-                                    "UUID": "acafed06-91aa-4ad6-aa74-eee7b6a771a0"
-                                }
-                            ],
-                            "QUESTIONS": [
-                                {
-                                    "question": "What is the Portuguese word for red?",
-                                    "choices": ["vermelho", "verde", "azul"],
-                                    "UUID": "edd08bd5-c7a7-4e68-8775-7204fecbcde7"
-                                },
-                                {
-                                    "question": "Which color does 'verde' represent?",
-                                    "choices": ["green", "red", "blue"],
-                                    "UUID": "58c7b02d-05ea-4cc9-8865-a5b554a0b4fe"
-                                },
-                                {
-                                    "question": "What is the Portuguese word for blue?",
-                                    "choices": ["azul", "vermelho", "verde"],
-                                    "UUID": "1d511ea9-5359-4b42-a0cc-1d9c302f5a32"
-                                },
-                                {
-                                    "question": "O céu é da cor azul.",
-                                    "choices": ["True", "False"],
-                                    "UUID": "58d0f58c-1021-4e76-b508-2c1a0b81ffaf"
-                                },
-                                {
-                                    "question": "A maçã é da cor azul.",
-                                    "choices": ["False", "True"],
-                                    "UUID": "f8a361b9-55c8-4d9d-a5d6-883a4b65ef07"
-                                },
-                                {
-                                    "question": "The word for 'sky' in Portuguese is 'céu.'",
-                                    "choices": ["True", "False"],
-                                    "UUID": "2a5ffe88-7c52-4665-b940-aa1584836690"
-                                }
-                            ]
-                        }
-                                    //Numbers game
+                        },
+                                  
                                     {
                                         "LANG": "Filipino",
                                         "UUID": "d8075a52-a17e-41f9-988d-67faae138c89",
@@ -1018,7 +1015,7 @@
                                                                 "question": "If 'azul' means blue, what color is the sky in Spanish?",
                                                                 "choices": ["azul", "rojo", "verde"],
                                                                 "UUID": "4a2fb3c6-35cc-4226-9697-e2e5b135114e"
-                                                            }
+                                                            },
                                                             {
                                                                 "GAME": "Numbers Game",
                                                                 "DIFFICULTY": "Hard",
@@ -1311,7 +1308,7 @@
                                                                         "question": "The word for 'sky' in Portuguese is 'céu.'",
                                                                         "choices": ["True", "False"],
                                                                         "UUID": "21d56c9c-28b5-4e3d-bc89-85dac00da737"
-                                                                    } //letters game
+                                                                    }, 
                 {
                     "LANG": "Filipino",
                     "UUID": "d8075a52-a17e-41f9-988d-67faae138c89",
@@ -1668,7 +1665,7 @@
                                             "question": "If 'azul' means blue, what color is the sky in Spanish?",
                                             "choices": ["azul", "rojo", "verde"],
                                             "UUID": "4a2fb3c6-35cc-4226-9697-e2e5b135114e"
-                                        }
+                                        },
                                         {
                                             "GAME": "Numbers Game",
                                             "DIFFICULTY": "Hard",
@@ -1961,7 +1958,7 @@
                                                 "question": "The word for 'sky' in Portuguese is 'céu.'",
                                                 "choices": ["True", "False"],
                                                 "UUID": "21d56c9c-28b5-4e3d-bc89-85dac00da737"
-                                            } 
+                                            }, 
         {
             "LANG": "Filipino",
             "UUID": "764aea0a-e70c-4952-9969-0dea930fc2ec",
@@ -2318,7 +2315,7 @@
                                     "question": "If 'azul' means blue, what color is the sky in Spanish?",
                                     "choices": ["azul", "rojo", "verde"],
                                     "UUID": "c07a5d83-79bc-49b6-9b78-b722dbdbf1a8"
-                                }
+                                },
                                 {
                                     "GAME": "Letters Game",
                                     "DIFFICULTY": "Hard",
@@ -2611,12 +2608,13 @@
                                         "question": "The word for 'sky' in Portuguese is 'céu.'",
                                         "choices": ["True", "False"],
                                         "UUID": "d4fb97f9-2561-47a2-ba3d-796cdaee4264"
-                                    }                                                    
-
+                                    }
+                                
+                            ]
+                        }
                     ]
-                }
+                }        
             ]
-        }        
-    ]
-}
+        }
+
 
