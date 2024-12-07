@@ -78,6 +78,22 @@ public class Facade {
         return userList.registerUser(email, username, displayName, password);
     }
 
+    public String changeEmail(String email) {
+        return currentUser.changeEmail(email);
+    }
+
+    public String changeUsername(String username) {
+        return currentUser.changeUsername(username);
+    }
+
+    public String changeDisplayName(String displayName) {
+        return currentUser.changeDisplayName(displayName);
+    }
+
+    public String changePassword(String password) {
+        return currentUser.changePassword(password);
+    }
+
     public void logoutUser() {
         // DataWriter.writeUserData(DataConstants.USER_FILE);
         currentUser = null;

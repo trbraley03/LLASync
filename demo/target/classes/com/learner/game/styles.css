@@ -140,6 +140,26 @@
     -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
+.settings-textboxes {
+    -fx-min-width: 300px;
+    -fx-max-width: 300px;
+
+    -fx-min-height: 30px;
+    -fx-max-height: 30px;
+}
+
+.settings-update-buttons {
+    -fx-min-width: 50px;
+    -fx-max-width: 50px;
+
+    -fx-min-height: 20px;
+    -fx-max-height: 20px;
+
+    -fx-font-size: 10px;
+}
+
+
+
 /* Styling for text */
 .title {
     -fx-font-size: 38px;

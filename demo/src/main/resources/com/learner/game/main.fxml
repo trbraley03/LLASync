@@ -38,7 +38,7 @@
             <Font size="11.0" />
          </font>
       </Button>
-      <ImageView fx:id="profileButton" fitHeight="55.0" fitWidth="55.0" onMouseClicked="#makeOptionsVisible" pickOnBounds="true" preserveRatio="true" translateX="-300.0" translateY="-300.0">
+      <ImageView fx:id="profileButton" fitHeight="55.0" fitWidth="55.0" onMouseClicked="#makeOptionsVisible" pickOnBounds="true" preserveRatio="true" styleClass="button" translateX="-300.0" translateY="-300.0">
          <image>
             <Image url="@profile_picture.png" />
          </image>

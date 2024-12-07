@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.learner.game.App;
 import com.learner.model.Facade;
+import com.learner.model.innerdata.GameCategory;
 import com.learner.model.questions.FITBQuestion;
 import com.learner.model.questions.MatchingQuestion;
 import com.learner.model.questions.MultipleChoiceQuestion;
@@ -44,7 +45,11 @@ public class GameOutroController implements Initializable {
 
     @FXML
     private void goBackToPreviousGameScreen(ActionEvent event) throws IOException {
-        App.setRoot("gameDefaultContentScreen");
+        if(facade.getCurrentGame().getCategory() == GameCategory.STORY) {
+            App.setRoot("gameStoryContentScreen");
+        } else {
+            App.setRoot("gameDefaultContentScreen");
+        }
     }
 
     @FXML

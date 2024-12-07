@@ -39,6 +39,23 @@ public class TextObject {
         this.gameUUID = gameUUID;
     }
 
+    /**
+     * For stories
+     * @param text
+     * @param englishText
+     * @param uuid
+     * @param gameUUID
+     */
+    public TextObject(String text, String englishText, UUID uuid, UUID gameUUID) {
+        this.text = text;
+        this.englishText = englishText;
+        this.linkedText = "";
+        this.englishLinkedText = "";
+        this.helperText = "";
+        this.uuid = uuid;
+        this.gameUUID = gameUUID;
+    }
+
     // UUID and GameUUID getters
     public UUID getUUID() {
         return uuid;

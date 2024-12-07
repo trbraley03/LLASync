@@ -10,12 +10,16 @@ import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 
 import com.learner.game.App;
+import com.learner.model.Facade;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -23,7 +27,11 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class SettingsController implements Initializable{
+
+    private Facade facade = Facade.getInstance();
+
     private FileChooser fileChooser = new FileChooser();
+
     @FXML
     private TextField UserBox;
 
@@ -58,23 +66,67 @@ public class SettingsController implements Initializable{
     private Button updateUsernameButton;
 
     @FXML
-    void updateDisplayname(ActionEvent event) {
-
+    private void updateEmail(ActionEvent event) {
+        if (!emailBox.getText().isEmpty()) {
+            String newEmail = emailBox.getText();
+            Alert confirmationAlert = new Alert(AlertType.CONFIRMATION, "Are you sure you would like to change your email to " + newEmail + "?", ButtonType.YES, ButtonType.CANCEL);
+            confirmationAlert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.YES) {
+                    boolean success = facade.changeEmail(newEmail).equals("Email changed successfully");
+                    showResultAlert(success, "Email");
+                }
+            });
+        }
     }
 
     @FXML
-    void updateEmail(ActionEvent event) {
-
+    private void updatePassword(ActionEvent event) {
+        if (!passwordBox.getText().isEmpty()) {
+            String newPassword = passwordBox.getText();
+            Alert confirmationAlert = new Alert(AlertType.CONFIRMATION, "Are you sure you would like to change your password?", ButtonType.YES, ButtonType.CANCEL);
+            confirmationAlert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.YES) {
+                    boolean success = facade.changePassword(newPassword).equals("Password changed successfully");
+                    showResultAlert(success, "Password");
+                }
+            });
+        }
     }
 
     @FXML
-    void updatePassword(ActionEvent event) {
-
+    private void updateUsername(ActionEvent event) {
+        if (!UserBox.getText().isEmpty()) {
+            String newUsername = UserBox.getText();
+            Alert confirmationAlert = new Alert(AlertType.CONFIRMATION, "Are you sure you would like to change your username to " + newUsername + "?", ButtonType.YES, ButtonType.CANCEL);
+            confirmationAlert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.YES) {
+                    boolean success = facade.changeUsername(newUsername).equals("Username changed successfully");
+                    showResultAlert(success, "Username");
+                }
+            });
+        }
     }
 
     @FXML
-    void updateUsername(ActionEvent event) {
+    private void updateDisplayname(ActionEvent event) {
+        if (!displaybox.getText().isEmpty()) {
+            String newDisplayName = displaybox.getText();
+            Alert confirmationAlert = new Alert(AlertType.CONFIRMATION, "Are you sure you would like to change your display name to " + newDisplayName + "?", ButtonType.YES, ButtonType.CANCEL);
+            confirmationAlert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.YES) {
+                    boolean success = facade.changeDisplayName(newDisplayName).equals("Display Name changed successfully");
+                    showResultAlert(success, "Display Name");
+                }
+            });
+        }
+    }
 
+    private void showResultAlert(boolean success, String field) {
+        Alert resultAlert = new Alert(success ? AlertType.INFORMATION : AlertType.ERROR);
+        resultAlert.setTitle(success ? "Success" : "Failure");
+        resultAlert.setHeaderText(null);
+        resultAlert.setContentText(success ? field + " changed successfully!" : "Failed to change " + field + ".");
+        resultAlert.showAndWait();
     }
 
 

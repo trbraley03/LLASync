@@ -91,6 +91,13 @@ public class UserList {
         return result;
     }
 
+    public void replaceUser(User user) {
+
+        users.removeIf(u -> u.getUUID().equals(user.getUUID()));
+
+        users.add(user);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
