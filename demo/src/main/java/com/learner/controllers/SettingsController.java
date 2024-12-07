@@ -45,7 +45,7 @@ public class SettingsController implements Initializable{
     private TextField emailBox;
 
     @FXML
-    private Button fileSelectButton;
+    private Button updateProfilePicture;
 
     @FXML
     private TextField passwordBox;
