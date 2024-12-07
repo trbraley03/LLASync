@@ -6,8 +6,10 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 import com.learner.controllers.GameOutroController;
+import com.learner.game.App;
 import com.learner.model.Facade;
 import com.learner.model.questions.FITBQuestion;
+import com.learner.narration.Narrator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +17,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 public class FITBQuestionController implements Initializable {
@@ -42,6 +46,16 @@ public class FITBQuestionController implements Initializable {
     @FXML
     private Label title;
 
+    @FXML
+    private ImageView audioButton;
+
+    @FXML
+    private ImageView exitButton;
+
+    @FXML
+    private void playAudio(MouseEvent event) {
+        Narrator.playSound(questionText.getText());
+    }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -68,12 +82,14 @@ public class FITBQuestionController implements Initializable {
             correctAnswerDisplayText.setText(getEncouragement());
             correctOrIncorrectText.setVisible(true);
             correctAnswerDisplayText.setVisible(true);
+            Narrator.playSound("Correct! Well done.");
         } else {
             correctOrIncorrectText.setText("Incorrect");
             correctOrIncorrectText.setStyle("-fx-fill: red;");
             correctAnswerDisplayText.setText("Expected Answer: " + currentQuestion.getAnswer());
             correctOrIncorrectText.setVisible(true);
             correctAnswerDisplayText.setVisible(true);
+            Narrator.playSound("Incorrect! Better luck next time.");
         }
         submit.setText("Continue");
     }
@@ -88,4 +104,8 @@ public class FITBQuestionController implements Initializable {
         GameOutroController.directQuestion(facade.getNextQuizQuestion());
     }
 
+    @FXML
+    private void goToMain(MouseEvent event) throws IOException {
+        App.setRoot("main");
+    }
 }

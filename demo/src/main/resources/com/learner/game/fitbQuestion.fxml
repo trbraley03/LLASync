@@ -31,6 +31,11 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
+                  <ImageView fx:id="audioButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#playAudio" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@fxml-images/audio-icon.png" />
+                     </image>
+                  </ImageView>
                   <TextField fx:id="answerBox" alignment="CENTER" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0">
                      <font>
                         <Font size="11.0" />
@@ -57,9 +62,9 @@
          </opaqueInsets>
       </VBox>
       <Button fx:id="submit" mnemonicParsing="false" onAction="#submitQuestion" text="Submit" />
-      <ImageView fx:id="exitButton" accessibleRole="BUTTON" fitHeight="51.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true" styleClass="exit-button" translateX="336.0" translateY="-392.0">
+      <ImageView fx:id="exitButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#goToMain" pickOnBounds="true" preserveRatio="true" translateX="320.0" translateY="-380.0">
          <image>
-            <Image url="@fmxl-images/exit.png" />
+            <Image url="@fxml-images/exit.png" />
          </image>
       </ImageView>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" />

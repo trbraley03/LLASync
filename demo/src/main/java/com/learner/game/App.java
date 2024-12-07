@@ -20,7 +20,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Image icon = new Image(getClass().getResourceAsStream("/com/learner/game/fmxl-images/logo.png"));
+        Image icon = new Image(getClass().getResourceAsStream("/com/learner/game/fxml-images/logo.png"));
         stage.getIcons().add(icon); 
         stage.setTitle("HelloLanguage");
         stage.setResizable(false); // Make windows non-resizable

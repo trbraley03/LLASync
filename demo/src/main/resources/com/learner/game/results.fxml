@@ -27,12 +27,12 @@
                <children>
                   <ImageView fx:id="greenCheck" fitHeight="100.0" fitWidth="100.0" translateX="50.0">
                      <image>
-                        <Image url="@fmxl-images/green-check.png" />
+                        <Image url="@fxml-images/green-check.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="redCheck" fitHeight="100.0" fitWidth="100.0" translateX="-50.0" visible="false">
                      <image>
-                        <Image url="@fmxl-images/red-x.png" />
+                        <Image url="@fxml-images/red-x.png" />
                      </image>
                   </ImageView>
                </children>
