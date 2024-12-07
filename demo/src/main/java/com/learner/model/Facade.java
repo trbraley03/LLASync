@@ -3,6 +3,7 @@ package com.learner.model;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import com.learner.model.innerdata.TextObject;
 import com.learner.model.loadwrite.DataConstants;
 import com.learner.model.loadwrite.DataLoader;
 import com.learner.model.questions.Question;
@@ -10,18 +11,16 @@ import com.learner.model.questions.Question;
 public class Facade {
 
     private static Facade instance;
-    private final FacadeForGame gameFacade;
     private final GameManager gameManager = GameManager.getInstance();
     private final UserList userList = UserList.getInstance();
 
     private Language currentLanguage;
     private Difficulty currentDifficulty;
     private Game currentGame;
-
     private User currentUser;
 
     private Facade() {
-        gameFacade = new FacadeForGame();
+        // Private constructor to enforce singleton pattern
     }
 
     public static Facade getInstance() {
@@ -63,17 +62,11 @@ public class Facade {
         User user = userList.login(email, password);
         if (user != null) {
             currentUser = user;
-            System.out.println("success");
             return true;
         }
-        System.out.println("failed");
         return false;
     }
 
-    /**
-     * If string returns as "true", then the user registered successfully,
-     * otherwise the issues with registration are returned as a string
-     */
     public String registerUser(String email, String username, String displayName, String password) {
         return userList.registerUser(email, username, displayName, password);
     }
@@ -95,7 +88,6 @@ public class Facade {
     }
 
     public void logoutUser() {
-        // DataWriter.writeUserData(DataConstants.USER_FILE);
         currentUser = null;
         currentLanguage = null;
         currentDifficulty = null;
@@ -114,31 +106,18 @@ public class Facade {
     }
 
     // Language and difficulty selection
-
     public ArrayList<Language> getAvailableLanguages() {
         return gameManager.getAllLanguages();
     }
 
-    /*
-     * Set current language by UUID
-     */
     public void selectLanguage(UUID langUUID) {
         currentLanguage = gameManager.getLanguageByUUID(langUUID);
     }
 
-    /*
-     * Set current language by UUID
-     */
     public void selectLanguage(String lang) {
         currentLanguage = gameManager.findLanguage(lang);
     }
 
-    /**
-     * Set current difficulty by UUID
-     * 
-     * @param difficulty
-     * @return
-     */
     public void selectDifficulty(Difficulty difficulty) {
         currentDifficulty = difficulty;
     }
@@ -147,96 +126,78 @@ public class Facade {
         currentDifficulty = gameManager.findDifficulty(difficulty);
     }
 
-    // Game-related methods delegated to GameFacade
-
-    public ArrayList<Game> getAvailableGames() {
-        return (currentLanguage != null && currentDifficulty != null) 
-            ? getAvailableGames(currentLanguage.getUUID(), currentDifficulty) 
-            : null;
-    }
-
-    private ArrayList<Game> getAvailableGames(UUID languageUUID, Difficulty difficulty) {
-        ArrayList<Game> games = new ArrayList<>();
-        for (Game game : gameManager.getGamesByDifficulty(languageUUID, difficulty)) {
-            games.add(game);
-        }
-        return games;
-    }
-
+    // Game management
     public boolean selectGame(UUID gameUUID) {
-        if(currentDifficulty == null || currentLanguage == null) {
+        if (currentDifficulty == null || currentLanguage == null) {
             return false;
         }
         currentGame = gameManager.findGameByUUID(gameUUID);
-        gameFacade.selectGame(currentGame);
         return true;
     }
 
-    // Navigation and quiz methods
-    // Uses gameFacade
-    
+    public int getCurrentTextObjectIndex() {
+        if (currentGame == null) {
+            throw new IllegalStateException("Current game is not set.");
+        }
+        return currentGame.getCurrentTextObjectIndex();
+    }
+
     public String showCurrentTextObject() {
-        return gameFacade.showCurrentTextObject();
+        TextObject textObject = currentGame.getCurrentTextObject();
+        return formatTextObjectContent(textObject);
     }
 
     public String getNextTextObject() {
-        return gameFacade.getNextTextObject();
+        currentGame.getNextTextObject();
+        return showCurrentTextObject();
     }
 
     public String getPreviousTextObject() {
-        return gameFacade.getPreviousTextObject();
-    }
-
-    public Question startQuiz() {
-        return gameFacade.startQuiz();
-    }
-
-    public Question getQuizQuestion() {
-        return gameFacade.getQuizQuestion();
-    }
-
-    public Question getNextQuizQuestion() {
-        return gameFacade.getNextQuizQuestion();
-    }
-
-    public boolean validateQuizAnswer(String answer) {
-        return gameFacade.validateQuizAnswer(answer);
-    }
-
-    public int getNumberOfQuizQuestions() {
-        return currentGame.getNumberOfQuizQuestions();
-    }
-
-    public int getNumberOfQuestionsAnsweredCorrectly() {
-        return currentGame.getNumberOfQuizQuestionAnsweredCorrectly();
-    }
-
-    public double getQuestionAverageResult() {
-        return (double)getNumberOfQuestionsAnsweredCorrectly()/(double)getNumberOfQuizQuestions();
-    }
-
-    public int getCurrentTextObjectIndex() {
-        return gameFacade.getCurrentTextObjectIndex();
+        currentGame.getPreviousTextObject();
+        return showCurrentTextObject();
     }
 
     public int getMaxTextObjectIndex() {
-        return gameFacade.getMaxTextObjectIndex();
+        return currentGame.getMaxTextObjectIndex();
     }
 
-    // public int getCurrentQuizIndex() {
-    //     return gameFacade.getCurrentQuestionIndex();
-    // }
-
     public void setTextObjectIndex(int newIndex) {
-        gameFacade.setTextObjectIndex(newIndex);
+        currentGame.setTextObjectIndex(newIndex);
+    }
+
+    private String formatTextObjectContent(TextObject textObject) {
+        return String.format(currentLanguage.getLanguageName() + ": %s\nEnglish: %s\nExample: %s\nHelper: %s",
+                textObject.getText(),
+                textObject.getEnglishText(),
+                textObject.getLinkedText(),
+                textObject.getHelperText());
+    }
+
+    public Question startQuiz() {
+        return currentGame.startQuiz();
+    }
+
+    public Question getQuizQuestion() {
+        return currentGame.getQuizQuestion();
+    }
+
+    public Question getNextQuizQuestion() {
+        return currentGame.getNextQuizQuestion();
+    }
+
+    public boolean validateQuizAnswer(String answer) {
+        return currentGame.validateQuizAnswer(answer);
     }
 
     public String endGameSession() {
-        if (currentUser == null || currentLanguage == null) return "No active game session.";
-        return gameFacade.endGameSession(currentUser, currentLanguage.getUUID());
+        if (currentUser != null && currentGame != null) {
+            currentUser.getProgressTracker(currentLanguage.getUUID()).addCompletedGame(currentGame.getUUID());
+        }
+        currentGame = null;
+        return "Game session ended. Progress saved.";
     }
 
-    // p tracking
+    // Progress tracking
     public void addGameToCompletedGames() {
         currentUser.addCompletedGame(currentLanguage.getUUID());
     }
@@ -257,4 +218,29 @@ public class Facade {
         return currentUser.getNumberOfCompletedGames(currentLanguage.getUUID());
     }
 
+    public ArrayList<Game> getAvailableGames() {
+        return (currentLanguage != null && currentDifficulty != null) 
+            ? getAvailableGames(currentLanguage.getUUID(), currentDifficulty) 
+            : null;
+    }
+
+    private ArrayList<Game> getAvailableGames(UUID languageUUID, Difficulty difficulty) {
+        ArrayList<Game> games = new ArrayList<>();
+        for (Game game : gameManager.getGamesByDifficulty(languageUUID, difficulty)) {
+            games.add(game);
+        }
+        return games;
+    }
+
+    public int getNumberOfQuizQuestions() {
+        return currentGame.getNumberOfQuizQuestions();
+    }
+
+    public int getNumberOfQuestionsAnsweredCorrectly() {
+        return currentGame.getNumberOfQuizQuestionAnsweredCorrectly();
+    }
+
+    public double getQuestionAverageResult() {
+        return (double)getNumberOfQuestionsAnsweredCorrectly()/(double)getNumberOfQuizQuestions();
+    }
 }

@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import com.learner.game.App;
 import com.learner.model.Facade;
-import com.learner.model.User.ProgressTracker;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,8 +32,13 @@ public class ProgressTrackerController {
     }
 
     private void updateProgressBar() {
+        int totalGames = facade.getCurrentTextObjectIndex();
         int completedGames = facade.getTotalNumberOfCompletedGames();
-        double progress = (double) completedGames / completedGames;
+        double progress = 0.0;
+        if (completedGames != 0) {
+            progress = (double) totalGames / (double) completedGames;
+        }
+        System.out.println("Progress: " + progress);
         gamesCompletedBar.setProgress(progress);
     }
 }
