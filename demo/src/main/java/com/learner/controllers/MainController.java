@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.learner.game.App;
+import com.learner.model.Facade;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,6 +48,7 @@ public class MainController implements Initializable{
 
     @FXML
     public void logoutToHome(ActionEvent event) throws IOException {
+        Facade.getInstance().saveUserData();
         App.setRoot("home");
     }
 

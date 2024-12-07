@@ -6,6 +6,7 @@ import java.util.UUID;
 import com.learner.model.innerdata.TextObject;
 import com.learner.model.loadwrite.DataConstants;
 import com.learner.model.loadwrite.DataLoader;
+import com.learner.model.loadwrite.DataWriter;
 import com.learner.model.questions.Question;
 
 public class Facade {
@@ -56,6 +57,11 @@ public class Facade {
     public void loadData() {
         DataLoader.loadGameData(DataConstants.GAME_DATA_FILE);
         DataLoader.loadUserData(DataConstants.USER_FILE);
+    }
+
+    // Save user data
+    public void saveUserData() {
+        DataWriter.writeUserData(DataConstants.USER_FILE);
     }
 
     // User session management
