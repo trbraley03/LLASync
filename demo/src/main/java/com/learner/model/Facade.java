@@ -236,4 +236,25 @@ public class Facade {
         return gameFacade.endGameSession(currentUser, currentLanguage.getUUID());
     }
 
+    // p tracking
+    public void addGameToCompletedGames() {
+        currentUser.addCompletedGame(currentLanguage.getUUID());
+    }
+
+    public void addMissedQuestion(Question question) {
+        currentUser.addMissedQuestion(question);
+    }
+
+    public void removeMissedQuestion(Question question) {
+        currentUser.removeMissedQuestion(question);
+    }
+
+    public int getTotalNumberOfCompletedGames() {
+        return currentUser.getTotalNumberOfCompletedGames();
+    }
+
+    public int getNumberOfCompletedGames() {
+        return currentUser.getNumberOfCompletedGames(currentLanguage.getUUID());
+    }
+
 }

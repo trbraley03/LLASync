@@ -121,6 +121,7 @@ public class User {
                 return tracker;
             }
         }
+        // addProgressTracker(ProgressTracker tracker)
         return null;
     }
 
@@ -144,6 +145,39 @@ public class User {
         if (currentProgressTracker != null) {
             currentProgressTracker.removeMissedQuestion(question);
         }
+    }
+
+    // ptracker methods 
+    public void addCompletedGame(UUID langUUID) {
+        ProgressTracker currentProgressTracker = getProgressTracker(langUUID);
+        if (currentProgressTracker != null) {
+            currentProgressTracker.addCompletedGame(langUUID);
+        } 
+    }
+
+    public ArrayList<UUID> getCompletedGames(UUID langUUID) {
+        ProgressTracker currentProgressTracker = getProgressTracker(langUUID);
+        if (currentProgressTracker != null) {
+            return currentProgressTracker.getCompletedGames();
+        } else {
+            return new ArrayList<>();
+        }
+    }
+
+    public int getNumberOfCompletedGames(UUID langUUID) {
+        ProgressTracker currentProgressTracker = getProgressTracker(langUUID);
+        if (currentProgressTracker == null) {
+            return 0;
+        }
+        return currentProgressTracker.getCompletedGames().size();
+    }
+
+    public int getTotalNumberOfCompletedGames() {
+        int total = 0;
+        for (ProgressTracker tracker : progressTrackers) {
+            total += tracker.getTotalCompletedGames();
+        }
+        return total;
     }
 
     /**

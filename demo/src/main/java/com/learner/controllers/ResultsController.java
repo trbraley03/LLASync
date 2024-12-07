@@ -57,6 +57,7 @@ public class ResultsController implements Initializable {
             redCheck.setVisible(false);
             greenCheck.setVisible(true);
             resultsFractionText.setText( numberOfQuestionsCorrect + "/" + totalNumberOfQuestions + " questions correct!");
+            facade.addGameToCompletedGames();
         } else {
             redCheck.setVisible(true);
             greenCheck.setVisible(false);
