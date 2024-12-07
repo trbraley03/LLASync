@@ -24,7 +24,6 @@ public class ResultsController implements Initializable {
     private final int totalNumberOfQuestions = facade.getNumberOfQuizQuestions();
     private final double questionResultAverage = facade.getQuestionAverageResult();
 
-
     @FXML
     private Label title;
 

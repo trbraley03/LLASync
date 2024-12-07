@@ -253,7 +253,7 @@ public class Facade {
         return currentUser.getTotalNumberOfCompletedGames();
     }
 
-    public int getNumberOfCompletedGames() {
+    public int getNumberOfCompletedGamesForCurrentLanguage() {
         return currentUser.getNumberOfCompletedGames(currentLanguage.getUUID());
     }
 

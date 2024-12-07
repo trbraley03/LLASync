@@ -14,20 +14,13 @@ import javafx.scene.control.ProgressBar;
 
 public class ProgressTrackerController {
 
+    private Facade facade = Facade.getInstance();
+
     @FXML
     private Button backButton;
 
     @FXML
     private ProgressBar gamesCompletedBar;
-
-    private static final int TOTAL_GAMES = 20;
-    private ProgressTracker progressTracker;
-
-    public ProgressTrackerController() {
-        // Access current user's progress tracker
-        Facade facade = Facade.getInstance();
-        // progressTracker = facade.getCurrentUser().getProgressTracker(facade.getCurrentLanguage().getUUID()); // there is no current langauage, this is not set at the main screen
-    }
 
     @FXML
     public void initialize() {
@@ -40,13 +33,8 @@ public class ProgressTrackerController {
     }
 
     private void updateProgressBar() {
-        int completedGames = progressTracker.getTotalCompletedGames();
-        double progress = (double) completedGames / TOTAL_GAMES;
+        int completedGames = facade.getTotalNumberOfCompletedGames();
+        double progress = (double) completedGames / completedGames;
         gamesCompletedBar.setProgress(progress);
-    }
-
-    public void onGameCompleted(UUID gameUUID) {
-        progressTracker.addCompletedGame(gameUUID);
-        updateProgressBar();
     }
 }

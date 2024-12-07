@@ -47,7 +47,7 @@ public class MatchingQuestion extends Question {
         // Populate with additional text objects
         for (int i = 0; i < 3; i++) {
             theTextObject = game.getNextTextObject(theTextObject.getUUID());
-            if(!textObjects.contains(theTextObject) || !(textObjects.size() < 3)) {
+            if(!textObjects.contains(theTextObject) || (textObjects.size() < 3)) {
                 textObjects.add(theTextObject);
             }
         }
