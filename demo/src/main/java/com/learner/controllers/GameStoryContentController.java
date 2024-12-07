@@ -62,20 +62,20 @@ public class GameStoryContentController implements Initializable {
     @FXML
     private void goBackToPreviousGameScreen(ActionEvent event) throws IOException {
         if(facade.getCurrentTextObjectIndex() == 0) {
-            App.setRoot("GameTitleScreen");
+            App.setRoot("gameStoryTitleScreen");
         } else {
+            facade.getPreviousTextObject();
             setNewScreen();
-            gameContentText.setText(facade.getCurrentGame().getCurrentTextObject().getText());
         }
     }
 
     @FXML
     private void goToNextGameScreen(ActionEvent event) throws IOException {
         if(facade.getCurrentTextObjectIndex() == facade.getMaxTextObjectIndex()) {
-            App.setRoot("GameOutroScreen");
+            App.setRoot("gameOutroScreen");
         } else {
+            facade.getNextTextObject();
             setNewScreen();
-            gameContentText.setText(facade.getCurrentGame().getCurrentTextObject().getText());
         }
     }
 

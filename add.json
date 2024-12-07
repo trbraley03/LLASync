@@ -1,0 +1,190 @@
+{
+    "LANGUAGES": [
+        {
+            "LANG": "Filipino",
+            "UUID": "66a92cdf-ea42-418e-a73c-92e80474adfd",
+            "GAMES": [
+                {
+                    "GAME": "The Tortoise and the Hare",
+                    "DIFFICULTY": "easy",
+                    "CATEGORY": "story",
+                    "UUID": "ebf8509c-4902-40e6-9440-38ea00c25659",
+                    "INFO": {
+                        "description": "The Tortoise and the Hare: Follow the classic story in Filipino.",
+                        "objective": "Be able to understand the Filipino words used in the story and learn how to use them in everyday situations.",
+                        "instructions": [
+                            "Navigate through each page of the story.",
+                            "Click the 'Translate' button to see the English translation of the text.",
+                            "When up for the task, you will face the brain blaster."
+                        ],
+                        "prep": {
+                            "introConcept": "In Filipino, stories are used to teach lessons and morals.",
+                            "exampleUsage": "For example, 'Ang Pagong at ang Kuneho' teaches the value of perseverance.",
+                            "gameTip": "Remember, understanding the story can help you learn new words and phrases."
+                        }
+                    },
+                    "TEXT": [
+                        {
+                            "text": "Ang Pagong at ang Kuneho",
+                            "englishText": "The Tortoise and the Hare",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "8a5c966a-2d10-4879-befe-da5c5923378a"
+                        },
+                        {
+                            "text": "Isang araw, nagyayabang ang kuneho tungkol sa bilis niya.",
+                            "englishText": "One day, the hare was boasting about his speed.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "387b2f6a-363d-4089-b169-1eb4b25dae85"
+                        },
+                        {
+                            "text": "‘Walang makakatalo sa akin sa takbuhan,’ sabi ng kuneho.",
+                            "englishText": "‘No one can beat me in a race,’ said the hare.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "7de4e8ea-e073-4f45-860e-240bac90b3e9"
+                        },
+                        {
+                            "text": "‘Sige nga, subukan natin,’ sabi ng pagong.",
+                            "englishText": "‘Let's see about that,’ said the tortoise.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "af2396c6-e0ca-4099-98bf-64893cd78f15"
+                        },
+                        {
+                            "text": "Nagtawanan ang mga hayop sa pagong.",
+                            "englishText": "The animals laughed at the tortoise.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "a055b916-003a-4752-952a-ac3af795fe34"
+                        },
+                        {
+                            "text": "‘Hindi ka mananalo,’ sabi ng kuneho.",
+                            "englishText": "‘You will not win,’ said the hare.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "e17b4e56-ff3a-4883-a6e5-05838f1e9147"
+                        },
+                        {
+                            "text": "‘Tingnan natin,’ sabi ng pagong.",
+                            "englishText": "‘We'll see,’ said the tortoise.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "c17c3e46-7df0-4f70-a79c-8f3a7a1e4fbe"
+                        },
+                        {
+                            "text": "Nagsimula ang karera.",
+                            "englishText": "The race began.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "bfa5c163-c09b-47a5-aecc-08a14280317c"
+                        },
+                        {
+                            "text": "Mabilis na tumakbo ang kuneho at iniwan ang pagong.",
+                            "englishText": "The hare ran fast and left the tortoise behind.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "09e2c77a-5451-4cac-8fdb-cdf1fb06c950"
+                        },
+                        {
+                            "text": "Nagpatuloy lang sa paglakad ang pagong.",
+                            "englishText": "The tortoise kept walking.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "47b681b5-9f41-492d-ba30-410d2bd05d14"
+                        },
+                        {
+                            "text": "Naabutan ng pagong ang kuneho na natutulog.",
+                            "englishText": "The tortoise found the hare sleeping.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "c01638f7-da22-4976-b1ff-3bceefd98f1e"
+                        },
+                        {
+                            "text": "Lumampas ang pagong sa kuneho.",
+                            "englishText": "The tortoise passed the hare.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "bd09d8f4-43f9-4cb3-b4b9-a8c7e1a11055"
+                        },
+                        {
+                            "text": "Nagising ang kuneho at tumakbo, ngunit huli na.",
+                            "englishText": "The hare woke up and ran, but it was too late.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "dfdb0fda-809a-4862-a2c2-1d814595b712"
+                        },
+                        {
+                            "text": "Nanalo ang pagong sa karera.",
+                            "englishText": "The tortoise won the race.",
+                            "linkedText": "",
+                            "englishLinkedText": "",
+                            "helperText": "",
+                            "UUID": "3588d54c-a5d7-4d0a-a44e-624f16e05817"
+                        }
+                    ],
+                    "QUESTIONS": [
+                        {
+                            "question": "What is the Filipino word for 'tortoise'?",
+                            "choices": [
+                                "pagong",
+                                "kuneho",
+                                "aso"
+                            ],
+                            "UUID": "3463996c-4b0c-4472-95ba-ba23cb1a6627"
+                        },
+                        {
+                            "question": "What does 'kuneho' mean in English?",
+                            "choices": [
+                                "hare",
+                                "tortoise",
+                                "dog"
+                            ],
+                            "UUID": "a8e64b75-c1bb-4838-8906-ad94f130b623"
+                        },
+                        {
+                            "question": "'Ang Pagong at ang Kuneho' means 'The Tortoise and the Hare'.",
+                            "choices": [
+                                "True",
+                                "False"
+                            ],
+                            "UUID": "e19bf42b-8f31-40ee-9ba9-77574b5b7c1f"
+                        },
+                        {
+                            "question": "What color was the tortoise?",
+                            "choices": [
+                                "berde",
+                                "pula",
+                                "asul"
+                            ],
+                            "UUID": "4cc94a78-ddc9-44fe-996f-ba52475030a4"
+                        },
+                        {
+                            "question": "What color was the hat the hare was wearing?",
+                            "choices": [
+                                "pula",
+                                "berde",
+                                "asul"
+                            ],
+                            "UUID": "b53d31ab-13c2-4565-b58b-38eba8dc6d01"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -14,6 +14,9 @@ public class User {
     private String password;
     private UUID uuid;
     private HashSet<ProgressTracker> progressTrackers; // Set of progress trackers for different languages
+    private String profilePicturePath;
+    private boolean readQuestionFeedbackAloud;
+
 
     /**
      * Constructor to initialize User with specified UUID
@@ -25,6 +28,8 @@ public class User {
         this.password = password;
         this.uuid = uuid;
         this.progressTrackers = new HashSet<>(); 
+        profilePicturePath = "/com/learner/game/fxml-images/default-profile-picture.png";
+        readQuestionFeedbackAloud = false;
     }
 
     /**
