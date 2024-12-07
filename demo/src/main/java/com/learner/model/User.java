@@ -174,8 +174,8 @@ public class User {
 
     public int getTotalNumberOfCompletedGames() {
         int total = 0;
-        for (ProgressTracker tracker : progressTrackers) {
-            total += tracker.getTotalCompletedGames();
+        for (Language lang : GameManager.getInstance().getAllLanguages()) {
+            total += getProgressTracker(lang.getUUID()).completedGames.size();
         }
         return total;
     }

@@ -50,7 +50,7 @@ public class ResultsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        title.setText(facade.getCurrentGame().getGameTitle());
+        title.setText(facade.getCurrentGame().getGameTitle());;
 
         if(questionResultAverage >= 60) {
             redCheck.setVisible(false);
