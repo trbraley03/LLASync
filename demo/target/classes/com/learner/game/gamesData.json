@@ -170,7 +170,7 @@
                     ]
                 },
                 {
-                    "GAME": "Letter Games",
+                    "GAME": "Letter Game",
                     "DIFFICULTY": "easy",
                     "CATEGORY": "alphabet",
                     "UUID": "abca5f0d-4d55-46eb-9bda-bf4c35e656ca",
@@ -243,12 +243,12 @@
                     ]
                 },
                 {
-                    "GAME": "Letter Games",
+                    "GAME": "Common Phrases",
                     "DIFFICULTY": "medium",
                     "CATEGORY": "culture",
                     "UUID": "8dc89fa8-0b31-4fba-919a-d43b6d817152",
                     "INFO": {
-                        "description": "Welcome to letter games. First, you will learn common phrases and cultural nuances, then you will conquer the brain blaster!",
+                        "description": "Welcome to medium level Common Phrases. First, you will learn common phrases and cultural nuances, then you will conquer the brain blaster!",
                         "objective": "Be able to identify and use common Filipino phrases and understand cultural nuances.",
                         "instructions": [
                             "Navigate through each of the given phrases and review the examples given.",
@@ -317,13 +317,13 @@
                     ]
                 },
                 {
-                    "GAME": "Letter Games",
+                    "GAME": "Common Phrases",
                     "DIFFICULTY": "hard",
                     "CATEGORY": "culture",
                     "UUID": "9fea4833-3720-40ef-89fc-417d34d5a93b",
                     "INFO": {
-                        "description": "Welcome to the hard letter games. First, you will learn advanced phrases and cultural nuances, then you will conquer the brain blaster!",
-                        "objective": "Be able to identify and use advanced Filipino phrases and understand deeper cultural nuances.",
+                        "description": "Welcome to the hard common phrases game! You will learn advanced phrases and cultural nuances",
+                        "objective": "Be able to identify and use a few advanced Filipino phrases.",
                         "instructions": [
                             "Navigate through each of the given phrases and review the examples given.",
                             "When up for the task, you will face the brain blaster."
@@ -1479,6 +1479,326 @@
                             "UUID": "4962168c-14f5-428d-9641-3ff945edd558"
                         }
                     ]
+                },
+                {
+                    "GAME": "Colors Game",
+                    "DIFFICULTY": "easy",
+                    "CATEGORY": "word",
+                    "UUID": "d78730b7-50e9-4d30-8547-bf16175ac1aa",
+                    "INFO": {
+                        "description": "Welcome to the easy colors game! First, you will learn each color (red, green, and blue), then complete a quiz!",
+                        "objective": "Be able to identify the Spanish words for each color taught and know the Spanish words for common objects of those colors.",
+                        "instructions": [
+                            "Navigate through each of the given colors and review the examples given.",
+                            "When up for the task, you will face the brain blaster."
+                        ],
+                        "prep": {
+                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
+                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
+                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
+                        }
+                    },
+                    "TEXT": [
+                        {
+                            "text": "rojo",
+                            "englishText": "red",
+                            "linkedText": "La manzana es color roja.",
+                            "englishLinkedText": "The apple is red.",
+                            "helperText": "Rojo means 'red' in Spanish. It's used the same way as 'red' in English, like describing a red apple (manzana roja) or a red car (coche rojo).",
+                            "UUID": "f0307778-966d-4555-812b-0f96e95bc74a"
+                        },
+                        {
+                            "text": "verde",
+                            "englishText": "green",
+                            "linkedText": "La hierba es color verde.",
+                            "englishLinkedText": "The grass is green.",
+                            "helperText": "Verde is similar to 'verdant,' which means green and lush in English. Think of green grass or trees.",
+                            "UUID": "d5e0e5a5-9633-4f74-9da2-5ff700de2356"
+                        },
+                        {
+                            "text": "azul",
+                            "englishText": "blue",
+                            "linkedText": "El cielo es color azul.",
+                            "englishLinkedText": "The sky is blue.",
+                            "helperText": "Azul means 'blue' in Spanish, similar to the color of the sky or the ocean.",
+                            "UUID": "3755092b-f9f0-4e56-b92c-f946539c4839"
+                        }
+                    ],
+                    "QUESTIONS": [
+                        {
+                            "question": "What is the Spanish word for red?",
+                            "choices": [
+                                "rojo",
+                                "verde",
+                                "azul"
+                            ],
+                            "UUID": "75586c7d-3e49-435e-8dd7-ae2644e4af9a"
+                        },
+                        {
+                            "question": "Which color does 'verde' represent?",
+                            "choices": [
+                                "green",
+                                "red",
+                                "blue"
+                            ],
+                            "UUID": "aa1ede7f-85a6-4d7d-84e4-6aae2a9fbad4"
+                        },
+                        {
+                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
+                            "choices": [
+                                "azul",
+                                "rojo",
+                                "verde"
+                            ],
+                            "UUID": "5d8e56de-3edc-4c40-9a91-c5f980ec1f76"
+                        }
+                    ]
+                },
+                {
+                    "GAME": "Colors Game",
+                    "DIFFICULTY": "medium",
+                    "CATEGORY": "word",
+                    "UUID": "8c93fa43-ea83-4cc1-8e93-0ec88ef2adff",
+                    "INFO": {
+                        "description": "Welcome to the medium colors game! First, you will learn each color (red, green, and blue), then complete a quiz!",
+                        "objective": "Be able to identify the Spanish words for each color taught and know the Spanish words for common objects of those colors.",
+                        "instructions": [
+                            "Navigate through each of the given colors and review the examples given.",
+                            "When up for the task, you will face the brain blaster."
+                        ],
+                        "prep": {
+                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
+                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
+                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
+                        }
+                    },
+                    "TEXT": [
+                        {
+                            "text": "rojo",
+                            "englishText": "red",
+                            "linkedText": "La manzana es color roja.",
+                            "englishLinkedText": "The apple is red.",
+                            "helperText": "Rojo means 'red' in Spanish. It's used the same way as 'red' in English, like describing a red apple (manzana roja) or a red car (coche rojo).",
+                            "UUID": "ad4b0e00-5208-4304-a861-27afc0c7dc74"
+                        },
+                        {
+                            "text": "verde",
+                            "englishText": "green",
+                            "linkedText": "La hierba es color verde.",
+                            "englishLinkedText": "The grass is green.",
+                            "helperText": "Verde is similar to 'verdant,' which means green and lush in English. Think of green grass or trees.",
+                            "UUID": "469d9043-e2b1-42f7-835c-1006ddb43a50"
+                        },
+                        {
+                            "text": "azul",
+                            "englishText": "blue",
+                            "linkedText": "El cielo es color azul.",
+                            "englishLinkedText": "The sky is blue.",
+                            "helperText": "Azul means 'blue' in Spanish, similar to the color of the sky or the ocean.",
+                            "UUID": "3f3602d9-3967-4cfb-9e86-5bbf6f4c8931"
+                        }
+                    ],
+                    "QUESTIONS": [
+                        {
+                            "question": "What is the Spanish word for red?",
+                            "choices": [
+                                "rojo",
+                                "verde",
+                                "azul"
+                            ],
+                            "UUID": "a400f9a2-482e-4c51-8d06-35ad784a78ed"
+                        },
+                        {
+                            "question": "Which color does 'verde' represent?",
+                            "choices": [
+                                "green",
+                                "red",
+                                "blue"
+                            ],
+                            "UUID": "b411878b-94eb-40cf-b601-acc09b014d9c"
+                        },
+                        {
+                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
+                            "choices": [
+                                "azul",
+                                "rojo",
+                                "verde"
+                            ],
+                            "UUID": "e53bdb0a-501a-446b-a6db-b1de6316df7c"
+                        }
+                    ]
+                },
+                {
+                    "GAME": "Colors Game",
+                    "DIFFICULTY": "hard",
+                    "CATEGORY": "word",
+                    "UUID": "9b731cfb-4589-415f-a8e1-1c673c86014c",
+                    "INFO": {
+                        "description": "Welcome to the hard colors game! First, you will learn each color (red, green, and blue), then complete a quiz!",
+                        "objective": "Be able to identify the Spanish words for each color taught and know the Spanish words for common objects of those colors.",
+                        "instructions": [
+                            "Navigate through each of the given colors and review the examples given.",
+                            "When up for the task, you will face the brain blaster."
+                        ],
+                        "prep": {
+                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
+                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
+                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
+                        }
+                    },
+                    "TEXT": [
+                        {
+                            "text": "rojo",
+                            "englishText": "red",
+                            "linkedText": "La manzana es color roja.",
+                            "englishLinkedText": "The apple is red.",
+                            "helperText": "Rojo means 'red' in Spanish. It's used the same way as 'red' in English, like describing a red apple (manzana roja) or a red car (coche rojo).",
+                            "UUID": "4c1977dc-7d69-43a7-94dc-1e5c24e3445a"
+                        },
+                        {
+                            "text": "verde",
+                            "englishText": "green",
+                            "linkedText": "La hierba es color verde.",
+                            "englishLinkedText": "The grass is green.",
+                            "helperText": "Verde is similar to 'verdant,' which means green and lush in English. Think of green grass or trees.",
+                            "UUID": "445727c3-bd5d-4ec6-8be3-3d26d309ec5b"
+                        },
+                        {
+                            "text": "azul",
+                            "englishText": "blue",
+                            "linkedText": "El cielo es color azul.",
+                            "englishLinkedText": "The sky is blue.",
+                            "helperText": "Azul means 'blue' in Spanish, similar to the color of the sky or the ocean.",
+                            "UUID": "55851b93-74a6-406a-a0b1-26271a7fc5d7"
+                        }
+                    ],
+                    "QUESTIONS": [
+                        {
+                            "question": "What is the Spanish word for red?",
+                            "choices": [
+                                "rojo",
+                                "verde",
+                                "azul"
+                            ],
+                            "UUID": "c4cd445d-aae4-484c-9064-c186f62677fa"
+                        },
+                        {
+                            "question": "Which color does 'verde' represent?",
+                            "choices": [
+                                "green",
+                                "red",
+                                "blue"
+                            ],
+                            "UUID": "47f78a89-9f01-4477-98a4-f51f0aea3291"
+                        },
+                        {
+                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
+                            "choices": [
+                                "azul",
+                                "rojo",
+                                "verde"
+                            ],
+                            "UUID": "26d3e577-b9db-4d9f-80c2-4a393cff6eef"
+                        }
+                    ]
+                },
+                {
+                    "GAME": "Three Little Pigs",
+                    "DIFFICULTY": "easy",
+                    "CATEGORY": "word",
+                    "UUID": "57ac44cc-bcbd-455a-9ed4-a21762421f01",
+                    "INFO": {
+                        "description": "Welcome to the easy Ang Tatlong Baboy! First, you will learn each color (red, green, and blue), then complete a quiz!",
+                        "objective": "Be able to identify the Spanish words for each color taught and know the Spanish words for common objects of those colors.",
+                        "instructions": [
+                            "Navigate through each of the given colors and review the examples given.",
+                            "When up for the task, you will face the brain blaster."
+                        ],
+                        "prep": {
+                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
+                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
+                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
+                        }
+                    },
+                    "TEXT": [
+                        {
+                            "text": "rojo",
+                            "englishText": "red",
+                            "linkedText": "Había tres cerditos que construyeron casas.",
+                            "englishLinkedText": "There were 3 pigs who built houses.",
+                            "helperText": "",
+                            "UUID": "15414718-9ac2-4b64-ac81-aa611285f0f2"
+                        },
+                        {
+                            "text": "verde",
+                            "englishText": "green",
+                            "linkedText": "El primero usó paja, el segundo madera, y el tercero ladrillos.",
+                            "englishLinkedText": "The first used straw, the second used wood and the third used bricks.",
+                            "helperText": "",
+                            "UUID": "90e71837-46b8-4a00-b2c3-1a05d962fdd4"
+                        },
+                        {
+                            "text": "azul",
+                            "englishText": "blue",
+                            "linkedText": "Llegó el lobo e intentó entrar. Sopló las dos primeras casas y las destruyó.",
+                            "englishLinkedText": "The wolf came and tried to get in. He blew down the first two houses which broke.",
+                            "helperText": "",
+                            "UUID": "889fc32d-f901-4927-8527-c1917fb9e676"
+                        },
+                        {
+                            "text": "azul",
+                            "englishText": "blue",
+                            "linkedText": "La casa del tercer cerdito era fuerte, por lo que no se rompió.",
+                            "englishLinkedText": "The third pig's house was strong and did not break.",
+                            "helperText": "",
+                            "UUID": "eade0614-3518-4b28-95f9-69096bd4dbf7"
+                        },
+                        {
+                            "text": "azul",
+                            "englishText": "blue",
+                            "linkedText": "El lobo se fue, y los cerditos estaban a salvo.",
+                            "englishLinkedText": "The wolf left and the pigs were safe.",
+                            "helperText": "",
+                            "UUID": "2f10d17c-3cbc-4139-a65a-8c9e4a7bb8dc"
+                        },
+                        {
+                            "text": "azul",
+                            "englishText": "blue",
+                            "linkedText": "Feliz, comieron y celebraron toda la noche.",
+                            "englishLinkedText": "They happily ate and celebrated all night.",
+                            "helperText": "",
+                            "UUID": "c77292eb-2ca0-4b6a-a9ee-34f44d488d2f"
+                        }
+                    ],
+                    "QUESTIONS": [
+                        {
+                            "question": "What is the Spanish word for red?",
+                            "choices": [
+                                "rojo",
+                                "verde",
+                                "azul"
+                            ],
+                            "UUID": "832de27f-0411-4fb6-9829-3d6f3b14e8c6"
+                        },
+                        {
+                            "question": "Which color does 'verde' represent?",
+                            "choices": [
+                                "green",
+                                "red",
+                                "blue"
+                            ],
+                            "UUID": "17f492df-15cd-4cbd-a164-f524da936758"
+                        },
+                        {
+                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
+                            "choices": [
+                                "azul",
+                                "rojo",
+                                "verde"
+                            ],
+                            "UUID": "80d9058e-aa87-4781-bca6-d43a02776d3c"
+                        }
+                    ]
                 }
             ]
         },
@@ -2291,332 +2611,6 @@
                                 "False"
                             ],
                             "UUID": "2d885a8a-0c8f-4279-b57d-accfad54ca9b"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "LANG": "Spanish",
-            "UUID": "5c7b2ba6-8e1c-44fc-addc-c97a35ad020d",
-            "GAMES": [
-                {
-                    "GAME": "Colors Game",
-                    "DIFFICULTY": "easy",
-                    "CATEGORY": "word",
-                    "UUID": "d78730b7-50e9-4d30-8547-bf16175ac1aa",
-                    "INFO": {
-                        "description": "Welcome to the easy colors game! First, you will learn each color (red, green, and blue), then complete a quiz!",
-                        "objective": "Be able to identify the Spanish words for each color taught and know the Spanish words for common objects of those colors.",
-                        "instructions": [
-                            "Navigate through each of the given colors and review the examples given.",
-                            "When up for the task, you will face the brain blaster."
-                        ],
-                        "prep": {
-                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
-                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
-                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
-                        }
-                    },
-                    "TEXT": [
-                        {
-                            "text": "rojo",
-                            "englishText": "red",
-                            "linkedText": "La manzana es color roja.",
-                            "englishLinkedText": "The apple is red.",
-                            "helperText": "Rojo means 'red' in Spanish. It's used the same way as 'red' in English, like describing a red apple (manzana roja) or a red car (coche rojo).",
-                            "UUID": "f0307778-966d-4555-812b-0f96e95bc74a"
-                        },
-                        {
-                            "text": "verde",
-                            "englishText": "green",
-                            "linkedText": "La hierba es color verde.",
-                            "englishLinkedText": "The grass is green.",
-                            "helperText": "Verde is similar to 'verdant,' which means green and lush in English. Think of green grass or trees.",
-                            "UUID": "d5e0e5a5-9633-4f74-9da2-5ff700de2356"
-                        },
-                        {
-                            "text": "azul",
-                            "englishText": "blue",
-                            "linkedText": "El cielo es color azul.",
-                            "englishLinkedText": "The sky is blue.",
-                            "helperText": "Azul means 'blue' in Spanish, similar to the color of the sky or the ocean.",
-                            "UUID": "3755092b-f9f0-4e56-b92c-f946539c4839"
-                        }
-                    ],
-                    "QUESTIONS": [
-                        {
-                            "question": "What is the Spanish word for red?",
-                            "choices": [
-                                "rojo",
-                                "verde",
-                                "azul"
-                            ],
-                            "UUID": "75586c7d-3e49-435e-8dd7-ae2644e4af9a"
-                        },
-                        {
-                            "question": "Which color does 'verde' represent?",
-                            "choices": [
-                                "green",
-                                "red",
-                                "blue"
-                            ],
-                            "UUID": "aa1ede7f-85a6-4d7d-84e4-6aae2a9fbad4"
-                        },
-                        {
-                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
-                            "choices": [
-                                "azul",
-                                "rojo",
-                                "verde"
-                            ],
-                            "UUID": "5d8e56de-3edc-4c40-9a91-c5f980ec1f76"
-                        }
-                    ]
-                },
-                {
-                    "GAME": "Colors Game",
-                    "DIFFICULTY": "medium",
-                    "CATEGORY": "word",
-                    "UUID": "8c93fa43-ea83-4cc1-8e93-0ec88ef2adff",
-                    "INFO": {
-                        "description": "Welcome to the medium colors game! First, you will learn each color (red, green, and blue), then complete a quiz!",
-                        "objective": "Be able to identify the Spanish words for each color taught and know the Spanish words for common objects of those colors.",
-                        "instructions": [
-                            "Navigate through each of the given colors and review the examples given.",
-                            "When up for the task, you will face the brain blaster."
-                        ],
-                        "prep": {
-                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
-                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
-                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
-                        }
-                    },
-                    "TEXT": [
-                        {
-                            "text": "rojo",
-                            "englishText": "red",
-                            "linkedText": "La manzana es color roja.",
-                            "englishLinkedText": "The apple is red.",
-                            "helperText": "Rojo means 'red' in Spanish. It's used the same way as 'red' in English, like describing a red apple (manzana roja) or a red car (coche rojo).",
-                            "UUID": "ad4b0e00-5208-4304-a861-27afc0c7dc74"
-                        },
-                        {
-                            "text": "verde",
-                            "englishText": "green",
-                            "linkedText": "La hierba es color verde.",
-                            "englishLinkedText": "The grass is green.",
-                            "helperText": "Verde is similar to 'verdant,' which means green and lush in English. Think of green grass or trees.",
-                            "UUID": "469d9043-e2b1-42f7-835c-1006ddb43a50"
-                        },
-                        {
-                            "text": "azul",
-                            "englishText": "blue",
-                            "linkedText": "El cielo es color azul.",
-                            "englishLinkedText": "The sky is blue.",
-                            "helperText": "Azul means 'blue' in Spanish, similar to the color of the sky or the ocean.",
-                            "UUID": "3f3602d9-3967-4cfb-9e86-5bbf6f4c8931"
-                        }
-                    ],
-                    "QUESTIONS": [
-                        {
-                            "question": "What is the Spanish word for red?",
-                            "choices": [
-                                "rojo",
-                                "verde",
-                                "azul"
-                            ],
-                            "UUID": "a400f9a2-482e-4c51-8d06-35ad784a78ed"
-                        },
-                        {
-                            "question": "Which color does 'verde' represent?",
-                            "choices": [
-                                "green",
-                                "red",
-                                "blue"
-                            ],
-                            "UUID": "b411878b-94eb-40cf-b601-acc09b014d9c"
-                        },
-                        {
-                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
-                            "choices": [
-                                "azul",
-                                "rojo",
-                                "verde"
-                            ],
-                            "UUID": "e53bdb0a-501a-446b-a6db-b1de6316df7c"
-                        }
-                    ]
-                },
-                {
-                    "GAME": "Colors Game",
-                    "DIFFICULTY": "hard",
-                    "CATEGORY": "word",
-                    "UUID": "9b731cfb-4589-415f-a8e1-1c673c86014c",
-                    "INFO": {
-                        "description": "Welcome to the hard colors game! First, you will learn each color (red, green, and blue), then complete a quiz!",
-                        "objective": "Be able to identify the Spanish words for each color taught and know the Spanish words for common objects of those colors.",
-                        "instructions": [
-                            "Navigate through each of the given colors and review the examples given.",
-                            "When up for the task, you will face the brain blaster."
-                        ],
-                        "prep": {
-                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
-                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
-                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
-                        }
-                    },
-                    "TEXT": [
-                        {
-                            "text": "rojo",
-                            "englishText": "red",
-                            "linkedText": "La manzana es color roja.",
-                            "englishLinkedText": "The apple is red.",
-                            "helperText": "Rojo means 'red' in Spanish. It's used the same way as 'red' in English, like describing a red apple (manzana roja) or a red car (coche rojo).",
-                            "UUID": "4c1977dc-7d69-43a7-94dc-1e5c24e3445a"
-                        },
-                        {
-                            "text": "verde",
-                            "englishText": "green",
-                            "linkedText": "La hierba es color verde.",
-                            "englishLinkedText": "The grass is green.",
-                            "helperText": "Verde is similar to 'verdant,' which means green and lush in English. Think of green grass or trees.",
-                            "UUID": "445727c3-bd5d-4ec6-8be3-3d26d309ec5b"
-                        },
-                        {
-                            "text": "azul",
-                            "englishText": "blue",
-                            "linkedText": "El cielo es color azul.",
-                            "englishLinkedText": "The sky is blue.",
-                            "helperText": "Azul means 'blue' in Spanish, similar to the color of the sky or the ocean.",
-                            "UUID": "55851b93-74a6-406a-a0b1-26271a7fc5d7"
-                        }
-                    ],
-                    "QUESTIONS": [
-                        {
-                            "question": "What is the Spanish word for red?",
-                            "choices": [
-                                "rojo",
-                                "verde",
-                                "azul"
-                            ],
-                            "UUID": "c4cd445d-aae4-484c-9064-c186f62677fa"
-                        },
-                        {
-                            "question": "Which color does 'verde' represent?",
-                            "choices": [
-                                "green",
-                                "red",
-                                "blue"
-                            ],
-                            "UUID": "47f78a89-9f01-4477-98a4-f51f0aea3291"
-                        },
-                        {
-                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
-                            "choices": [
-                                "azul",
-                                "rojo",
-                                "verde"
-                            ],
-                            "UUID": "26d3e577-b9db-4d9f-80c2-4a393cff6eef"
-                        }
-                    ]
-                },
-                {
-                    "GAME": "Three Little Pigs",
-                    "DIFFICULTY": "easy",
-                    "CATEGORY": "word",
-                    "UUID": "57ac44cc-bcbd-455a-9ed4-a21762421f01",
-                    "INFO": {
-                        "description": "Welcome to the easy Ang Tatlong Baboy! First, you will learn each color (red, green, and blue), then complete a quiz!",
-                        "objective": "Be able to identify the Spanish words for each color taught and know the Spanish words for common objects of those colors.",
-                        "instructions": [
-                            "Navigate through each of the given colors and review the examples given.",
-                            "When up for the task, you will face the brain blaster."
-                        ],
-                        "prep": {
-                            "introConcept": "In Spanish, the word for 'color' is 'color.'",
-                            "exampleUsage": "To say that something is a color, use 'es color' followed by the color. For example, 'La manzana es color roja.' (The apple is red.)",
-                            "gameTip": "Remember, colors often appear in everyday objects! Think of common items like fruits or plants to help you remember."
-                        }
-                    },
-                    "TEXT": [
-                        {
-                            "text": "rojo",
-                            "englishText": "red",
-                            "linkedText": "Había tres cerditos que construyeron casas.",
-                            "englishLinkedText": "There were 3 pigs who built houses.",
-                            "helperText": "",
-                            "UUID": "15414718-9ac2-4b64-ac81-aa611285f0f2"
-                        },
-                        {
-                            "text": "verde",
-                            "englishText": "green",
-                            "linkedText": "El primero usó paja, el segundo madera, y el tercero ladrillos.",
-                            "englishLinkedText": "The first used straw, the second used wood and the third used bricks.",
-                            "helperText": "",
-                            "UUID": "90e71837-46b8-4a00-b2c3-1a05d962fdd4"
-                        },
-                        {
-                            "text": "azul",
-                            "englishText": "blue",
-                            "linkedText": "Llegó el lobo e intentó entrar. Sopló las dos primeras casas y las destruyó.",
-                            "englishLinkedText": "The wolf came and tried to get in. He blew down the first two houses which broke.",
-                            "helperText": "",
-                            "UUID": "889fc32d-f901-4927-8527-c1917fb9e676"
-                        },
-                        {
-                            "text": "azul",
-                            "englishText": "blue",
-                            "linkedText": "La casa del tercer cerdito era fuerte, por lo que no se rompió.",
-                            "englishLinkedText": "The third pig's house was strong and did not break.",
-                            "helperText": "",
-                            "UUID": "eade0614-3518-4b28-95f9-69096bd4dbf7"
-                        },
-                        {
-                            "text": "azul",
-                            "englishText": "blue",
-                            "linkedText": "El lobo se fue, y los cerditos estaban a salvo.",
-                            "englishLinkedText": "The wolf left and the pigs were safe.",
-                            "helperText": "",
-                            "UUID": "2f10d17c-3cbc-4139-a65a-8c9e4a7bb8dc"
-                        },
-                        {
-                            "text": "azul",
-                            "englishText": "blue",
-                            "linkedText": "Feliz, comieron y celebraron toda la noche.",
-                            "englishLinkedText": "They happily ate and celebrated all night.",
-                            "helperText": "",
-                            "UUID": "c77292eb-2ca0-4b6a-a9ee-34f44d488d2f"
-                        }
-                    ],
-                    "QUESTIONS": [
-                        {
-                            "question": "What is the Spanish word for red?",
-                            "choices": [
-                                "rojo",
-                                "verde",
-                                "azul"
-                            ],
-                            "UUID": "832de27f-0411-4fb6-9829-3d6f3b14e8c6"
-                        },
-                        {
-                            "question": "Which color does 'verde' represent?",
-                            "choices": [
-                                "green",
-                                "red",
-                                "blue"
-                            ],
-                            "UUID": "17f492df-15cd-4cbd-a164-f524da936758"
-                        },
-                        {
-                            "question": "If 'azul' means blue, what color is the sky in Spanish?",
-                            "choices": [
-                                "azul",
-                                "rojo",
-                                "verde"
-                            ],
-                            "UUID": "80d9058e-aa87-4781-bca6-d43a02776d3c"
                         }
                     ]
                 }

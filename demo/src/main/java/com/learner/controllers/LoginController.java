@@ -17,6 +17,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class LoginController {
 
@@ -67,11 +69,20 @@ public class LoginController {
         if(signedIn) {
             App.setRoot("main");
         } else {
-            // This is a popup and can be switched for better ui alterative
             Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Failed");
+            alert.setTitle(" Login Failed");
             alert.setHeaderText(null);
-            alert.setContentText("Login failed. Invalid email or password .");
+            alert.setContentText("Invalid email or password.");
+
+            // Set a custom icon for the alert
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/com/learner/game/fxml-images/logo.png")));
+            ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/com/learner/game/fxml-images/red-x.png")));
+            customIcon.setFitHeight(48); // Set the desired size
+            customIcon.setFitWidth(48); 
+            alert.setGraphic(customIcon);
+
+            // Show the alert
             alert.showAndWait();
         }
     }

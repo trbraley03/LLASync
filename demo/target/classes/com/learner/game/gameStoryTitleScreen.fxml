@@ -17,9 +17,9 @@
       </Label>
       <HBox alignment="CENTER" minHeight="350.0" prefHeight="350.0" prefWidth="720.0">
          <children>
-            <ImageView fitHeight="349.0" fitWidth="199.0" translateX="-110.0">
+            <ImageView fitHeight="349.0" fitWidth="199.0" preserveRatio="true" translateX="-60.0">
                <image>
-                  <Image url="@../../../../../../../../../Downloads/coverPiece.png" />
+                  <Image url="@fxml-images/cover-piece.png" />
                </image>
             </ImageView>
             <Label fx:id="title" styleClass="title" text="Title">
@@ -27,9 +27,9 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <ImageView fitHeight="344.0" fitWidth="196.0" rotate="180.0" translateX="110.0">
+            <ImageView fitHeight="344.0" fitWidth="196.0" preserveRatio="true" rotate="180.0" translateX="60.0">
                <image>
-                  <Image url="@../../../../../../../../../Downloads/coverPiece.png" />
+                  <Image url="@fxml-images/cover-piece.png" />
                </image>
             </ImageView>
          </children>

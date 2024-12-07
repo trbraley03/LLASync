@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
@@ -24,8 +25,11 @@ public class GameStoryContentController implements Initializable {
     private final Facade facade = Facade.getInstance();
     private final Language currentLanguage = facade.getCurrentLanguage();
     private final Difficulty currentDifficulty = facade.getCurrentDifficulty();
-    private String title = facade.getCurrentGame().getGameTitle();
+    private String titleText = facade.getCurrentGame().getGameTitle();
     private boolean translated = false;
+
+    @FXML
+    private Label title;
 
     @FXML
     private Button backButton;
@@ -44,6 +48,7 @@ public class GameStoryContentController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        title.setText(titleText);
         translated = false;
         gameContentText.setText(facade.getCurrentGame().getCurrentTextObject().getText());
         storyImage.setPreserveRatio(true);
@@ -57,10 +62,10 @@ public class GameStoryContentController implements Initializable {
     @FXML
     private void goBackToPreviousGameScreen(ActionEvent event) throws IOException {
         if(facade.getCurrentTextObjectIndex() == 0) {
-            App.setRoot("GameIntroScreen");
+            App.setRoot("GameTitleScreen");
         } else {
-            facade.getPreviousTextObject();
-            gameContentText.setText(facade.showCurrentTextObject());
+            setNewScreen();
+            gameContentText.setText(facade.getCurrentGame().getCurrentTextObject().getText());
         }
     }
 
@@ -69,17 +74,25 @@ public class GameStoryContentController implements Initializable {
         if(facade.getCurrentTextObjectIndex() == facade.getMaxTextObjectIndex()) {
             App.setRoot("GameOutroScreen");
         } else {
-            facade.getNextTextObject();
-            gameContentText.setText(facade.showCurrentTextObject());
+            setNewScreen();
+            gameContentText.setText(facade.getCurrentGame().getCurrentTextObject().getText());
         }
     }
 
     private void setStoryImage() {
-        String imagePath = "demo/src/main/resources/com/learner/game/story-images/" + title + "/" + getPageIndex() + ".png";
+        String imagePath = "/com/learner/game/story-images/" + titleText + "/" + getPageIndex() + ".png";
         URL imageUrl = getClass().getResource(imagePath);
         if (imageUrl != null) {
-            storyImage = new ImageView(imageUrl.toString());
-        }
+            // System.out.println("Image URL: " + imageUrl.toString());
+            Image image = new Image(imageUrl.toString());
+            storyImage.setImage(image);
+            // System.out.println("Image set successfully.");
+        } 
+        // else {
+        //     System.out.println("Image not found: " + imagePath);
+        //     System.out.println("Game title: " + title);
+        //     System.out.println("Page index: " + getPageIndex());
+        // }
     }
 
     @FXML
@@ -91,6 +104,12 @@ public class GameStoryContentController implements Initializable {
             gameContentText.setText(facade.getCurrentGame().getCurrentTextObject().getEnglishText());
             translated = true;
         }
+    }
+
+    private void setNewScreen() {
+        translated = false;
+        setStoryImage();
+        gameContentText.setText(facade.getCurrentGame().getCurrentTextObject().getText());
     }
 
 }
