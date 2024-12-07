@@ -28,7 +28,7 @@
                <children>
                   <ImageView fx:id="filipinoButton" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#selectFilipino" pickOnBounds="true" preserveRatio="true" styleClass="image-button">
                         <image>
-                           <Image url="@fmxl-images/philippines-flag.png" />
+                           <Image url="@fxml-images/philippines-flag.png" />
                         </image>
                   </ImageView>
                   <Label text="Filipino" />
@@ -38,7 +38,7 @@
                <children>
                   <ImageView fx:id="spanishButton" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#selectSpanish" pickOnBounds="true" preserveRatio="true" styleClass="image-button">
                      <image>
-                        <Image url="@fmxl-images/mexico-flag.png" />
+                        <Image url="@fxml-images/mexico-flag.png" />
                      </image>
                   </ImageView>
                   <Label text="Spanish" />
@@ -48,7 +48,7 @@
                <children>
                   <ImageView fx:id="portugueseButton" fitHeight="116.0" fitWidth="201.0" onMouseClicked="#selectPortuguese" pickOnBounds="true" preserveRatio="true" styleClass="image-button">
                      <image>
-                        <Image url="@fmxl-images/brazil-flag.png" />
+                        <Image url="@fxml-images/brazil-flag.png" />
                      </image>
                   </ImageView>
                   <Label text="Portuguese" />

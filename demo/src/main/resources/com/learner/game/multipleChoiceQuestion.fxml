@@ -28,6 +28,11 @@
                   <Font size="14.0" />
                </font>
             </Label>
+            <ImageView fx:id="audioButton" fitHeight="50.0" fitWidth="77.0" onMouseClicked="#playAudio" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@fxml-images/audio-icon.png" />
+               </image>
+            </ImageView>
             <HBox fx:id="hboxForChoiceButtons" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <VBox.margin>
                   <Insets />
@@ -38,9 +43,9 @@
          </opaqueInsets>
       </VBox>
       <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitQuestion" text="Submit" />
-      <ImageView fx:id="exitButton" accessibleRole="BUTTON" fitHeight="51.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true" styleClass="exit-button" translateX="336.0" translateY="-392.0">
+      <ImageView fx:id="exitButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#goToMain" pickOnBounds="true" preserveRatio="true" translateX="320.0" translateY="-370.0">
          <image>
-            <Image url="@fmxl-images/exit.png" />
+            <Image url="@fxml-images/exit.png" />
          </image>
       </ImageView>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" />

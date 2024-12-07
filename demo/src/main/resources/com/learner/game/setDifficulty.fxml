@@ -30,17 +30,17 @@
                <children>
                   <ImageView fx:id="easyButton" fitHeight="200.0" fitWidth="176.0" onMouseClicked="#goToEasyGame" styleClass="image-button">
                      <image>
-                        <Image url="@fmxl-images/easy.png" />
+                        <Image url="@fxml-images/easy.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="mediumButton" fitHeight="200.0" fitWidth="175.0" onMouseClicked="#goToMediumGame" styleClass="image-button">
                      <image>
-                        <Image url="@fmxl-images/medium.png" />
+                        <Image url="@fxml-images/medium.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="hardButton" fitHeight="200.0" fitWidth="176.0" onMouseClicked="#goToHardGame" styleClass="image-button">
                      <image>
-                        <Image url="@fmxl-images/hard.png" />
+                        <Image url="@fxml-images/hard.png" />
                      </image>
                   </ImageView>
                </children>

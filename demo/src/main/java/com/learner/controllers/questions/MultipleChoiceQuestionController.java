@@ -6,14 +6,18 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.learner.controllers.GameOutroController;
+import com.learner.game.App;
 import com.learner.model.Facade;
 import com.learner.model.questions.MultipleChoiceQuestion;
+import com.learner.narration.Narrator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
@@ -23,8 +27,8 @@ public class MultipleChoiceQuestionController implements Initializable {
     private MultipleChoiceQuestion currentQuestion;
     private String selectedAnswer; 
 
-    // @FXML
-    // private Button audioButton;
+    @FXML
+    private ImageView audioButton;
 
     @FXML
     private HBox hboxForChoiceButtons;
@@ -44,6 +48,14 @@ public class MultipleChoiceQuestionController implements Initializable {
     @FXML
     private Label title;
 
+    @FXML
+    private ImageView exitButton;
+
+    @FXML
+    private void goToMain(MouseEvent event) throws IOException {
+        App.setRoot("main");
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         title.setText(facade.getCurrentGame().getGameTitle());
@@ -52,13 +64,13 @@ public class MultipleChoiceQuestionController implements Initializable {
 
     private void loadQuestion() {
         currentQuestion = (MultipleChoiceQuestion) facade.getQuizQuestion();
-    
+        
         if (currentQuestion != null) {
             questionText.setText(currentQuestion.getQuestionText());
             ArrayList<String> options = currentQuestion.getOptions();
     
             questionTypeText.setText(options.size() == 2 ? "True/False" : "Multiple Choice");
-    
+            
             // hboxForChoiceButtons.getChildren().clear(); // Clear previous buttons
     
             for (String option : options) {
@@ -99,8 +111,10 @@ public class MultipleChoiceQuestionController implements Initializable {
                     // Check / compare button to answers 
                     if (answerText.equals(currentQuestion.getCorrectAnswer()) && answerText.equals(selectedAnswer)) {
                         btn.setStyle("-fx-background-color: green; -fx-text-fill: white;"); // Correct answer
+                        Narrator.playSound("Correct! Well done.");
                     } else if (answerText.equals(selectedAnswer)) {
                         btn.setStyle("-fx-background-color: red; -fx-text-fill: white;"); // Incorrect selected answer
+                        Narrator.playSound("Incorrect! Better luck next time.");
                     } else {
                         btn.setStyle(""); // Reset style for other buttons
                     }
@@ -128,8 +142,10 @@ public class MultipleChoiceQuestionController implements Initializable {
                 // Check / compare button to answers 
                 if (answerText.equals(currentQuestion.getCorrectAnswer())) {
                     btn.setStyle("-fx-background-color: green; -fx-text-fill: white;"); // Correct answer
+                    
                 } else {
                     btn.setStyle("-fx-background-color: red; -fx-text-fill: white;"); // Incorrect answer
+                    
                 } 
             }
         });
@@ -145,12 +161,11 @@ public class MultipleChoiceQuestionController implements Initializable {
         selectedAnswer = option; // Store the selected answer
     }
 
-    // @FXML
-    // void playAudio(ActionEvent event) {
-    //     Narrator.playSound(questionText.getText());
-    // }   
+    @FXML
+    private void playAudio(MouseEvent event) {
+        Narrator.playSound(questionText.getText());
+    }
     
-    // REMOVE
     @FXML
     private void goToNext(ActionEvent event) throws IOException {
         // Navigate to the next part of the application (e.g., results or another question type)
