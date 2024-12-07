@@ -20,19 +20,23 @@
       <Text fx:id="questionTypeText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Question" />
       <VBox alignment="CENTER" maxWidth="720.0" prefHeight="320.0" prefWidth="720.0" spacing="5.0">
          <children>
-            <Label fx:id="questionText" alignment="CENTER" maxWidth="550.0" prefHeight="35.0" prefWidth="550.0" styleClass="question-text" text="Text" wrapText="true">
-               <opaqueInsets>
-                  <Insets top="20.0" />
-               </opaqueInsets>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="audioButton" fitHeight="50.0" fitWidth="77.0" onMouseClicked="#playAudio" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@fxml-images/audio-icon.png" />
-               </image>
-            </ImageView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="audioButton" fitHeight="50.0" fitWidth="77.0" onMouseClicked="#playAudio" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                     <image>
+                        <Image url="@fxml-images/audio-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="questionText" alignment="CENTER" styleClass="question-text" text="Text" wrapText="true">
+                     <opaqueInsets>
+                        <Insets top="20.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
             <HBox fx:id="hboxForChoiceButtons" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <VBox.margin>
                   <Insets />
@@ -43,11 +47,10 @@
          </opaqueInsets>
       </VBox>
       <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitQuestion" text="Submit" />
-      <ImageView fx:id="exitButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#goToMain" pickOnBounds="true" preserveRatio="true" translateX="320.0" translateY="-370.0">
+      <ImageView fx:id="exitButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#goToMain" pickOnBounds="true" preserveRatio="true" translateX="320.0" translateY="-415.0">
          <image>
             <Image url="@fxml-images/exit.png" />
          </image>
       </ImageView>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" />
    </children>
 </VBox>
