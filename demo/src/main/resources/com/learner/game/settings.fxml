@@ -95,21 +95,16 @@
       </VBox>
       <VBox alignment="CENTER" minHeight="180.0" prefHeight="150.0" prefWidth="720.0" spacing="3.0">
          <children>
-            <Label text="Profile picture">
+            <Label text="Profile picture" translateY="-20.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="profilePicture" fitHeight="76.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="profilePicture" fitHeight="76.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" translateY="-20.0">
                <image>
                   <Image url="@profile_picture.png" />
                </image>
             </ImageView>
-            <Button fx:id="fileSelectButton" alignment="CENTER" mnemonicParsing="false" onAction="#selectPicture" prefHeight="25.0" prefWidth="77.0" text="Change Image">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
          </children>
       </VBox>
       <HBox prefHeight="131.0" prefWidth="720.0">
@@ -117,5 +112,10 @@
             <Button fx:id="backButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToMain" text="&lt; Back" translateX="10.0" translateY="-50.0" />
          </children>
       </HBox>
+      <Button fx:id="updateProfilePicture" alignment="CENTER" maxHeight="20.0" maxWidth="40.0" minHeight="19.0" mnemonicParsing="false" onAction="#selectPicture" prefHeight="19.0" prefWidth="134.0" styleClass="settings-update-buttons" text="Change Image" translateY="-90.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
    </children>
 </VBox>

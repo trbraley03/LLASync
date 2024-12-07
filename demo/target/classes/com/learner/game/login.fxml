@@ -22,7 +22,7 @@
             <Insets left="200.0" right="200.0" top="100.0" />
          </VBox.margin>
       </TextField>
-      <Label pickOnBounds="false" text="Email" textAlignment="CENTER" translateY="-40.0" VBox.vgrow="NEVER">
+      <Label pickOnBounds="false" text="Email" textAlignment="CENTER" translateY="-35.0" VBox.vgrow="NEVER">
          <font>
             <Font size="24.0" />
          </font>
@@ -38,7 +38,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label pickOnBounds="false" text="Password" textAlignment="CENTER" translateY="-40.0" VBox.vgrow="NEVER">
+      <Label pickOnBounds="false" text="Password" textAlignment="CENTER" translateY="-35.0" VBox.vgrow="NEVER">
          <font>
             <Font size="24.0" />
          </font>
