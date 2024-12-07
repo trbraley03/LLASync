@@ -18,7 +18,7 @@
          <children>
             <ImageView fitHeight="99.0" fitWidth="187.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@fmxl-images/logo.png" />
+                  <Image url="@fxml-images/logo.png" />
                </image>
             </ImageView>
             <VBox>

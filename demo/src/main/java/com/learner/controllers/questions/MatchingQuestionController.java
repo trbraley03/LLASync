@@ -1,5 +1,6 @@
 package com.learner.controllers.questions;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,8 +8,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import com.learner.controllers.GameOutroController;
+import com.learner.game.App;
 import com.learner.model.Facade;
 import com.learner.model.questions.MatchingQuestion;
+import com.learner.narration.Narrator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class MatchingQuestionController implements Initializable {
 
@@ -34,9 +38,6 @@ public class MatchingQuestionController implements Initializable {
 
     @FXML
     private Button clearButton;
-
-    @FXML
-    private ImageView exitButton;
 
     @FXML
     private Button leftButton1;
@@ -64,6 +65,14 @@ public class MatchingQuestionController implements Initializable {
 
     @FXML
     private Label correctIncorrectDisplayText;
+
+    @FXML
+    private ImageView exitButton;
+
+    @FXML
+    private void goToMain(MouseEvent event) throws IOException {
+        App.setRoot("main");
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -100,6 +109,7 @@ public class MatchingQuestionController implements Initializable {
     private void handleLeftButtonClick(Button button) {
         if (selectedLeftButton != null) {
             selectedLeftButton.setStyle(""); // Reset previous left button style
+            Narrator.playSound(button.getText());
         }
         selectedLeftButton = button;
         selectedLeftButton.setStyle(availableColors.get(0)); // Highlight selected left button
@@ -112,6 +122,7 @@ public class MatchingQuestionController implements Initializable {
     private void handleRightButtonClick(Button button) {
         if (selectedRightButton != null) {
             selectedRightButton.setStyle(""); // Reset previous right button style
+            Narrator.playSound(button.getText());
         }
         selectedRightButton = button;
         selectedRightButton.setStyle(availableColors.get(0)); // Highlight selected right button
@@ -178,10 +189,12 @@ public class MatchingQuestionController implements Initializable {
             if (correctCount == 3) {
                 facade.getCurrentGame().answeredQuestionCorrectly(); // used instead of validate answer
                 correctIncorrectDisplayText.setText("All pairs are correct! Awesome job!");
+                Narrator.playSound("All pairs are correct! Awesome job!");
                 submit.setText("Continue");
             } else {
                 correctIncorrectDisplayText.setText(correctCount + "/3 correct pairs. Nice Try!");
                 // submit.setText("View Answer"); // can uncomment and add an addiontal element to the if else at a later time
+                Narrator.playSound(correctCount + "/3 correct pairs. Nice Try!");
                 submit.setText("Continue");
             }
             correctIncorrectDisplayText.setVisible(true);
