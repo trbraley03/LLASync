@@ -23,6 +23,7 @@ public class Facade {
         // Private constructor to enforce singleton pattern
     }
 
+
     public static Facade getInstance() {
         if (instance == null) {
             instance = new Facade();
@@ -241,6 +242,6 @@ public class Facade {
     }
 
     public double getQuestionAverageResult() {
-        return (double)getNumberOfQuestionsAnsweredCorrectly()/(double)getNumberOfQuizQuestions();
+        return (double)getNumberOfQuestionsAnsweredCorrectly()/(double)getNumberOfQuizQuestions() * 100;
     }
 }
