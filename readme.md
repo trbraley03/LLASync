@@ -12,9 +12,13 @@ Link to the live site of the prototype: (https://smdindl.github.io/Language-Lear
 # Project Prototype Walk-through
 Watch my video walk-through on YouTube here: [Video Walk-through](https://www.youtube.com/watch?v=xKGJS_9CxZs)
 
+# GUI Video Walk-through
+Watch my GUI video walk-through on YouTube here: [Video Walk-through](___)
+
 
 ## Features
 - **Interactive Games**: Engaging games such as Alphahabet,Colors,Numbers that make learning fun.
 - **Storybooks**: Read along with stories to enhance vocabulary.
 - **Three Difficulty Levels**: Easy, Medium, and Hard to suit different learners.
 - **Progress Tracking**: Monitor your learning journey and achievements.
+
