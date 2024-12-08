@@ -1084,7 +1084,7 @@
                     "GAME": "Three Little Pigs",
                     "DIFFICULTY": "easy",
                     "CATEGORY": "story",
-                    "UUID": "a0fb4d4a-2c0e-4549-bf93-94f3d6553926",
+                    "UUID": "d75e98bd-801f-4631-99a0-160aca767b50",
                     "INFO": {
                         "description": "Welcome to the story of 'Ang Tatlong Baboy' (Three Little Pigs). Follow the classic story, but this time in Filipino.",
                         "objective": "Be able to understand the Filipino words used in the story and learn how to use them in everyday situations",
@@ -1106,7 +1106,7 @@
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
-                            "UUID": "4c0ad483-1ec2-469f-b268-ac29da950339"
+                            "UUID": "457cfe78-1793-4891-906e-ad0945b908bb"
                         },
                         {
                             "text": "Ang una ay gumamit ng dayami, ang ikalawa ng kahoy, at ang ikatlo ng bato.",
@@ -1114,7 +1114,7 @@
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
-                            "UUID": "93efd7d0-ce9c-4bde-8f6e-d0c94c5addbf"
+                            "UUID": "64e54c9f-1151-4b40-ac8e-dcd172152d5d"
                         },
                         {
                             "text": "Dumating ang lobo at sinubukang pumasok. Hinipan niya ang unang dalawang bahay, at nasira ang mga ito.",
@@ -1122,7 +1122,7 @@
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
-                            "UUID": "9fd0c5ed-88a6-41b1-a196-1c474f6fb852"
+                            "UUID": "a41c9799-9710-4708-9c63-4d36ce4476d9"
                         },
                         {
                             "text": "Ang bahay ng ikatlong baboy ay matibay, kaya hindi ito nasira.",
@@ -1130,7 +1130,7 @@
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
-                            "UUID": "b10cc46b-24dd-4d69-9cf0-6f4beb0d798f"
+                            "UUID": "64309015-8f72-4117-94c3-cbd06a72f4ae"
                         },
                         {
                             "text": "Umalis ang lobo, at ligtas ang mga baboy.",
@@ -1138,7 +1138,7 @@
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
-                            "UUID": "fc646a9b-4662-41cd-b777-2ce2f028e4dd"
+                            "UUID": "031f30a9-92e7-47bc-bfff-18e815ebbdcf"
                         },
                         {
                             "text": "Masaya silang kumain at nagsaya buong gabi.",
@@ -1146,60 +1146,63 @@
                             "linkedText": "",
                             "englishLinkedText": "",
                             "helperText": "",
-                            "UUID": "c4d2190f-f772-4cb7-8451-25033ff7047a"
+                            "UUID": "68624916-c23e-4ce9-90f3-992eb1a0e0cf"
                         }
                     ],
                     "QUESTIONS": [
                         {
-                            "question": "What is the Filipino word for red?",
+                            "question": "What did the first pig use to build his house?",
                             "choices": [
-                                "pula",
-                                "berde",
-                                "asul"
+                                "dayami",
+                                "kahoy",
+                                "bato"
                             ],
-                            "UUID": "03cbbd0d-3eac-4eed-8c83-f185940e8eda"
+                            "UUID": "a90cbc72-16a5-43b0-926e-810371b5a936"
                         },
                         {
-                            "question": "Which color does 'berde' represent?",
+                            "question": "What did the second pig use to build his house?",
                             "choices": [
-                                "green",
-                                "red",
-                                "blue"
+                                "kahoy",
+                                "dayami",
+                                "bato"
                             ],
-                            "UUID": "6d914527-3e67-4cd8-8ca6-415a7994dacf"
+                            "UUID": "976255ba-56b2-40ea-84c1-e92f66e87f01"
                         },
                         {
-                            "question": "What is the Filipino word for blue?",
+                            "question": "What did the third pig use to build his house?",
                             "choices": [
-                                "asul",
-                                "pula",
-                                "berde"
+                                "bato",
+                                "dayami",
+                                "kahoy"
                             ],
-                            "UUID": "62aaaf9a-264b-4864-a0cb-4fb5a8b9872f"
+                            "UUID": "677e9ead-5d02-4d70-b264-7c6910872890"
                         },
                         {
-                            "question": "Ang langit ay kulay asul.",
+                            "question": "What happened to the first two houses?",
                             "choices": [
-                                "True",
-                                "False"
+                                "nasira",
+                                "matibay",
+                                "ligtas"
                             ],
-                            "UUID": "9cb7b480-121f-43d1-b8b9-43183cb22606"
+                            "UUID": "e521f97e-3343-4dd3-91b1-6a9bcd251aad"
                         },
                         {
-                            "question": "Ang mansanas ay kulay asul.",
+                            "question": "What happened to the third pig's house?",
                             "choices": [
-                                "False",
-                                "True"
+                                "matibay",
+                                "nasira",
+                                "ligtas"
                             ],
-                            "UUID": "6dbdab39-f31e-426e-a191-258dd2ac7915"
+                            "UUID": "a047f102-6d3c-4371-ac70-c374c5b36644"
                         },
                         {
-                            "question": "The word for 'sky' in Filipino is 'langit'.",
+                            "question": "What did the pigs do after the wolf left?",
                             "choices": [
-                                "True",
-                                "False"
+                                "kumain at nagsaya",
+                                "umalis",
+                                "natulog"
                             ],
-                            "UUID": "e4159bed-0f1f-45ef-9be5-05daf244a86e"
+                            "UUID": "1294ab6c-7339-412b-9a52-4a544f14a9d0"
                         }
                     ]
                 },
