@@ -25,6 +25,7 @@ public class MatchingQuestionController implements Initializable {
 
     private final Facade facade = Facade.getInstance();
     private MatchingQuestion currentQuestion = (MatchingQuestion) facade.getQuizQuestion();
+    private final boolean spokenFeedback = facade.getCurrentUser().getReadQuestionFeedbackAloud();
 
     private final HashMap<Button, String> leftButtonMap = new HashMap<>();
     private final HashMap<Button, String> rightButtonMap = new HashMap<>();
@@ -109,7 +110,7 @@ public class MatchingQuestionController implements Initializable {
     private void handleLeftButtonClick(Button button) {
         if (selectedLeftButton != null) {
             selectedLeftButton.setStyle(""); // Reset previous left button style
-            Narrator.playSound(button.getText());
+            if(spokenFeedback) Narrator.playSound(button.getText());
         }
         selectedLeftButton = button;
         selectedLeftButton.setStyle(availableColors.get(0)); // Highlight selected left button
@@ -122,7 +123,7 @@ public class MatchingQuestionController implements Initializable {
     private void handleRightButtonClick(Button button) {
         if (selectedRightButton != null) {
             selectedRightButton.setStyle(""); // Reset previous right button style
-            Narrator.playSound(button.getText());
+            if(spokenFeedback) Narrator.playSound(button.getText());
         }
         selectedRightButton = button;
         selectedRightButton.setStyle(availableColors.get(0)); // Highlight selected right button
@@ -189,12 +190,12 @@ public class MatchingQuestionController implements Initializable {
             if (correctCount == 3) {
                 facade.getCurrentGame().answeredQuestionCorrectly(); // used instead of validate answer
                 correctIncorrectDisplayText.setText("All pairs are correct! Awesome job!");
-                Narrator.playSound("All pairs are correct! Awesome job!");
+                if(spokenFeedback) Narrator.playSound("All pairs are correct! Awesome job!");
                 submit.setText("Continue");
             } else {
                 correctIncorrectDisplayText.setText(correctCount + "/3 correct pairs. Nice Try!");
                 // submit.setText("View Answer"); // can uncomment and add an addiontal element to the if else at a later time
-                Narrator.playSound(correctCount + "/3 correct pairs. Nice Try!");
+                if(spokenFeedback) Narrator.playSound(correctCount + "/3 correct pairs. Nice Try!");
                 submit.setText("Continue");
             }
             correctIncorrectDisplayText.setVisible(true);
@@ -205,6 +206,7 @@ public class MatchingQuestionController implements Initializable {
                 e.printStackTrace();
             }
         }
+
     }
 
     private static class Pair<K, V> {

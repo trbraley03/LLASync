@@ -19,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 public class FITBQuestionController implements Initializable {
@@ -26,6 +27,7 @@ public class FITBQuestionController implements Initializable {
     private final Facade facade = Facade.getInstance();
     private FITBQuestion currentQuestion = (FITBQuestion) facade.getQuizQuestion();
     private String selectedAnswer; 
+    private boolean spokenFeedback = facade.getCurrentUser().getReadQuestionFeedbackAloud();
     private String[] encouragement = {"Great job!", "Keep it up!", "You're doing great!"};
 
     @FXML
@@ -51,6 +53,9 @@ public class FITBQuestionController implements Initializable {
 
     @FXML
     private ImageView exitButton;
+
+    @FXML
+    private HBox hboxForChoiceButtons;
 
     @FXML
     private void playAudio(MouseEvent event) {
@@ -82,14 +87,14 @@ public class FITBQuestionController implements Initializable {
             correctAnswerDisplayText.setText(getEncouragement());
             correctOrIncorrectText.setVisible(true);
             correctAnswerDisplayText.setVisible(true);
-            Narrator.playSound("Correct! Well done.");
+            if(spokenFeedback) Narrator.playSound("Correct! Well done.");
         } else {
             correctOrIncorrectText.setText("Incorrect");
             correctOrIncorrectText.setStyle("-fx-fill: red;");
             correctAnswerDisplayText.setText("Expected Answer: " + currentQuestion.getAnswer());
             correctOrIncorrectText.setVisible(true);
             correctAnswerDisplayText.setVisible(true);
-            Narrator.playSound("Incorrect! Better luck next time.");
+            if(spokenFeedback) Narrator.playSound("Incorrect! Better luck next time.");
         }
         submit.setText("Continue");
     }
@@ -108,4 +113,5 @@ public class FITBQuestionController implements Initializable {
     private void goToMain(MouseEvent event) throws IOException {
         App.setRoot("main");
     }
+
 }

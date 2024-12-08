@@ -23,7 +23,7 @@
       </Label>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="640.0" spacing="20.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -110,29 +110,47 @@
             <Insets left="80.0" />
          </VBox.margin>
       </VBox>
-      <VBox alignment="CENTER" minHeight="180.0" prefHeight="150.0" prefWidth="720.0" spacing="3.0">
+      <VBox alignment="CENTER" minHeight="174.0" prefHeight="195.0" prefWidth="720.0" spacing="2.0">
          <children>
             <Label text="Profile picture" translateY="-20.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="profilePicture" fitHeight="76.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" translateY="-20.0">
+            <ImageView fx:id="profilePicture" fitHeight="56.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" translateY="-20.0">
                <image>
                   <Image url="@profile_picture.png" />
                </image>
             </ImageView>
          </children>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
       </VBox>
       <HBox prefHeight="131.0" prefWidth="720.0">
          <children>
-            <Button fx:id="backButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToMain" text="&lt; Back" translateX="10.0" translateY="-50.0" />
+            <Button fx:id="backButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToMain" text="&lt; Back" translateX="10.0" translateY="-82.0" />
          </children>
       </HBox>
-      <Button fx:id="updateProfilePicture" alignment="CENTER" maxHeight="20.0" maxWidth="69.0" minHeight="19.0" mnemonicParsing="false" onAction="#selectPicture" prefHeight="19.0" prefWidth="69.0" styleClass="small-button" text="Change Image" translateY="-90.0">
+      <Button fx:id="updateProfilePicture" alignment="CENTER" maxHeight="20.0" maxWidth="69.0" minHeight="19.0" mnemonicParsing="false" onAction="#selectPicture" prefHeight="19.0" prefWidth="69.0" styleClass="small-button" text="Change Image" translateY="-107.0">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" translateY="-261.0">
+         <children>
+            <Label text="Spoken feedback">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="spokenFeedbackButton" mnemonicParsing="false" onAction="#changeSpokenFeedbackState" text="Disabled">
+               <styleClass>
+                  <String fx:value="settings-update-buttons" />
+                  <String fx:value="button-inverse" />
+               </styleClass>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </VBox>

@@ -28,9 +28,11 @@ import javafx.stage.Stage;
 
 public class SettingsController implements Initializable{
 
-    private Facade facade = Facade.getInstance();
+    private final Facade facade = Facade.getInstance();
+    private boolean spokenFeedback = facade.getCurrentUser().getReadQuestionFeedbackAloud();
 
     private FileChooser fileChooser = new FileChooser();
+
 
     @FXML
     private TextField UserBox;
@@ -64,6 +66,9 @@ public class SettingsController implements Initializable{
 
     @FXML
     private Button updateUsernameButton;
+
+    @FXML
+    private Button spokenFeedbackButton;
 
     @FXML
     private void updateEmail(ActionEvent event) {
@@ -188,6 +193,19 @@ public class SettingsController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         profilePicture.setImage(ImageModel.getCurrentImage());
+    }
+
+    @FXML
+    private void changeSpokenFeedbackState(ActionEvent event) {
+        if(spokenFeedback) {
+            spokenFeedback = false;
+            facade.getCurrentUser().setReadQuestionFeedbackAloud(true);
+            spokenFeedbackButton.setText("Disabled");
+        } else {
+            spokenFeedback = true;
+            facade.getCurrentUser().setReadQuestionFeedbackAloud(true);
+            spokenFeedbackButton.setText("Enabled");
+        }
     }
 
 }

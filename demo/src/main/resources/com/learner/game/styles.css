@@ -44,6 +44,7 @@
 }
 
 .button:disabled {
+    -fx-text-fill: white;      /* Text color */
     -fx-cursor: default; /* Default cursor when button is disabled */
 }
 
@@ -218,4 +219,16 @@
     -fx-fit-height: 20px;
     -fx-pref-width: 20px;
     -fx-pref-height: 20px;
+}
+
+/* Highlighted button style */
+.button-highlighted {
+    -fx-background-color: #162335; /* Gold color for highlighting */
+    -fx-text-fill: rgb(255, 255, 255); /* Text color */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-font-size: 14pt; /* Font size */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-cursor: hand; /* Hand cursor on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); /* Shadow effect */
+    -fx-transition: all 0.3s ease; /* Smooth transition */
 }

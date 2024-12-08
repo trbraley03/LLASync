@@ -247,7 +247,11 @@ public class User {
         ProgressTracker currentProgressTracker = getProgressTracker(langUUID);
         if (currentProgressTracker != null) {
             currentProgressTracker.addCompletedGame(langUUID);
-        } 
+        } else {
+            ProgressTracker newProgressTracker = new ProgressTracker(langUUID, GameManager.getInstance().getLanguageByUUID(langUUID).getLanguageName());
+            newProgressTracker.addCompletedGame(langUUID);
+            progressTrackers.add(newProgressTracker);
+        }
     }
 
     public ArrayList<UUID> getCompletedGames(UUID langUUID) {

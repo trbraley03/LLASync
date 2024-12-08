@@ -25,6 +25,7 @@ public class MultipleChoiceQuestionController implements Initializable {
 
     private final Facade facade = Facade.getInstance();
     private MultipleChoiceQuestion currentQuestion;
+    private final boolean spokenFeedback = facade.getCurrentUser().getReadQuestionFeedbackAloud();
     private String selectedAnswer; 
 
     @FXML
@@ -50,6 +51,8 @@ public class MultipleChoiceQuestionController implements Initializable {
 
     @FXML
     private ImageView exitButton;
+
+    private Button currentlyHighlightedButton;
 
     @FXML
     private void goToMain(MouseEvent event) throws IOException {
@@ -111,10 +114,10 @@ public class MultipleChoiceQuestionController implements Initializable {
                     // Check / compare button to answers 
                     if (answerText.equals(currentQuestion.getCorrectAnswer()) && answerText.equals(selectedAnswer)) {
                         btn.setStyle("-fx-background-color: green; -fx-text-fill: white;"); // Correct answer
-                        Narrator.playSound("Correct! Well done.");
+                        if(spokenFeedback) Narrator.playSound("Correct! Well done.");
                     } else if (answerText.equals(selectedAnswer)) {
                         btn.setStyle("-fx-background-color: red; -fx-text-fill: white;"); // Incorrect selected answer
-                        Narrator.playSound("Incorrect! Better luck next time.");
+                        if(spokenFeedback) Narrator.playSound("Incorrect! Better luck next time.");
                     } else {
                         btn.setStyle(""); // Reset style for other buttons
                     }
@@ -172,5 +175,18 @@ public class MultipleChoiceQuestionController implements Initializable {
         System.out.println("Next button clicked.");
     }
 
-    
+    @FXML
+    private void handleOptionSelection(ActionEvent event) {
+        Button clickedButton = (Button) event.getSource();
+
+        // Reset the style of the previously highlighted button
+        if (currentlyHighlightedButton != null) {
+            currentlyHighlightedButton.setStyle(""); // Reset to default style
+        }
+
+        // Highlight the clicked button
+        clickedButton.setStyle("-fx-background-color: #FFD700; -fx-text-fill: black; -fx-border-color: #FFD700; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-font-size: 14pt; -fx-font-weight: bold; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-transition: all 0.3s ease;");
+        currentlyHighlightedButton = clickedButton;
+    }
+
 }

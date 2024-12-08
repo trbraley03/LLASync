@@ -3,6 +3,7 @@ package com.learner.game;
 import java.io.IOException;
 
 import com.learner.model.Facade;
+import com.learner.narration.Narrator;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -40,6 +41,7 @@ public class App extends Application {
 
     public static void main(String[] args) {
         Facade.getInstance().loadData();
+        Narrator.playSound("");
         launch();
     }
 
