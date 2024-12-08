@@ -82,6 +82,7 @@ public class SettingsController implements Initializable{
                 }
             });
         }
+
     }
 
     @FXML
@@ -193,6 +194,11 @@ public class SettingsController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         profilePicture.setImage(ImageModel.getCurrentImage());
+        if(spokenFeedback) {
+            spokenFeedbackButton.setText("Enabled");
+        } else {
+            spokenFeedbackButton.setText("Disabled");
+        }
     }
 
     @FXML
