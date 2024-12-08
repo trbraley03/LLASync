@@ -63,6 +63,7 @@ public class MultipleChoiceQuestionController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         title.setText(facade.getCurrentGame().getGameTitle());
         loadQuestion();
+        submitButton.setDisable(true); // Disable submit button initially
     }
 
     private void loadQuestion() {
@@ -78,8 +79,6 @@ public class MultipleChoiceQuestionController implements Initializable {
     
             for (String option : options) {
                 Button optionButton = new Button(option);
-                
-                // Set the initial style with a border
             
                 // Assign event handler for selection
                 optionButton.setOnAction(event -> {
@@ -89,13 +88,14 @@ public class MultipleChoiceQuestionController implements Initializable {
                             ((Button) node).setStyle(("-fx-background-color: #93a3b8;")); // Reset the style
                         }
                     }
-            
-                    // Remove the border from the newly selected button
-                    optionButton.setStyle("-fx-background-color: #bbc1c9;");
                     
-                    // Update the currently selected button
+                    
+                    // Update the currently selected button w/ different color
+                    optionButton.setStyle("-fx-background-color: #bbc1c9;");
                     currentlySelectedButton = optionButton;
-            
+
+                    submitButton.setDisable(false);
+                    
                     // Handle the option selection logic
                     handleOptionSelection(option);
                 });

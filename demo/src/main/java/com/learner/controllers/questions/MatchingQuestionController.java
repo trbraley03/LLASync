@@ -86,9 +86,9 @@ public class MatchingQuestionController implements Initializable {
         ArrayList<String> leftSide = currentQuestion.getLeftSide();
         ArrayList<String> rightSide = currentQuestion.getRightSide();
 
-        // Debugging: Print the leftSide and rightSide lists
-        System.out.println("Left side: " + leftSide);
-        System.out.println("Right side: " + rightSide);
+        // // Debugging: Print the leftSide and rightSide lists
+        // System.out.println("Left side: " + leftSide);
+        // System.out.println("Right side: " + rightSide);
 
         List<Button> leftButtons = List.of(leftButton1, leftButton2, leftButton3);
         for (int i = 0; i < 3; i++) {
@@ -142,7 +142,10 @@ public class MatchingQuestionController implements Initializable {
         selectedLeftButton = null;
         selectedRightButton = null;
 
-        submit.setDisable(false); // Enable submit button when a pair is selected
+        // Only enable submit button when all pairs are selected
+        if (selectedPairs.size() == 3) {
+            submit.setDisable(false); // Enable submit button when all pairs are selected
+        }
         disableButtons(leftButton, rightButton); // Disable the selected pair
     }
 
@@ -167,7 +170,7 @@ public class MatchingQuestionController implements Initializable {
 
     @FXML
     private void submitQuestion(ActionEvent event) {
-        if(submit.getText().equals("Submit")) {
+        if(submit.getText().equals("Submit") && selectedPairs.size() == 3) {
             // Create a right side to compare with correct right side out of select pairs
             // use selected pairs, if correct count = 3 then its fully correct
 
