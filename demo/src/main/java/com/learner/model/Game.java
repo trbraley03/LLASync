@@ -230,9 +230,9 @@ public class Game {
         addQuestionsByType(QuestionType.MULTIPLE_CHOICE, 3, multiChoiceStartIndex);
 
         // Pull 1 Sequencing Question if the game is eligible for sequencing (story games for example)
-        if (category == GameCategory.STORY) {
-            addQuestionsByType(QuestionType.SEQUENCING, 1, startIndex);
-        } else {
+        if (category == GameCategory.STORY) { // Not yet implemented
+            // addQuestionsByType(QuestionType.SEQUENCING, 1, startIndex);
+        } else if(category == GameCategory.WORD) {
             // Pull 2 Fill in the Blank Questions
             addQuestionsByType(QuestionType.FITB, 2, startIndex);
 
