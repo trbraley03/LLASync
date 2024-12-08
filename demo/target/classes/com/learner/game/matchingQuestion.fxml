@@ -84,7 +84,7 @@
          <VBox.margin>
             <Insets />
          </VBox.margin></Button>
-      <ImageView fx:id="exitButton" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#goToMain" pickOnBounds="true" preserveRatio="true" styleClass="image-button" translateX="330.0" translateY="-395.0">
+      <ImageView fx:id="exitButton" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#goToMain" pickOnBounds="true" preserveRatio="true" styleClass="image-button" translateX="330.0" translateY="-396.0">
          <image>
             <Image url="@fxml-images/exit.png" />
          </image>
