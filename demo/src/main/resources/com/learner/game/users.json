@@ -1,66 +1,68 @@
 {
-    "users": [
+  "users": [
+    {
+      "password": "Password2024!",
+      "progressTrackers": [
         {
-            "uuid": "c9d7dff4-d613-4dad-bb41-e1fb1913ccb7",
-            "email": "sdindl@email.com",
-            "username": "sdindl",
-            "displayname": "Steven",
-            "password": "Password2024!",
-            "progressTrackers": [
-                {
-                    "languageName": "Filipino",
-                    "languageUUID": "1bafb0ae-3462-4ec3-9cc2-a98ff2898e72",
-                    "completedGames": [
-                        {
-                            "gameUUID": "8ce4fefc-a539-4546-9d7e-0ac8778f8de5"
-                        }
-                    ],
-                    "missedQuestions": [
-                        {
-                            "uuid": "e4e1d515-7baf-4569-8c14-7c663b6e49f5",
-                            "questionType": "multipleChoice"
-                        },
-                        {
-                            "uuid": "285bad41-5c1c-45b4-bc51-59f480bb1895",
-                            "questionType": "matching"
-                        }
-                    ]
-                },
-                {
-                    "languageName": "Spanish",
-                    "languageUUID": "d9d2caae-e27d-4de7-9b2a-8a784f5fbb12",
-                    "completedGames": [],
-                    "missedQuestions": []
-                }
-            ]
+          "languageUUID": "d9d2caae-e27d-4de7-9b2a-8a784f5fbb12",
+          "completedGames": [],
+          "languageName": "Spanish",
+          "missedQuestions": []
         },
         {
-            "uuid": "2e253e1e-33cb-401a-b0a9-9b2fe046e8ea",
-            "email": "0",
-            "username": "0",
-            "displayname": "0",
-            "password": "0",
-            "progressTrackers": [
-                {
-                    "languageName": "Filipino",
-                    "languageUUID": "1bafb0ae-3462-4ec3-9cc2-a98ff2898e72",
-                    "completedGames": [
-                        {
-                            "gameUUID": "8ce4fefc-a539-4546-9d7e-0ac8778f8de5"
-                        }
-                    ],
-                    "missedQuestions": [
-                        {
-                            "uuid": "e4e1d515-7baf-4569-8c14-7c663b6e49f5",
-                            "questionType": "multipleChoice"
-                        },
-                        {
-                            "uuid": "285bad41-5c1c-45b4-bc51-59f480bb1895",
-                            "questionType": "matching"
-                        }
-                    ]
-                }
-            ]
+          "languageUUID": "1bafb0ae-3462-4ec3-9cc2-a98ff2898e72",
+          "completedGames": [
+            {
+              "gameUUID": "8ce4fefc-a539-4546-9d7e-0ac8778f8de5"
+            }
+          ],
+          "languageName": "Filipino",
+          "missedQuestions": []
         }
-    ]
+      ],
+      "displayname": "Steven",
+      "uuid": "c9d7dff4-d613-4dad-bb41-e1fb1913ccb7",
+      "email": "sdindl@email.com",
+      "username": "sdindl"
+    },
+    {
+      "password": "0",
+      "progressTrackers": [
+        {
+          "languageUUID": "1bafb0ae-3462-4ec3-9cc2-a98ff2898e72",
+          "completedGames": [
+            {
+              "gameUUID": "8ce4fefc-a539-4546-9d7e-0ac8778f8de5"
+            }
+          ],
+          "languageName": "Filipino",
+          "missedQuestions": []
+        },
+        {
+          "languageUUID": "5c7b2ba6-8e1c-44fc-addc-c97a35ad020d",
+          "completedGames": [
+            {
+              "gameUUID": "5c7b2ba6-8e1c-44fc-addc-c97a35ad020d"
+            }
+          ],
+          "languageName": "Spanish",
+          "missedQuestions": []
+        },
+        {
+          "languageUUID": "1907e0cb-cff7-4437-a4b4-0119ac4ddaac",
+          "completedGames": [
+            {
+              "gameUUID": "1907e0cb-cff7-4437-a4b4-0119ac4ddaac"
+            }
+          ],
+          "languageName": "Filipino",
+          "missedQuestions": []
+        }
+      ],
+      "displayname": "0",
+      "uuid": "2e253e1e-33cb-401a-b0a9-9b2fe046e8ea",
+      "email": "0",
+      "username": "0"
+    }
+  ]
 }

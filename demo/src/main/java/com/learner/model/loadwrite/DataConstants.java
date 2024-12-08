@@ -14,7 +14,8 @@ public class DataConstants {
 
     // Default profile picture path
     public final static String DEFAULT_PROFILE_PICTURE_PATH = "/com/learner/game/fxml-images/default-profile-picture.png";
-    public final static String DEFAULT = "default"; // Default profile picture name in json file
+    public final static String DEFAULT_PROFILE_PICTURE_NAME = "default.png"; // Default profile picture name in json file
+    public final static String PROFILE_PICTURES_FOLDER_PATH = "/com/learner/game/user-profile-pictures/";
 
     // Constants for GameData.json
 

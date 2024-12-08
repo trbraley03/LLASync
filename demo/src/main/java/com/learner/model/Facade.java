@@ -94,6 +94,10 @@ public class Facade {
         return currentUser.changePassword(password);
     }
 
+    public String updateProfilePicturePath(String path, int size) {
+        return currentUser.updateProfilePicturePath(path, size);
+    }
+
     public void logoutUser() {
         currentUser = null;
         currentLanguage = null;

@@ -15,6 +15,8 @@ module com.learner.game {
     requires javafx.graphics;
     requires javafx.base;
     requires java.desktop;
+    requires gson;
+    requires java.sql;
 
     opens com.learner.game to javafx.fxml;
     exports com.learner.game;

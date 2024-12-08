@@ -4,7 +4,6 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,6 +11,7 @@ import java.util.UUID;
 
 import javax.imageio.ImageIO;
 
+import com.learner.model.loadwrite.DataConstants;
 import com.learner.model.questions.Question;
 
 public class User {
@@ -25,7 +25,7 @@ public class User {
     private HashSet<ProgressTracker> progressTrackers; // Set of progress trackers for different languages
 
     // Addional user information settings
-    private String profilePicturePath;
+    private String profilePictureFileName;
     private boolean readQuestionFeedbackAloud;
 
 
@@ -39,8 +39,19 @@ public class User {
         this.password = password;
         this.uuid = uuid;
         this.progressTrackers = new HashSet<>(); 
-        profilePicturePath = "/com/learner/game/fxml-images/default-profile-picture.png";
+        profilePictureFileName = "default.png";
         readQuestionFeedbackAloud = false;
+    }
+
+    public User(String email, String username, String displayName, String password, UUID uuid, String profilePictureFileName, Boolean readQuestionFeedbackAloud) {
+        this.email = email;
+        this.username = username;
+        this.displayName = displayName;
+        this.password = password;
+        this.uuid = uuid;
+        this.progressTrackers = new HashSet<>(); 
+        this.profilePictureFileName = profilePictureFileName;
+        this.readQuestionFeedbackAloud = readQuestionFeedbackAloud;
     }
 
     /**
@@ -115,25 +126,40 @@ public class User {
         UserList.getInstance().replaceUser(this);
     }
 
+    // public void setProfilePicturePath(String fileName) {
+    //     profilePicturePath = fileName;
+    // }
+
     // Might implement this later
-    public void setProfilePicture(String path, int size) throws IOException {
+    public String updateProfilePicturePath(String path, int size) {
+
+        // Delete old profile image if its not the default one
+        if(!profilePictureFileName.equals(DataConstants.DEFAULT_PROFILE_PICTURE_NAME)) {
+            File oldFile = new File(profilePictureFileName);
+            oldFile.delete();
+        } else {
+            return "";
+        }
+
         // Ensure the file exists
         File file = new File(path);
         if (!file.exists()) {
-            throw new FileNotFoundException("File not found: " + path);
+            return "File not found: " + path;
         }
     
         // Detect file type (extension)
         String fileExtension = getFileExtension(file);
         if (fileExtension == null || !ImageIO.getImageReadersByFormatName(fileExtension).hasNext()) {
-            throw new IOException("Unsupported file format: " + fileExtension);
+            return ("Unsupported file format: " + fileExtension);
         }
-    
+        BufferedImage originalImage;
         // Read and resize the image
-        BufferedImage originalImage = ImageIO.read(file);
-        if (originalImage == null) {
-            throw new IOException("Could not read image from file: " + path);
+        try {
+            originalImage = ImageIO.read(file);
+        } catch (IOException e) {
+            return "Could not read image from file: " + path;
         }
+
         BufferedImage resizedImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = resizedImage.createGraphics();
         g.drawImage(originalImage.getScaledInstance(size, size, Image.SCALE_SMOOTH), 0, 0, null);
@@ -144,10 +170,16 @@ public class User {
         File outputDir = new File("demo/src/main/resources/com/learner/game/user-profile-pictures/");
         outputDir.mkdirs(); // Ensure the directory exists
         File outputfile = new File(outputDir, newFileName);
-        ImageIO.write(resizedImage, fileExtension, outputfile);
+        
+        try {
+            ImageIO.write(resizedImage, fileExtension, outputfile);;
+        } catch (IOException e) {
+            return "Could not read image from file: " + path;
+        }
     
         // Set the profile picture path
-        profilePicturePath = "/com/learner/game/user-profile-pictures/" + newFileName;
+        profilePictureFileName = newFileName;
+        return "Profile picture updated successfully";
     }
     
     private String getFileExtension(File file) {
@@ -160,8 +192,15 @@ public class User {
      * Gets the profile picture path
      * @return the path to the profile picture
      */
+    public String getProfilePictureFileName() {
+        return profilePictureFileName;
+    }
+
     public String getProfilePicturePath() {
-        return profilePicturePath;
+        if(profilePictureFileName.equals(DataConstants.DEFAULT_PROFILE_PICTURE_NAME)) {
+            return DataConstants.DEFAULT_PROFILE_PICTURE_PATH;
+        }
+        return DataConstants.PROFILE_PICTURES_FOLDER_PATH + profilePictureFileName;
     }
 
     /**
