@@ -209,10 +209,21 @@
 }
 
 .multiplechoice-button {
-    -fx-font-size: 18px;
-    -fx-pref-width: flex;
     -fx-background-color: #8B9eb7;
+    -fx-border-color: #8B9eb7;
+    -fx-border-radius: 3px;
+    -fx-border-width: 3px;
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
+
+.multiplechoice-button :focused {
+    -fx-border-color: #ffffff; /* Highlight border color */
+}
+
+.multiplechoice-button :active {
+    -fx-background-color: #c5d0dd; /* Darker background when clicked */
+}
+
 
 .exit-button {
     -fx-fit-width: 20px;

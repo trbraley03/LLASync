@@ -14,6 +14,7 @@ import com.learner.narration.Narrator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -27,6 +28,7 @@ public class MultipleChoiceQuestionController implements Initializable {
     private MultipleChoiceQuestion currentQuestion;
     private final boolean spokenFeedback = facade.getCurrentUser().getReadQuestionFeedbackAloud();
     private String selectedAnswer; 
+    private Button currentlySelectedButton = null;
 
     @FXML
     private ImageView audioButton;
@@ -52,8 +54,6 @@ public class MultipleChoiceQuestionController implements Initializable {
     @FXML
     private ImageView exitButton;
 
-    private Button currentlyHighlightedButton;
-
     @FXML
     private void goToMain(MouseEvent event) throws IOException {
         App.setRoot("main");
@@ -78,10 +78,28 @@ public class MultipleChoiceQuestionController implements Initializable {
     
             for (String option : options) {
                 Button optionButton = new Button(option);
-    
+                
+                // Set the initial style with a border
+            
                 // Assign event handler for selection
-                optionButton.setOnAction(event -> handleOptionSelection(option));
-    
+                optionButton.setOnAction(event -> {
+                    /// Reset the styles of all buttons in the container
+                    for (Node node : hboxForChoiceButtons.getChildren()) {
+                        if (node instanceof Button) {
+                            ((Button) node).setStyle(("-fx-background-color: #93a3b8;")); // Reset the style
+                        }
+                    }
+            
+                    // Remove the border from the newly selected button
+                    optionButton.setStyle("-fx-background-color: #bbc1c9;");
+                    
+                    // Update the currently selected button
+                    currentlySelectedButton = optionButton;
+            
+                    // Handle the option selection logic
+                    handleOptionSelection(option);
+                });
+            
                 // Add button to the UI
                 hboxForChoiceButtons.getChildren().add(optionButton);
             }
@@ -171,22 +189,7 @@ public class MultipleChoiceQuestionController implements Initializable {
     
     @FXML
     private void goToNext(ActionEvent event) throws IOException {
-        // Navigate to the next part of the application (e.g., results or another question type)
-        System.out.println("Next button clicked.");
-    }
-
-    @FXML
-    private void handleOptionSelection(ActionEvent event) {
-        Button clickedButton = (Button) event.getSource();
-
-        // Reset the style of the previously highlighted button
-        if (currentlyHighlightedButton != null) {
-            currentlyHighlightedButton.setStyle(""); // Reset to default style
-        }
-
-        // Highlight the clicked button
-        clickedButton.setStyle("-fx-background-color: #FFD700; -fx-text-fill: black; -fx-border-color: #FFD700; -fx-background-radius: 10px; -fx-padding: 10px 20px; -fx-font-size: 14pt; -fx-font-weight: bold; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); -fx-transition: all 0.3s ease;");
-        currentlyHighlightedButton = clickedButton;
+        // unused
     }
 
 }
