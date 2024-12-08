@@ -23,22 +23,27 @@
 .button {
     -fx-background-color: #8B9eb7;
     -fx-text-fill: white;
-    -fx-transition: all 0.3s ease;
+    -fx-border-color: transparent; /* Remove outer border */
+    -fx-background-radius: 10px; /* Rounded corners */
+    -fx-padding: 10px 20px; /* Padding for better visibility */
+    -fx-font-size: 14pt; 
+    -fx-font-weight: bold; 
     -fx-cursor: hand; /* Changes cursor to hand on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); /* Add shadow for better visibility */
+    -fx-transition: all 0.3s ease; /* Smooth transition */
 }
 
-.button:focused {
-    -fx-border-color: #a6a59f; /* Highlight border color */
-    -fx-border-width: 2px;     /* Border width */
+.button:hover {
+    -fx-background-color: #A0B9D9; /* Highlight color on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 15, 0, 0, 0); /* Stronger shadow on hover */
 }
 
-.button:active {
-    -fx-background-color: #276570; /* Darker background when clicked */
+.button:pressed {
+    -fx-background-color: #6A8BA3; /* Darker color when pressed */
+    -fx-effect: none; /* Remove shadow when pressed */
 }
 
 .button:disabled {
-    -fx-opacity: 1; /* Prevent dimming */
-    -fx-text-fill: white; /* Set the text color to match the normal state */
     -fx-cursor: default; /* Default cursor when button is disabled */
 }
 
@@ -46,8 +51,9 @@
 .button-inverse {
     -fx-background-color:  #5b5f78;
     -fx-text-fill: white;
-    -fx-border-color: #8B9eb7;
-    -fx-border-radius: 2px;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5;
+    -fx-border-width: 0.5;
     -fx-transition: all 0.3s ease;
     -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
@@ -60,32 +66,40 @@
     -fx-background-color: #9c9c9c; /* Darker background when clicked */
 }
 
-.button-inverse:disabled {
-    -fx-opacity: 1; /* Prevent dimming */
-    -fx-text-fill: #8B9eb7; /* Set the text color to match the normal state */
-    -fx-cursor: default; /* Default cursor when button is disabled */
+/* Styling for small buttons */
+.small-button {
+    -fx-border-color: transparent; /* Remove outer border */
+    -fx-background-radius: 5px; /* Small rounded corners */
+    -fx-padding: 0; /* No inner padding */
+    -fx-font-size: 8; /* Responsive font size */
+    -fx-font-weight: bold; /* Make text bold */
+    -fx-cursor: hand; /* Changes cursor to hand on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0); /* Add shadow for better visibility */
+    -fx-transition: all 0.3s ease; /* Smooth transition */
+}
+
+.small-button:hover {
+    -fx-background-color: #A0B9D9; /* Highlight color on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 0); /* Stronger shadow on hover */
+}
+
+.small-button:pressed {
+    -fx-background-color: #6A8BA3; /* Darker color when pressed */
+    -fx-effect: none; /* Remove shadow when pressed */
 }
 
 /* Styling for image buttons */
 .image-button {
-    -fx-padding: 10; /* Adds padding around the image */
-    -fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0); /* Button-like gradient */
-    -fx-background-radius: 10; /* Slightly round the background corners */
-    -fx-border-color: #888; /* Border color */
-    -fx-border-radius: 10; /* Match the background radius for consistency */
-    -fx-border-width: 1; /* Border width */
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.0, 1, 1); /* Shadow for depth */
+    -fx-background-color: transparent; /* Transparent background */
     -fx-cursor: hand; /* Changes cursor to hand on hover */
 }
 
 .image-button:hover {
-    -fx-background-color: linear-gradient(to bottom, #e0e0e0, #c0c0c0);
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.0, 2, 2);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 15, 0, 0, 0); /* Stronger shadow on hover */
 }
 
 .image-button:pressed {
-    -fx-background-color: linear-gradient(to bottom, #d0d0d0, #b0b0b0);
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.0, 1, 1);
+    -fx-effect: none; /* Remove shadow when pressed */
 }
 
 /* Additional button styles */
@@ -107,6 +121,11 @@
     -fx-background-color: #00673a;
     -fx-text-fill: white;
     -fx-cursor: hand; /* Changes cursor to hand on hover */
+}
+
+.translate-button:hover {
+    -fx-background-color: #009c59; /* Highlight color on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 15, 0, 0, 0); /* Stronger shadow on hover */
 }
 
 .left-matching-button {
@@ -154,8 +173,8 @@
 
     -fx-min-height: 20px;
     -fx-max-height: 20px;
-
-    -fx-font-size: 10px;
+    -fx-padding: 0; /* No inner padding */
+    -fx-font-size: 8px;
 }
 
 
@@ -168,7 +187,7 @@
 }
 
 .heading {
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
     -fx-font-weight: 600;
     -fx-text-fill: white;
 }
