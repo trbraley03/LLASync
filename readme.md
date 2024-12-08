@@ -13,7 +13,7 @@ Link to the live site of the prototype: (https://smdindl.github.io/Language-Lear
 Watch my video walk-through on YouTube here: [Video Walk-through](https://www.youtube.com/watch?v=xKGJS_9CxZs)
 
 # GUI Video Walk-through
-Watch my GUI video walk-through on YouTube here: [Video Walk-through](___)
+Watch my GUI video walk-through on YouTube here: [Video Walk-through](https://youtu.be/9BkRCLGuQPQ)
 
 
 ## Features
