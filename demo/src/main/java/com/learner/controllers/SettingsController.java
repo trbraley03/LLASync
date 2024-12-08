@@ -205,7 +205,7 @@ public class SettingsController implements Initializable{
     private void changeSpokenFeedbackState(ActionEvent event) {
         if(spokenFeedback) {
             spokenFeedback = false;
-            facade.getCurrentUser().setReadQuestionFeedbackAloud(true);
+            facade.getCurrentUser().setReadQuestionFeedbackAloud(false);
             spokenFeedbackButton.setText("Disabled");
         } else {
             spokenFeedback = true;
