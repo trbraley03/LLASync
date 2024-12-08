@@ -1,48 +1,13 @@
 {
   "users": [
     {
-      "password": "Password2024!",
-      "progressTrackers": [
-        {
-          "languageUUID": "d9d2caae-e27d-4de7-9b2a-8a784f5fbb12",
-          "completedGames": [],
-          "languageName": "Spanish",
-          "missedQuestions": []
-        },
-        {
-          "languageUUID": "1bafb0ae-3462-4ec3-9cc2-a98ff2898e72",
-          "completedGames": [
-            {
-              "gameUUID": "8ce4fefc-a539-4546-9d7e-0ac8778f8de5"
-            }
-          ],
-          "languageName": "Filipino",
-          "missedQuestions": []
-        }
-      ],
-      "displayname": "Steven",
-      "uuid": "c9d7dff4-d613-4dad-bb41-e1fb1913ccb7",
-      "email": "sdindl@email.com",
-      "username": "sdindl"
-    },
-    {
       "password": "0",
       "progressTrackers": [
-        {
-          "languageUUID": "1bafb0ae-3462-4ec3-9cc2-a98ff2898e72",
-          "completedGames": [
-            {
-              "gameUUID": "8ce4fefc-a539-4546-9d7e-0ac8778f8de5"
-            }
-          ],
-          "languageName": "Filipino",
-          "missedQuestions": []
-        },
         {
           "languageUUID": "5c7b2ba6-8e1c-44fc-addc-c97a35ad020d",
           "completedGames": [
             {
-              "gameUUID": "5c7b2ba6-8e1c-44fc-addc-c97a35ad020d"
+              "gameUUID": "698bfe55-f86e-4f17-ade5-baad5d0b9e65"
             }
           ],
           "languageName": "Spanish",
@@ -52,7 +17,13 @@
           "languageUUID": "1907e0cb-cff7-4437-a4b4-0119ac4ddaac",
           "completedGames": [
             {
-              "gameUUID": "1907e0cb-cff7-4437-a4b4-0119ac4ddaac"
+              "gameUUID": "80025f56-810c-4fc5-87fb-0ab223470f31"
+            },
+            {
+              "gameUUID": "19f7cf74-1a94-41e2-870e-260abbcff3ea"
+            },
+            {
+              "gameUUID": "abca5f0d-4d55-46eb-9bda-bf4c35e656ca"
             }
           ],
           "languageName": "Filipino",
@@ -63,6 +34,25 @@
       "uuid": "2e253e1e-33cb-401a-b0a9-9b2fe046e8ea",
       "email": "0",
       "username": "0"
+    },
+    {
+      "password": "Test",
+      "progressTrackers": [
+        {
+          "languageUUID": "1907e0cb-cff7-4437-a4b4-0119ac4ddaac",
+          "completedGames": [
+            {
+              "gameUUID": "80025f56-810c-4fc5-87fb-0ab223470f31"
+            }
+          ],
+          "languageName": "Filipino",
+          "missedQuestions": []
+        }
+      ],
+      "displayname": "Test",
+      "uuid": "660a6856-f1d6-4b9c-b89a-6afb9adab4a0",
+      "email": "Test",
+      "username": "Test"
     }
   ]
 }

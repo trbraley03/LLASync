@@ -210,7 +210,8 @@ public class Facade {
 
     // Progress tracking
     public void addGameToCompletedGames() {
-        currentUser.addCompletedGame(currentLanguage.getUUID());
+        System.out.println("Adding: " + currentLanguage.getLanguageName() + ": " + currentLanguage.getUUID());
+        currentUser.addCompletedGame(currentGame.getUUID(), currentLanguage.getUUID());
     }
 
     public void addMissedQuestion(Question question) {

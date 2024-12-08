@@ -35,6 +35,7 @@ public class DataWriter {
             // Progress trackers
             JSONArray progressTrackersArray = new JSONArray();
             for (User.ProgressTracker tracker : user.getProgressTrackers()) {
+                System.out.println(tracker);
                 JSONObject trackerJson = new JSONObject();
                 trackerJson.put("languageUUID", tracker.getUUID().toString());
                 trackerJson.put("languageName", tracker.getLanguageName());

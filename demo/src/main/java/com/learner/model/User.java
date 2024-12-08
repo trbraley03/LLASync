@@ -254,7 +254,7 @@ public class User {
         for (ProgressTracker tracker : progressTrackers) {
             if (tracker.getUUID().equals(languageUUID)) {
                 return tracker;
-            }
+            } 
         }
         return null;
     }
@@ -282,13 +282,13 @@ public class User {
     }
 
     // ptracker methods 
-    public void addCompletedGame(UUID langUUID) {
+    public void addCompletedGame(UUID gameUUID, UUID langUUID) {
         ProgressTracker currentProgressTracker = getProgressTracker(langUUID);
         if (currentProgressTracker != null) {
-            currentProgressTracker.addCompletedGame(langUUID);
+            currentProgressTracker.addCompletedGame(gameUUID);
         } else {
             ProgressTracker newProgressTracker = new ProgressTracker(langUUID, GameManager.getInstance().getLanguageByUUID(langUUID).getLanguageName());
-            newProgressTracker.addCompletedGame(langUUID);
+            newProgressTracker.addCompletedGame(gameUUID);
             progressTrackers.add(newProgressTracker);
         }
     }
