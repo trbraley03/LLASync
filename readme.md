@@ -1,5 +1,8 @@
 # Language-Learning-App
-Language Learning App for Filipino by Hello Worlders
+Language Learning App for Filipino by Hello 
+
+# GUI Video Walk-through
+Get an idea of the final project with the GUI video walk-through on YouTube here: [Video Walk-through](https://youtu.be/9BkRCLGuQPQ)
 
 Our application is designed to help English speakers learn Filipino (Latin-based Tagalog) through interactive games and storybooks. The software offers three difficulty levels (easy, medium, and hard), making it suitable for a wide range of learners, yet primarily focused on primary school aged childern.
 
@@ -10,11 +13,7 @@ Our application is designed to help English speakers learn Filipino (Latin-based
 Link to the live site of the prototype: (https://smdindl.github.io/Language-Learning-App/)
 
 # Project Prototype Walk-through
-Watch my video walk-through on YouTube here: [Video Walk-through](https://www.youtube.com/watch?v=xKGJS_9CxZs)
-
-# GUI Video Walk-through
-Watch my GUI video walk-through on YouTube here: [Video Walk-through](https://youtu.be/9BkRCLGuQPQ)
-
+Watch the proptype video walk-through on YouTube here: [Video Walk-through](https://www.youtube.com/watch?v=xKGJS_9CxZs)
 
 ## Features
 - **Interactive Games**: Engaging games such as Alphahabet,Colors,Numbers that make learning fun.
