@@ -1,10 +1,10 @@
 # Language-Learning-App
-Language Learning App for Filipino by Hello 
+Language Learning App for Filipino by Hello Worlder
+
+Our application is designed to help English speakers learn Filipino (Latin-based Tagalog) through interactive games and storybooks. The software offers three difficulty levels (easy, medium, and hard), making it suitable for a wide range of learners, yet primarily focused on primary school aged childern.
 
 # GUI Video Walk-through
 Get an idea of the final project with the GUI video walk-through on YouTube here: [Video Walk-through](https://youtu.be/9BkRCLGuQPQ)
-
-Our application is designed to help English speakers learn Filipino (Latin-based Tagalog) through interactive games and storybooks. The software offers three difficulty levels (easy, medium, and hard), making it suitable for a wide range of learners, yet primarily focused on primary school aged childern.
 
 ## Video Walkthrough
 [Watch the video here](https://youtu.be/ekEufFtlyRE)
