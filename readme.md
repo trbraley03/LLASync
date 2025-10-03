@@ -1,23 +1,71 @@
-# Language-Learning-App
-Language Learning App for Filipino by Hello Worlders
+# Hello Language by Hello Worlders
+## Children's Foreign Language Learning App
 
-Our application is designed to help English speakers learn Filipino (Latin-based Tagalog) through interactive games and storybooks. The software offers three difficulty levels (easy, medium, and hard), making it suitable for a wide range of learners, yet primarily focused on primary school aged childern.
+<div style="display: flex; align-items: center;">
+  <img src="demo/src/main/resources/com/learner/game/fxml-images/logo.png" 
+       alt="logo" width="150" style="margin-right: 20px;"/>
+  <p>
+    Our application is designed to help English children learn foreign languages 
+    through interactive content and storybooks. The software offers three difficulty 
+    levels (easy, medium, and hard), making it suitable for a wide range of learners, 
+    yet primarily focused on primary school aged children.
+  </p>
+</div>
 
-# GUI Video Walk-through
-Get an idea of the final project with the GUI video walk-through on YouTube here: [Video Walk-through](https://youtu.be/9BkRCLGuQPQ)
 
-## Video Walkthrough
-[Watch the video here](https://youtu.be/ekEufFtlyRE)
+## See what we did!
+Get an idea of the final project with the graphical sser interface video walk-through on YouTube here or scroll down to check out the screenshots.
+[![Video Walk-through](demo/ref-img/video-img.png)](https://youtu.be/9BkRCLGuQPQ)
 
-# Project Prototype
-Link to the live site of the prototype: (https://smdindl.github.io/Language-Learning-App/)
-
-# Project Prototype Walk-through
-Watch the proptype video walk-through on YouTube here: [Video Walk-through](https://www.youtube.com/watch?v=xKGJS_9CxZs)
 
 ## Features
-- **Interactive Games**: Engaging games such as Alphahabet,Colors,Numbers that make learning fun.
+- **Interactive Games**: Engaging games such as Alphahabet, Colors, Numbers that make learning fun.
 - **Storybooks**: Read along with stories to enhance vocabulary.
-- **Three Difficulty Levels**: Easy, Medium, and Hard to suit different learners.
+- **Difficulty Levels**: Easy, Medium, and Hard to suit different learners.
 - **Progress Tracking**: Monitor your learning journey and achievements.
+
+## Reference Images
+### Intro Screen
+<img src="demo/ref-img/intro-screen.png" alt="screen" width="500"/>
+
+### Main Menu
+<img src="demo/ref-img/main-menu.png" alt="screen" width="500"/>
+
+### Language Select
+<img src="demo/ref-img/pick-lang.png" alt="screen" width="500"/>
+
+### Game Select
+<img src="demo/ref-img/pick-game.png" alt="screen" width="500"/>
+
+### Story Book Page
+<img src="demo/ref-img/book.png" alt="screen" width="500"/>
+
+### Start Brain Blaster
+<img src="demo/ref-img/start-quiz.png" alt="screen" width="500"/>
+
+### Multiple Choice Question
+<img src="demo/ref-img/q1.png" alt="screen" width="500"/>
+
+### Fill in the Blank
+<img src="demo/ref-img/q2.png" alt="screen" width="500"/>
+
+### Matching Question
+<img src="demo/ref-img/q3.png" alt="screen" width="500"/>
+
+### Matching Question
+<img src="demo/ref-img/passed.png" alt="screen" width="500"/>
+
+### More
+* Difficulty selection
+* Content Learning
+* Progress Check
+* Sign up and signin
+* Settings
+* Local data storage
+
+#### [Video Walk-through](https://youtu.be/9BkRCLGuQPQ)
+
+
+
+
 
